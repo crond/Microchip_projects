@@ -1,0 +1,70 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4431 ]
+"9 E:\MPLAB Projects\PIC18f4431\main.c
+[v _toggleLed `(i  1 e 2 0 ]
+"21
+[v _setSlaveAddr `(i  1 e 2 0 ]
+"37
+[v _delay `(i  1 e 2 0 ]
+"48
+[v _init `(i  1 e 2 0 ]
+"71
+[v _main `(i  1 e 2 0 ]
+"789 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\include\pic18f4431.h
+[v _PORTB `Vuc  1 e 1 @3969 ]
+"899
+[v _PORTD `Vuc  1 e 1 @3971 ]
+"1126
+[v _TRISB `Vuc  1 e 1 @3987 ]
+"1212
+[v _TRISD `Vuc  1 e 1 @3989 ]
+"1382
+[v _SSPIE `Vb  1 e 0 @31979 ]
+"1409
+[v _SSPIF `Vb  1 e 0 @31987 ]
+"2052
+[v _SSPCON `Vuc  1 e 1 @4038 ]
+"2153
+[v _SSPADD `Vuc  1 e 1 @4040 ]
+"2330
+[v _OSCCON `Vuc  1 e 1 @4051 ]
+"2625
+[v _PEIE `Vb  1 e 0 @32662 ]
+"2626
+[v _GIE `Vb  1 e 0 @32663 ]
+"71 E:\MPLAB Projects\PIC18f4431\main.c
+[v _main `(i  1 e 2 0 ]
+{
+"86
+} 0
+"9
+[v _toggleLed `(i  1 e 2 0 ]
+{
+"19
+} 0
+"21
+[v _setSlaveAddr `(i  1 e 2 0 ]
+{
+"22
+[v _addrBkp `uc  1 a 1 0 ]
+"21
+[v _addr `uc  1 p 1 0 ]
+"34
+} 1
+"48
+[v _init `(i  1 e 2 0 ]
+{
+"69
+} 0
+"37
+[v _delay `(i  1 e 2 0 ]
+{
+"38
+[v _i `i  1 a 2 0 ]
+[v _j `i  1 a 2 2 ]
+"37
+[v _cnt `i  1 p 2 0 ]
+"46
+} 4

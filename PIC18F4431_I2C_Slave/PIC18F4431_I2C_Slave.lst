@@ -1,0 +1,2983 @@
+
+
+HI-TECH Software LITE Macro Assembler (PIC18) V9.66 build 8870 
+                                                       Sat Dec 22 02:02:13 2012
+
+HI-TECH Software Omniscient Code Generator build 8870
+     1  000000                     opt subtitle "HI-TECH Software Omniscient Code G
+                                 enerator build 8870"
+     2                           
+     3                           	processor	18F4431
+     4  000000                     porta	equ	0F80h
+     5  000000                     portb	equ	0F81h
+     6  000000                     portc	equ	0F82h
+     7  000000                     portd	equ	0F83h
+     8  000000                     porte	equ	0F84h
+     9  000000                     lata	equ	0F89h
+    10  000000                     latb	equ	0F8Ah
+    11  000000                     latc	equ	0F8Bh
+    12  000000                     latd	equ	0F8Ch
+    13  000000                     late	equ	0F8Dh
+    14  000000                     trisa	equ	0F92h
+    15  000000                     trisb	equ	0F93h
+    16  000000                     trisc	equ	0F94h
+    17  000000                     trisd	equ	0F95h
+    18  000000                     trise	equ	0F96h
+    19  000000                     pie1	equ	0F9Dh
+    20  000000                     pir1	equ	0F9Eh
+    21  000000                     ipr1	equ	0F9Fh
+    22  000000                     pie2	equ	0FA0h
+    23  000000                     pir2	equ	0FA1h
+    24  000000                     ipr2	equ	0FA2h
+    25  000000                     t3con	equ	0FB1h
+    26  000000                     tmr3l	equ	0FB2h
+    27  000000                     tmr3h	equ	0FB3h
+    28  000000                     ccp1con	equ	0FBDh
+    29  000000                     ccpr1l	equ	0FBEh
+    30  000000                     ccpr1h	equ	0FBFh
+    31  000000                     adcon1	equ	0FC1h
+    32  000000                     adcon0	equ	0FC2h
+    33  000000                     adresl	equ	0FC3h
+    34  000000                     adresh	equ	0FC4h
+    35  000000                     sspcon2	equ	0FC5h
+    36  000000                     sspcon1	equ	0FC6h
+    37  000000                     sspstat	equ	0FC7h
+    38  000000                     sspadd	equ	0FC8h
+    39  000000                     sspbuf	equ	0FC9h
+    40  000000                     t2con	equ	0FCAh
+    41  000000                     pr2	equ	0FCBh
+    42  000000                     tmr2	equ	0FCCh
+    43  000000                     t1con	equ	0FCDh
+    44  000000                     tmr1l	equ	0FCEh
+    45  000000                     tmr1h	equ	0FCFh
+    46  000000                     rcon	equ	0FD0h
+    47  000000                     wdtcon	equ	0FD1h
+    48  000000                     lvdcon	equ	0FD2h
+    49  000000                     osccon	equ	0FD3h
+    50  000000                     t0con	equ	0FD5h
+    51  000000                     tmr0l	equ	0FD6h
+    52  000000                     tmr0h	equ	0FD7h
+    53  000000                     status	equ	0FD8h
+    54  000000                     fsr2	equ	0FD9h
+    55  000000                     fsr2l	equ	0FD9h
+    56  000000                     fsr2h	equ	0FDAh
+    57  000000                     plusw2	equ	0FDBh
+    58  000000                     preinc2	equ	0FDCh
+    59  000000                     postdec2	equ	0FDDh
+    60  000000                     postinc2	equ	0FDEh
+    61  000000                     indf2	equ	0FDFh
+    62  000000                     bsr	equ	0FE0h
+    63  000000                     fsr1	equ	0FE1h
+    64  000000                     fsr1l	equ	0FE1h
+    65  000000                     fsr1h	equ	0FE2h
+    66  000000                     plusw1	equ	0FE3h
+    67  000000                     preinc1	equ	0FE4h
+    68  000000                     postdec1	equ	0FE5h
+    69  000000                     postinc1	equ	0FE6h
+    70  000000                     indf1	equ	0FE7h
+    71  000000                     wreg	equ	0FE8h
+    72  000000                     fsr0	equ	0FE9h
+    73  000000                     fsr0l	equ	0FE9h
+    74  000000                     fsr0h	equ	0FEAh
+    75  000000                     plusw0	equ	0FEBh
+    76  000000                     preinc0	equ	0FECh
+    77  000000                     postdec0	equ	0FEDh
+    78  000000                     postinc0	equ	0FEEh
+    79  000000                     indf0	equ	0FEFh
+    80  000000                     intcon3	equ	0FF0h
+    81  000000                     intcon2	equ	0FF1h
+    82  000000                     intcon	equ	0FF2h
+    83  000000                     prod	equ	0FF3h
+    84  000000                     prodl	equ	0FF3h
+    85  000000                     prodh	equ	0FF4h
+    86  000000                     tablat	equ	0FF5h
+    87  000000                     tblptr	equ	0FF6h
+    88  000000                     tblptrl	equ	0FF6h
+    89  000000                     tblptrh	equ	0FF7h
+    90  000000                     tblptru	equ	0FF8h
+    91  000000                     pcl	equ	0FF9h
+    92  000000                     pclat	equ	0FFAh
+    93  000000                     pclath	equ	0FFAh
+    94  000000                     pclatu	equ	0FFBh
+    95  000000                     stkptr	equ	0FFCh
+    96  000000                     tosl	equ	0FFDh
+    97  000000                     tosh	equ	0FFEh
+    98  000000                     tosu	equ	0FFFh
+    99                           	global	__ramtop
+   100                           	global	__accesstop
+   101                           	GLOBAL	__activetblptr
+   102  000000                     __activetblptr	EQU	1
+   103                           	GLOBAL	__smallconst,__Lsmallconst
+   104  000000                     __smallconst	EQU	__Lsmallconst
+   105                           	GLOBAL	__mediumconst,__Lmediumconst
+   106  000000                     __mediumconst	EQU	__Lmediumconst
+   107                           	GLOBAL	__Ldata
+   108  000000                     __Ldata	EQU	0
+   109  000000                     sendToUart@size	equ	??_sendToUart+0
+   110                           	global	sendToUart@size
+   111  000000                     sendToUart@i	equ	??_sendToUart+2
+   112                           	global	sendToUart@i
+   113  000000                     sendToUart@pkt	equ	?_sendToUart+0
+   114                           	global	sendToUart@pkt
+   115  000000                     eusart_init@usart_mode	equ	?_eusart_init+0
+   116                           	global	eusart_init@usart_mode
+   117  000000                     eusart_init@tx_mode	equ	?_eusart_init+1
+   118                           	global	eusart_init@tx_mode
+   119  000000                     eusart_init@fosc	equ	?_eusart_init+2
+   120                           	global	eusart_init@fosc
+   121  000000                     eusart_init@baud	equ	?_eusart_init+6
+   122                           	global	eusart_init@baud
+   123  000000                     uart_send_byte@byte	equ	?_uart_send_byte+0
+   124                           	global	uart_send_byte@byte
+   125  000000                     delay@j	equ	??_delay+0
+   126                           	global	delay@j
+   127  000000                     delay@i	equ	??_delay+2
+   128                           	global	delay@i
+   129  000000                     delay@cnt	equ	?_delay+0
+   130                           	global	delay@cnt
+   131  000000                     ___lldiv@counter	equ	??___lldiv+0
+   132                           	global	___lldiv@counter
+   133  000000                     ___lldiv@quotient	equ	??___lldiv+1
+   134                           	global	___lldiv@quotient
+   135  000000                     ___lldiv@dividend	equ	?___lldiv+0
+   136                           	global	___lldiv@dividend
+   137  000000                     ___lldiv@divisor	equ	?___lldiv+4
+   138                           	global	___lldiv@divisor
+   139  000000                     strlen@cp	equ	??_strlen+0
+   140                           	global	strlen@cp
+   141  000000                     strlen@s	equ	?_strlen+0
+   142                           	global	strlen@s
+   143  000000                     i2sendToUart@size	equ	??i2_sendToUart+0
+   144                           	global	i2sendToUart@size
+   145  000000                     i2sendToUart@i	equ	??i2_sendToUart+2
+   146                           	global	i2sendToUart@i
+   147  000000                     i2sendToUart@pkt	equ	?i2_sendToUart+0
+   148                           	global	i2sendToUart@pkt
+   149  000000                     i2delay@j	equ	??i2_delay+0
+   150                           	global	i2delay@j
+   151  000000                     i2delay@i	equ	??i2_delay+2
+   152                           	global	i2delay@i
+   153  000000                     i2delay@cnt	equ	?i2_delay+0
+   154                           	global	i2delay@cnt
+   155  000000                     i2uart_send_byte@byte	equ	?i2_uart_send_byte+0
+   156                           	global	i2uart_send_byte@byte
+   157  000000                     i2strlen@cp	equ	??i2_strlen+0
+   158                           	global	i2strlen@cp
+   159  000000                     i2strlen@s	equ	?i2_strlen+0
+   160                           	global	i2strlen@s
+   161                           ;Data sizes: Strings 169, constant 0, data 0, bs
+                                 s 0, persistent 0 stack 58
+   162                           	global	_main
+   163                           	global	??_main
+   164                           	global	?_main
+   165                           
+   166                           ; *************** function _main ***************
+                                 **
+   167                           ; Defined at:
+   168                           ;		line 54 in file "G:\root\MPLAB Projects\PIC18
+                                 F4431_I2C_Slave\PIC18F4431_I2C_Slave\main.c"
+   169                           ; Parameters:
+   170                           ;		None
+   171                           ; Auto variables:
+   172                           ;		None
+   173                           ; Return value:
+   174                           ;		type: int 
+   175                           ;		size: 2
+   176                           ; Registers used:
+   177                           ;		wreg, status,2, status,0, tblptrl, tblptrh, t
+                                 blptru, tablat, cstack
+   178                           ; Tracked objects:
+   179                           ;		On entry : 0/0
+   180                           ;		On exit  : 0/0
+   181                           ;		Unchanged: 0/0
+   182                           ; Data sizes:
+   183                           ;		Autos:    0
+   184                           ;		Params:   0
+   185                           ;		Temp:     0
+   186                           ;		Total:    0
+   187                           ; This function calls:
+   188                           ;		_init
+   189                           ;		_start_I2C
+   190                           ;		_delay
+   191                           ; This function is called by:
+   192                           ;		Startup code after reset
+   193                           ; This function uses a non-reentrant model
+   194                           ; 
+   195                                   psect   text0,class=CODE,space=0,reloc=2
+   196                           
+   197                           	opt lm
+   198                           	file	"G:\root\MPLAB Projects\PIC18F4431_I2C_Sla
+                                 ve\PIC18F4431_I2C_Slave\main.c"
+   199                           	line	54
+   200  000000                     	__size_of_main	equ	__end_of_main-_main
+   201                           ;main.c: 53: int main()
+   202                           ;main.c: 54: {
+   203                           	
+   204  000BC8                     _main:		; BSR set to: ?
+   205                           
+   206                           	opt stack 28
+   207                           	line	55
+   208  000BC8  ECAD  F005         	call	_init	;wreg free
+   209                           	line	56
+   210                           ;main.c: 56: start_I2C();
+   211  000BCC  ECFF  F004         	call	_start_I2C	;wreg free
+   212                           	line	58
+   213                           ;main.c: 58: while(1){
+   214                           	
+   215  000BD0                     l525:		; BSR set to: ?
+   216                           
+   217                           	line	60
+   218                           ;main.c: 60: delay(5000);
+   219  000BD0  0E88               	movlw	low(01388h)
+   220  000BD2  0101               	movlb	1	; () banked
+   221  000BD4  0101               	movlb	1	; () banked
+   222  000BD6  6F08               	movwf	((?_delay))&0ffh
+   223  000BD8  0E13               	movlw	high(01388h)
+   224  000BDA  0101               	movlb	1	; () banked
+   225  000BDC  6F09               	movwf	((?_delay+1))&0ffh
+   226  000BDE  ECF8  F003         	call	_delay	;wreg free
+   227                           	line	61
+   228                           	
+   229  000BE2                     l524:		; BSR set to: ?
+   230                           
+   231                           	line	58
+   232  000BE2  EFE8  F005         	goto	l525
+   233                           	global	start
+   234  000BE6  EF0C  F000         	goto	start
+   235                           	opt stack 0
+   236                           GLOBAL __end_of_main
+   237  000BEA                     	__end_of_main:
+   238                           	FNSIZE	_main,0,0
+   239                           ; =============== function _main ends ==========
+                                 ==
+   240                           
+   241                                   psect   text1,class=CODE,space=0,reloc=2
+   242                           	line	63
+   243                           
+   244                           	opt lm
+   245                           	signat	_main,90
+   246                           	global	_start_I2C
+   247                           	global	??_start_I2C
+   248                           	global	?_start_I2C
+   249                           
+   250                           ; *************** function _start_I2C **********
+                                 *******
+   251                           ; Defined at:
+   252                           ;		line 113 in file "G:\root\MPLAB Projects\PIC1
+                                 8F4431_I2C_Slave\PIC18F4431_I2C_Slave\i2c.c"
+   253                           ; Parameters:
+   254                           ;		None
+   255                           ; Auto variables:
+   256                           ;		None
+   257                           ; Return value:
+   258                           ;		type: int 
+   259                           ;		size: 2
+   260                           ; Registers used:
+   261                           ;		wreg, status,2, status,0, tblptrl, tblptrh, t
+                                 blptru, tablat, cstack
+   262                           ; Tracked objects:
+   263                           ;		On entry : 0/0
+   264                           ;		On exit  : 0/0
+   265                           ;		Unchanged: 0/0
+   266                           ; Data sizes:
+   267                           ;		Autos:    0
+   268                           ;		Params:   0
+   269                           ;		Temp:     0
+   270                           ;		Total:    0
+   271                           ; This function calls:
+   272                           ;		_sendToUart
+   273                           ; This function is called by:
+   274                           ;		_main
+   275                           ; This function uses a non-reentrant model
+   276                           ; 
+   277                           	file	"G:\root\MPLAB Projects\PIC18F4431_I2C_Sla
+                                 ve\PIC18F4431_I2C_Slave\i2c.c"
+   278                           	line	113
+   279  000000                     	__size_of_start_I2C	equ	__end_of_start_I2C-_sta
+                                 rt_I2C
+   280                           ;i2c.c: 112: int start_I2C()
+   281                           ;i2c.c: 113: {
+   282                           	
+   283  0009FE                     _start_I2C:		; BSR set to: ?
+   284                           
+   285                           	opt stack 27
+   286                           	line	114
+   287  0009FE  0E74               	movlw	low(STR_12)
+   288  000A00  0101               	movlb	1	; () banked
+   289  000A02  0101               	movlb	1	; () banked
+   290  000A04  6F00               	movwf	((?_sendToUart))&0ffh
+   291  000A06  0E03               	movlw	high(STR_12)
+   292  000A08  0101               	movlb	1	; () banked
+   293  000A0A  6F01               	movwf	((?_sendToUart+1))&0ffh
+   294  000A0C  EC90  F003         	call	_sendToUart	;wreg free
+   295                           	line	115
+   296                           ;i2c.c: 115: if(SSPIF == 0)
+   297  000A10  B69E               	btfsc	c:(31987/8),(31987)&7	;volatile
+   298  000A12  EF0D  F005         	goto	u1191
+   299  000A16  EF0F  F005         	goto	u1190
+   300  000A1A                     u1191:
+   301  000A1A  EF1A  F005         	goto	l261
+   302  000A1E                     u1190:
+   303                           	line	116
+   304                           ;i2c.c: 116: sendToUart("SSPIF 0 ");
+   305  000A1E  0E8C               	movlw	low(STR_13)
+   306  000A20  0101               	movlb	1	; () banked
+   307  000A22  0101               	movlb	1	; () banked
+   308  000A24  6F00               	movwf	((?_sendToUart))&0ffh
+   309  000A26  0E03               	movlw	high(STR_13)
+   310  000A28  0101               	movlb	1	; () banked
+   311  000A2A  6F01               	movwf	((?_sendToUart+1))&0ffh
+   312  000A2C  EC90  F003         	call	_sendToUart	;wreg free
+   313  000A30  EF23  F005         	goto	l262
+   314                           	line	117
+   315                           	
+   316  000A34                     l261:		; BSR set to: ?
+   317                           
+   318                           	line	118
+   319                           ;i2c.c: 117: else
+   320                           ;i2c.c: 118: sendToUart("SSPIF 1");
+   321  000A34  0E9E               	movlw	low(STR_14)
+   322  000A36  0101               	movlb	1	; () banked
+   323  000A38  0101               	movlb	1	; () banked
+   324  000A3A  6F00               	movwf	((?_sendToUart))&0ffh
+   325  000A3C  0E03               	movlw	high(STR_14)
+   326  000A3E  0101               	movlb	1	; () banked
+   327  000A40  6F01               	movwf	((?_sendToUart+1))&0ffh
+   328  000A42  EC90  F003         	call	_sendToUart	;wreg free
+   329                           	
+   330  000A46                     l262:		; BSR set to: ?
+   331                           
+   332                           	line	119
+   333                           ;i2c.c: 119: SSPIF = 0;
+   334  000A46  969E               	bcf	c:(31987/8),(31987)&7	;volatile
+   335                           	line	121
+   336                           ;i2c.c: 121: while(SSPIF == 0);
+   337  000A48  EF26  F005         	goto	l263
+   338                           	
+   339  000A4C                     l263:		; BSR set to: ?
+   340                           
+   341  000A4C  A69E               	btfss	c:(31987/8),(31987)&7	;volatile
+   342  000A4E  EF2B  F005         	goto	u1201
+   343  000A52  EF2D  F005         	goto	u1200
+   344  000A56                     u1201:
+   345  000A56  EF26  F005         	goto	l263
+   346  000A5A                     u1200:
+   347                           	
+   348  000A5A                     l265:		; BSR set to: ?
+   349                           
+   350                           	line	122
+   351                           ;i2c.c: 122: sendToUart("SSPIF 1");
+   352  000A5A  0E9E               	movlw	low(STR_15)
+   353  000A5C  0101               	movlb	1	; () banked
+   354  000A5E  0101               	movlb	1	; () banked
+   355  000A60  6F00               	movwf	((?_sendToUart))&0ffh
+   356  000A62  0E03               	movlw	high(STR_15)
+   357  000A64  0101               	movlb	1	; () banked
+   358  000A66  6F01               	movwf	((?_sendToUart+1))&0ffh
+   359  000A68  EC90  F003         	call	_sendToUart	;wreg free
+   360                           	line	124
+   361  000A6C  EF38  F005         	goto	l260
+   362                           	line	125
+   363                           ;i2c.c: 125: }
+   364  000A70                     l260:
+   365                           			; BSR set to: ?
+   366                           
+   367  000A70  0012               	return
+   368                           	opt stack 0
+   369                           GLOBAL __end_of_start_I2C
+   370  000A72                     	__end_of_start_I2C:
+   371                           	FNSIZE	_start_I2C,0,0
+   372                           ; =============== function _start_I2C ends =====
+                                 =======
+   373                           
+   374                           	signat	_start_I2C,90
+   375                           	global	_init
+   376                           	global	??_init
+   377                           	global	?_init
+   378                           
+   379                           ; *************** function _init ***************
+                                 **
+   380                           ; Defined at:
+   381                           ;		line 29 in file "G:\root\MPLAB Projects\PIC18
+                                 F4431_I2C_Slave\PIC18F4431_I2C_Slave\main.c"
+   382                           ; Parameters:
+   383                           ;		None
+   384                           ; Auto variables:
+   385                           ;		None
+   386                           ; Return value:
+   387                           ;		type: int 
+   388                           ;		size: 2
+   389                           ; Registers used:
+   390                           ;		wreg, status,2, status,0, cstack
+   391                           ; Tracked objects:
+   392                           ;		On entry : 0/0
+   393                           ;		On exit  : 0/0
+   394                           ;		Unchanged: 0/0
+   395                           ; Data sizes:
+   396                           ;		Autos:    0
+   397                           ;		Params:   0
+   398                           ;		Temp:     2
+   399                           ;		Total:    2
+   400                           ; This function calls:
+   401                           ;		_eusart_init
+   402                           ;		_init_I2C
+   403                           ; This function is called by:
+   404                           ;		_main
+   405                           ; This function uses a non-reentrant model
+   406                           ; 
+   407                                   psect   text2,class=CODE,space=0,reloc=2
+   408                           
+   409                           	opt lm
+   410                           	file	"G:\root\MPLAB Projects\PIC18F4431_I2C_Sla
+                                 ve\PIC18F4431_I2C_Slave\main.c"
+   411                           	line	29
+   412  000000                     	__size_of_init	equ	__end_of_init-_init
+   413                           ;main.c: 28: int init(void)
+   414                           ;main.c: 29: {
+   415                           	
+   416  000B5A                     _init:		; BSR set to: ?
+   417                           
+   418                           	opt stack 27
+   419                           	line	31
+   420  000B5A  0E63               	movlw	low(063h)
+   421  000B5C  6ED3               	movwf	((c:4051)),c	;volatile
+   422                           	line	32
+   423                           ;main.c: 32: ANSEL0 = 0x00;
+   424  000B5E  0E00               	movlw	low(0)
+   425  000B60  6EB8               	movwf	((c:4024)),c	;volatile
+   426                           	line	34
+   427                           ;main.c: 34: PORTB = 0x00;
+   428  000B62  0E00               	movlw	low(0)
+   429  000B64  6E81               	movwf	((c:3969)),c	;volatile
+   430                           	line	35
+   431                           ;main.c: 35: TRISB = 0x00;
+   432  000B66  0E00               	movlw	low(0)
+   433  000B68  6E93               	movwf	((c:3987)),c	;volatile
+   434                           	line	36
+   435                           ;main.c: 36: TRISC = 0x80;
+   436  000B6A  0E80               	movlw	low(080h)
+   437  000B6C  6E94               	movwf	((c:3988)),c	;volatile
+   438                           	line	38
+   439                           ;main.c: 38: GIE=1;
+   440  000B6E  8EF2               	bsf	c:(32663/8),(32663)&7	;volatile
+   441                           	line	39
+   442                           ;main.c: 39: PEIE=1;
+   443  000B70  8CF2               	bsf	c:(32662/8),(32662)&7	;volatile
+   444                           	line	40
+   445                           ;main.c: 40: eusart_init(0, 0, 4000000UL, 9600);
+   446  000B72  0E80               	movlw	low(02580h)
+   447  000B74  0101               	movlb	1	; () banked
+   448  000B76  0101               	movlb	1	; () banked
+   449  000B78  6F08               	movwf	(0+(?_eusart_init+06h))&0ffh
+   450  000B7A  0E25               	movlw	high(02580h)
+   451  000B7C  0101               	movlb	1	; () banked
+   452  000B7E  6F09               	movwf	(1+(?_eusart_init+06h))&0ffh
+   453  000B80  0E00               	movlw	low(03D0900h)
+   454  000B82  0101               	movlb	1	; () banked
+   455  000B84  0101               	movlb	1	; () banked
+   456  000B86  6F04               	movwf	(0+(?_eusart_init+02h))&0ffh
+   457  000B88  0E09               	movlw	high(03D0900h)
+   458  000B8A  0101               	movlb	1	; () banked
+   459  000B8C  6F05               	movwf	(1+(?_eusart_init+02h))&0ffh
+   460  000B8E  0E3D               	movlw	low highword(03D0900h)
+   461  000B90  0101               	movlb	1	; () banked
+   462  000B92  6F06               	movwf	(2+(?_eusart_init+02h))&0ffh
+   463  000B94  0E00               	movlw	high highword(03D0900h)
+   464  000B96  0101               	movlb	1	; () banked
+   465  000B98  6F07               	movwf	(3+(?_eusart_init+02h))&0ffh
+   466  000B9A  0101               	movlb	1	; () banked
+   467  000B9C  6F00               	movwf	(??_init+0+0)&0ffh
+   468  000B9E  0E00               	movlw	low(0)
+   469  000BA0  0101               	movlb	1	; () banked
+   470  000BA2  0101               	movlb	1	; () banked
+   471  000BA4  6F03               	movwf	(0+(?_eusart_init+01h))&0ffh
+   472  000BA6  0101               	movlb	1	; () banked
+   473  000BA8  5100               	movf	(??_init+0+0)&0ffh,w
+   474  000BAA  0101               	movlb	1	; () banked
+   475  000BAC  6F01               	movwf	(??_init+1+0)&0ffh
+   476  000BAE  0E00               	movlw	low(0)
+   477  000BB0  0101               	movlb	1	; () banked
+   478  000BB2  0101               	movlb	1	; () banked
+   479  000BB4  6F02               	movwf	((?_eusart_init))&0ffh
+   480  000BB6  0101               	movlb	1	; () banked
+   481  000BB8  5101               	movf	(??_init+1+0)&0ffh,w
+   482  000BBA  ECBA  F004         	call	_eusart_init	;wreg free
+   483                           	line	42
+   484                           ;main.c: 42: init_I2C();
+   485  000BBE  EC03  F006         	call	_init_I2C	;wreg free
+   486                           	line	50
+   487  000BC2  EFE3  F005         	goto	l522
+   488                           	line	51
+   489                           ;main.c: 51: }
+   490  000BC6                     l522:
+   491                           			; BSR set to: ?
+   492                           
+   493  000BC6  0012               	return
+   494                           	opt stack 0
+   495                           GLOBAL __end_of_init
+   496  000BC8                     	__end_of_init:
+   497                           	FNSIZE	_init,2,0
+   498                           ; =============== function _init ends ==========
+                                 ==
+   499                           
+   500                           	signat	_init,90
+   501                           	global	_sendToUart
+   502                           	global	??_sendToUart
+   503                           	global	?_sendToUart
+   504                           
+   505                           ; *************** function _sendToUart *********
+                                 ********
+   506                           ; Defined at:
+   507                           ;		line 50 in file "G:\root\MPLAB Projects\PIC18
+                                 F4431_I2C_Slave\PIC18F4431_I2C_Slave\uart.c"
+   508                           ; Parameters:
+   509                           ;		pkt            size:   2offs:   0	type: PTR c
+                                 onst unsigned char ; Largest target is 39
+   510                           ;		 -> STR_15(8), STR_14(8), STR_13(9), STR_12(1
+                                 3), 
+   511                           ;		 -> STR_11(14), STR_10(15), STR_9(15), STR_8(
+                                 9), 
+   512                           ;		 -> STR_7(15), STR_6(14), STR_5(15), STR_4(11
+                                 ), 
+   513                           ;		 -> STR_3(17), STR_2(39), STR_1(4), 
+   514                           ; Auto variables:
+   515                           ;		size        	       	type: int 
+   516                           ;		i           	       	type: int 
+   517                           ; Return value:
+   518                           ;		type: int 
+   519                           ;		size: 2
+   520                           ; Registers used:
+   521                           ;		wreg, status,2, status,0, tblptrl, tblptrh, t
+                                 blptru, tablat, cstack
+   522                           ; Tracked objects:
+   523                           ;		On entry : 0/0
+   524                           ;		On exit  : 0/0
+   525                           ;		Unchanged: 0/0
+   526                           ; Data sizes:
+   527                           ;		Autos:    4
+   528                           ;		Params:   2
+   529                           ;		Temp:     2
+   530                           ;		Total:    8
+   531                           ; This function calls:
+   532                           ;		_strlen
+   533                           ;		_uart_send_byte
+   534                           ;		_delay
+   535                           ; This function is called by:
+   536                           ;		_ISR
+   537                           ;		_start_I2C
+   538                           ; This function uses a non-reentrant model
+   539                           ; 
+   540                                   psect   text3,class=CODE,space=0,reloc=2
+   541                           
+   542                           	opt lm
+   543                           	file	"G:\root\MPLAB Projects\PIC18F4431_I2C_Sla
+                                 ve\PIC18F4431_I2C_Slave\uart.c"
+   544                           	line	50
+   545  000000                     	__size_of_sendToUart	equ	__end_of_sendToUart-_s
+                                 endToUart
+   546                           ;uart.c: 49: int sendToUart(const char *pkt)
+   547                           ;uart.c: 50: {
+   548                           	
+   549  000720                     _sendToUart:		; BSR set to: ?
+   550                           
+   551                           	opt stack 26
+   552                           	line	52
+   553                           ;uart.c: 51: int i;
+   554                           ;uart.c: 52: int size=0;
+   555  000720  0E00               	movlw	low(0)
+   556  000722  0101               	movlb	1	; () banked
+   557  000724  0101               	movlb	1	; () banked
+   558  000726  6F02               	movwf	((sendToUart@size))&0ffh
+   559  000728  0E00               	movlw	high(0)
+   560  00072A  0101               	movlb	1	; () banked
+   561  00072C  6F03               	movwf	((sendToUart@size+1))&0ffh
+   562                           	line	54
+   563                           ;uart.c: 54: size = strlen(pkt);
+   564  00072E  C100  F108         	movff	(sendToUart@pkt),(?_strlen)
+   565  000732  C101  F109         	movff	(sendToUart@pkt+1),(?_strlen+1)
+   566  000736  EC73  F005         	call	_strlen	;wreg free
+   567  00073A  C108  F102         	movff	0+?_strlen,(sendToUart@size)
+   568  00073E  C109  F103         	movff	1+?_strlen,(sendToUart@size+1)
+   569                           	line	55
+   570                           ;uart.c: 55: for(i = 0; i < size; i++)
+   571  000742  0E00               	movlw	low(0)
+   572  000744  0101               	movlb	1	; () banked
+   573  000746  0101               	movlb	1	; () banked
+   574  000748  6F04               	movwf	((sendToUart@i))&0ffh
+   575  00074A  0E00               	movlw	high(0)
+   576  00074C  0101               	movlb	1	; () banked
+   577  00074E  6F05               	movwf	((sendToUart@i+1))&0ffh
+   578  000750  EFD3  F003         	goto	l788
+   579                           	line	56
+   580                           	
+   581  000754                     l785:		; BSR set to: ?
+   582                           
+   583                           	line	57
+   584                           ;uart.c: 56: {
+   585                           ;uart.c: 57: uart_send_byte(pkt[i]);
+   586  000754  0101               	movlb	1	; () banked
+   587  000756  0101               	movlb	1	; () banked
+   588  000758  5104               	movf	((sendToUart@i))&0ffh,w
+   589  00075A  0101               	movlb	1	; () banked
+   590  00075C  0101               	movlb	1	; () banked
+   591  00075E  2500               	addwf	((sendToUart@pkt))&0ffh,w
+   592  000760  0101               	movlb	1	; () banked
+   593  000762  6F06               	movwf	(??_sendToUart+4+0)&0ffh
+   594  000764  6AE8               	clrf	wreg
+   595  000766  0101               	movlb	1	; () banked
+   596  000768  0101               	movlb	1	; () banked
+   597  00076A  BF04               	btfsc	((sendToUart@i))&0ffh,7
+   598  00076C  68E8               	setf	wreg
+   599  00076E  0101               	movlb	1	; () banked
+   600  000770  0101               	movlb	1	; () banked
+   601  000772  2101               	addwfc	((sendToUart@pkt+1))&0ffh,w
+   602  000774  0101               	movlb	1	; () banked
+   603  000776  6F07               	movwf	(??_sendToUart+4+0+1)&0ffh
+   604  000778  C106  FFF6         	movff	??_sendToUart+4+0,tblptrl
+   605  00077C  C107  FFF7         	movff	??_sendToUart+4+1,tblptrh
+   606  000780  0008               	tblrd	*
+   607                           	
+   608  000782  0101               	movlb	1	; () banked
+   609  000784  CFF5 F108          	movff	tablat,(?_uart_send_byte)
+   610  000788  EC11  F006         	call	_uart_send_byte	;wreg free
+   611                           	line	58
+   612                           ;uart.c: 58: delay(10);
+   613  00078C  0E0A               	movlw	low(0Ah)
+   614  00078E  0101               	movlb	1	; () banked
+   615  000790  0101               	movlb	1	; () banked
+   616  000792  6F08               	movwf	((?_delay))&0ffh
+   617  000794  0E00               	movlw	high(0Ah)
+   618  000796  0101               	movlb	1	; () banked
+   619  000798  6F09               	movwf	((?_delay+1))&0ffh
+   620  00079A  ECF8  F003         	call	_delay	;wreg free
+   621                           	line	55
+   622  00079E  0101               	movlb	1	; () banked
+   623  0007A0  0101               	movlb	1	; () banked
+   624  0007A2  4B04               	infsnz	((sendToUart@i))&0ffh
+   625  0007A4  2B05               	incf	((sendToUart@i+1))&0ffh
+   626                           	
+   627  0007A6                     l788:		; BSR set to: ?
+   628                           
+   629  0007A6  0101               	movlb	1	; () banked
+   630  0007A8  0101               	movlb	1	; () banked
+   631  0007AA  5105               	movf	((sendToUart@i+1))&0ffh,w
+   632  0007AC  0A80               	xorlw	80h
+   633  0007AE  0101               	movlb	1	; () banked
+   634  0007B0  6F06               	movwf	(??_sendToUart+4+0)&0ffh
+   635  0007B2  0101               	movlb	1	; () banked
+   636  0007B4  5102               	movf	((sendToUart@size))&0ffh,w
+   637  0007B6  0101               	movlb	1	; () banked
+   638  0007B8  0101               	movlb	1	; () banked
+   639  0007BA  5D04               	subwf	((sendToUart@i))&0ffh,w
+   640  0007BC  0101               	movlb	1	; () banked
+   641  0007BE  0101               	movlb	1	; () banked
+   642  0007C0  5103               	movf	((sendToUart@size+1))&0ffh,w
+   643  0007C2  0A80               	xorlw	80h
+   644  0007C4  0101               	movlb	1	; () banked
+   645  0007C6  5906               	subwfb	(??_sendToUart+4+0)&0ffh,w
+   646  0007C8  A0D8               	btfss	status,0
+   647  0007CA  EFE9  F003         	goto	u1181
+   648  0007CE  EFEB  F003         	goto	u1180
+   649  0007D2                     u1181:
+   650  0007D2  EFAA  F003         	goto	l785
+   651  0007D6                     u1180:
+   652                           	
+   653  0007D6                     l786:		; BSR set to: ?
+   654                           
+   655                           	line	60
+   656                           ;uart.c: 59: }
+   657                           ;uart.c: 60: uart_send_byte('\n');
+   658  0007D6  0101               	movlb	1	; () banked
+   659  0007D8  6F06               	movwf	(??_sendToUart+4+0)&0ffh
+   660  0007DA  0E0A               	movlw	low(0Ah)
+   661  0007DC  0101               	movlb	1	; () banked
+   662  0007DE  0101               	movlb	1	; () banked
+   663  0007E0  6F08               	movwf	((?_uart_send_byte))&0ffh
+   664  0007E2  0101               	movlb	1	; () banked
+   665  0007E4  5106               	movf	(??_sendToUart+4+0)&0ffh,w
+   666  0007E6  EC11  F006         	call	_uart_send_byte	;wreg free
+   667                           	line	61
+   668  0007EA  EFF7  F003         	goto	l784
+   669                           	line	62
+   670                           ;uart.c: 62: }
+   671  0007EE                     l784:
+   672                           			; BSR set to: ?
+   673                           
+   674  0007EE  0012               	return
+   675                           	opt stack 0
+   676                           GLOBAL __end_of_sendToUart
+   677  0007F0                     	__end_of_sendToUart:
+   678                           	FNSIZE	_sendToUart,6,2
+   679                           ; =============== function _sendToUart ends ====
+                                 ========
+   680                           
+   681                           	signat	_sendToUart,4218
+   682                           	global	_init_I2C
+   683                           	global	??_init_I2C
+   684                           	global	?_init_I2C
+   685                           
+   686                           ; *************** function _init_I2C ***********
+                                 ******
+   687                           ; Defined at:
+   688                           ;		line 129 in file "G:\root\MPLAB Projects\PIC1
+                                 8F4431_I2C_Slave\PIC18F4431_I2C_Slave\i2c.c"
+   689                           ; Parameters:
+   690                           ;		None
+   691                           ; Auto variables:
+   692                           ;		None
+   693                           ; Return value:
+   694                           ;		type: int 
+   695                           ;		size: 2
+   696                           ; Registers used:
+   697                           ;		wreg, status,2
+   698                           ; Tracked objects:
+   699                           ;		On entry : 0/0
+   700                           ;		On exit  : 0/0
+   701                           ;		Unchanged: 0/0
+   702                           ; Data sizes:
+   703                           ;		Autos:    0
+   704                           ;		Params:   0
+   705                           ;		Temp:     0
+   706                           ;		Total:    0
+   707                           ; This function calls:
+   708                           ;		Nothing
+   709                           ; This function is called by:
+   710                           ;		_init
+   711                           ; This function uses a non-reentrant model
+   712                           ; 
+   713                                   psect   text4,class=CODE,space=0,reloc=2
+   714                           
+   715                           	opt lm
+   716                           	file	"G:\root\MPLAB Projects\PIC18F4431_I2C_Sla
+                                 ve\PIC18F4431_I2C_Slave\i2c.c"
+   717                           	line	129
+   718  000000                     	__size_of_init_I2C	equ	__end_of_init_I2C-_init_
+                                 I2C
+   719                           ;i2c.c: 128: int init_I2C()
+   720                           ;i2c.c: 129: {
+   721                           	
+   722  000C06                     _init_I2C:		; BSR set to: ?
+   723                           
+   724                           	opt stack 26
+   725                           	line	133
+   726  000C06  6895               	setf	((c:3989)),c	;volatile
+   727                           	line	136
+   728                           ;i2c.c: 136: TRISDbits.RD2=1;
+   729  000C08  8495               	bsf	((c:3989)),c,2	;volatile
+   730                           	line	137
+   731                           ;i2c.c: 137: TRISDbits.RD3=1;
+   732  000C0A  8695               	bsf	((c:3989)),c,3	;volatile
+   733                           	line	139
+   734                           ;i2c.c: 139: SSPADD=0b01010101;
+   735  000C0C  0E55               	movlw	low(055h)
+   736  000C0E  6EC8               	movwf	((c:4040)),c	;volatile
+   737                           	line	140
+   738                           ;i2c.c: 140: SSPSTATbits.CKE=0b0;
+   739  000C10  9CC7               	bcf	((c:4039)),c,6	;volatile
+   740                           	line	142
+   741                           ;i2c.c: 142: SSPCONbits.SSPM3 = 0b1;
+   742  000C12  86C6               	bsf	((c:4038)),c,3	;volatile
+   743                           	line	143
+   744                           ;i2c.c: 143: SSPCONbits.SSPM2 = 0b0;
+   745  000C14  94C6               	bcf	((c:4038)),c,2	;volatile
+   746                           	line	144
+   747                           ;i2c.c: 144: SSPCONbits.SSPM1 = 0b1;
+   748  000C16  82C6               	bsf	((c:4038)),c,1	;volatile
+   749                           	line	145
+   750                           ;i2c.c: 145: SSPCONbits.SSPM0 = 0b1;
+   751  000C18  80C6               	bsf	((c:4038)),c,0	;volatile
+   752                           	line	147
+   753                           ;i2c.c: 147: SSPIE=1;
+   754  000C1A  869D               	bsf	c:(31979/8),(31979)&7	;volatile
+   755                           	line	151
+   756  000C1C  EF10  F006         	goto	l266
+   757                           	line	152
+   758                           ;i2c.c: 152: }
+   759  000C20                     l266:
+   760                           			; BSR set to: ?
+   761                           
+   762  000C20  0012               	return
+   763                           	opt stack 0
+   764                           GLOBAL __end_of_init_I2C
+   765  000C22                     	__end_of_init_I2C:
+   766                           	FNSIZE	_init_I2C,0,0
+   767                           ; =============== function _init_I2C ends ======
+                                 ======
+   768                           
+   769                           	signat	_init_I2C,90
+   770                           	global	_eusart_init
+   771                           	global	??_eusart_init
+   772                           	global	?_eusart_init
+   773                           
+   774                           ; *************** function _eusart_init ********
+                                 *********
+   775                           ; Defined at:
+   776                           ;		line 6 in file "G:\root\MPLAB Projects\PIC18F
+                                 4431_I2C_Slave\PIC18F4431_I2C_Slave\uart.c"
+   777                           ; Parameters:
+   778                           ;		usart_mode     size:   1offs:   0	type: unsig
+                                 ned char 
+   779                           ;		tx_mode        size:   1offs:   1	type: unsig
+                                 ned char 
+   780                           ;		fosc           size:   4offs:   2	type: unsig
+                                 ned long 
+   781                           ;		baud           size:   2offs:   6	type: unsig
+                                 ned int 
+   782                           ; Auto variables:
+   783                           ;		None
+   784                           ; Return value:
+   785                           ;		type: void 
+   786                           ;		size: 0
+   787                           ; Registers used:
+   788                           ;		wreg, status,2, status,0, cstack
+   789                           ; Tracked objects:
+   790                           ;		On entry : 0/0
+   791                           ;		On exit  : 0/0
+   792                           ;		Unchanged: 0/0
+   793                           ; Data sizes:
+   794                           ;		Autos:    0
+   795                           ;		Params:   8
+   796                           ;		Temp:     4
+   797                           ;		Total:   12
+   798                           ; This function calls:
+   799                           ;		___lldiv
+   800                           ; This function is called by:
+   801                           ;		_init
+   802                           ; This function uses a non-reentrant model
+   803                           ; 
+   804                                   psect   text5,class=CODE,space=0,reloc=2
+   805                           
+   806                           	opt lm
+   807                           	file	"G:\root\MPLAB Projects\PIC18F4431_I2C_Sla
+                                 ve\PIC18F4431_I2C_Slave\uart.c"
+   808                           	line	6
+   809  000000                     	__size_of_eusart_init	equ	__end_of_eusart_init-
+                                 _eusart_init
+   810                           ;uart.c: 4: void eusart_init(unsigned char usart
+                                 _mode, char tx_mode,
+   811                           ;uart.c: 5: unsigned long fosc, unsigned int bau
+                                 d)
+   812                           ;uart.c: 6: {
+   813                           	
+   814  000974                     _eusart_init:		; BSR set to: ?
+   815                           
+   816                           	opt stack 26
+   817                           	line	9
+   818                           ;uart.c: 9: switch(usart_mode)
+   819  000974  EFF3  F004         	goto	l772
+   820                           	line	11
+   821                           ;uart.c: 10: {
+   822                           ;uart.c: 11: case 0:
+   823                           	
+   824  000978                     l773:		; BSR set to: ?
+   825                           
+   826                           	line	13
+   827                           ;uart.c: 12: {
+   828                           ;uart.c: 13: BRG16 = 1;
+   829  000978  86AA               	bsf	c:(32083/8),(32083)&7	;volatile
+   830                           	line	15
+   831                           ;uart.c: 15: SPBRG = (int)(fosc/(4UL * baud) -1)
+                                 ;
+   832  00097A  0101               	movlb	1	; () banked
+   833  00097C  0101               	movlb	1	; () banked
+   834  00097E  5108               	movf	((eusart_init@baud))&0ffh,w
+   835  000980  0101               	movlb	1	; () banked
+   836  000982  6F0A               	movwf	(??_eusart_init+0+0)&0ffh
+   837  000984  0101               	movlb	1	; () banked
+   838  000986  0101               	movlb	1	; () banked
+   839  000988  5109               	movf	((eusart_init@baud+1))&0ffh,w
+   840  00098A  0101               	movlb	1	; () banked
+   841  00098C  6F0B               	movwf	1+(??_eusart_init+0+0)&0ffh
+   842                           	
+   843  00098E  0101               	movlb	1	; () banked
+   844  000990  6B0C               	clrf	2+(??_eusart_init+0+0)&0ffh
+   845                           	
+   846  000992  0101               	movlb	1	; () banked
+   847  000994  6B0D               	clrf	3+(??_eusart_init+0+0)&0ffh
+   848  000996  0E02               	movlw	02h
+   849  000998                     u365:
+   850  000998  90D8               	bcf	status,0
+   851  00099A  0101               	movlb	1	; () banked
+   852  00099C  370A               	rlcf	(??_eusart_init+0+0)&0ffh
+   853  00099E  370B               	rlcf	(??_eusart_init+0+1)&0ffh
+   854  0009A0  370C               	rlcf	(??_eusart_init+0+2)&0ffh
+   855  0009A2  370D               	rlcf	(??_eusart_init+0+3)&0ffh
+   856  0009A4  2EE8               	decfsz	wreg
+   857  0009A6  EFCC  F004         	goto	u365
+   858  0009AA  C10A  F112         	movff	??_eusart_init+0+0,0+(?___lldiv+04h)
+   859  0009AE  C10B  F113         	movff	??_eusart_init+0+1,1+(?___lldiv+04h)
+   860  0009B2  C10C  F114         	movff	??_eusart_init+0+2,2+(?___lldiv+04h)
+   861  0009B6  C10D  F115         	movff	??_eusart_init+0+3,3+(?___lldiv+04h)
+   862  0009BA  C104  F10E         	movff	(eusart_init@fosc),(?___lldiv)
+   863  0009BE  C105  F10F         	movff	(eusart_init@fosc+1),(?___lldiv+1)
+   864  0009C2  C106  F110         	movff	(eusart_init@fosc+2),(?___lldiv+2)
+   865  0009C6  C107  F111         	movff	(eusart_init@fosc+3),(?___lldiv+3)
+   866  0009CA  EC91  F002         	call	___lldiv	;wreg free
+   867  0009CE  0101               	movlb	1	; () banked
+   868  0009D0  0101               	movlb	1	; () banked
+   869  0009D2  050E               	decf	(0+?___lldiv)&0ffh,w
+   870  0009D4  6EAF               	movwf	((c:4015)),c	;volatile
+   871                           	line	16
+   872                           ;uart.c: 16: TXSTA = 0x24;
+   873  0009D6  0E24               	movlw	low(024h)
+   874  0009D8  6EAC               	movwf	((c:4012)),c	;volatile
+   875                           	line	17
+   876                           ;uart.c: 17: RCSTA = 0x90;
+   877  0009DA  0E90               	movlw	low(090h)
+   878  0009DC  6EAB               	movwf	((c:4011)),c	;volatile
+   879                           	line	18
+   880                           ;uart.c: 18: break;
+   881  0009DE  EFFE  F004         	goto	l771
+   882                           	line	20
+   883                           ;uart.c: 19: }
+   884                           ;uart.c: 20: case 1:
+   885                           	
+   886  0009E2                     l774:		; BSR set to: ?
+   887                           
+   888                           	line	22
+   889                           ;uart.c: 21: {
+   890                           ;uart.c: 22: break;
+   891  0009E2  EFFE  F004         	goto	l771
+   892                           	line	9
+   893                           	
+   894  0009E6                     l772:		; BSR set to: ?
+   895                           
+   896  0009E6  0101               	movlb	1	; () banked
+   897  0009E8  0101               	movlb	1	; () banked
+   898  0009EA  5102               	movf	((eusart_init@usart_mode))&0ffh,w
+   899  0009EC  0A00               	xorlw	0 ^ 0
+   900  0009EE  E0C4               	bz	l773
+   901  0009F0  0A01               	xorlw	1 ^ 0
+   902  0009F2  E0F7               	bz	l774
+   903  0009F4  0A03               	xorlw	2 ^ 1
+   904  0009F6  E0F5               	bz	l774
+   905  0009F8  EFFE  F004         	goto	l771
+   906                           
+   907                           	line	28
+   908                           	
+   909  0009FC                     l771:		; BSR set to: ?
+   910                           
+   911                           	line	29
+   912                           ;uart.c: 29: }
+   913  0009FC                     l770:
+   914                           			; BSR set to: ?
+   915                           
+   916  0009FC  0012               	return
+   917                           	opt stack 0
+   918                           GLOBAL __end_of_eusart_init
+   919  0009FE                     	__end_of_eusart_init:
+   920                           	FNSIZE	_eusart_init,4,8
+   921                           ; =============== function _eusart_init ends ===
+                                 =========
+   922                           
+   923                           	signat	_eusart_init,16504
+   924                           	global	_uart_send_byte
+   925                           	global	??_uart_send_byte
+   926                           	global	?_uart_send_byte
+   927                           
+   928                           ; *************** function _uart_send_byte *****
+                                 ************
+   929                           ; Defined at:
+   930                           ;		line 32 in file "G:\root\MPLAB Projects\PIC18
+                                 F4431_I2C_Slave\PIC18F4431_I2C_Slave\uart.c"
+   931                           ; Parameters:
+   932                           ;		byte           size:   1offs:   0	type: unsig
+                                 ned char 
+   933                           ; Auto variables:
+   934                           ;		None
+   935                           ; Return value:
+   936                           ;		type: void 
+   937                           ;		size: 0
+   938                           ; Registers used:
+   939                           ;		None
+   940                           ; Tracked objects:
+   941                           ;		On entry : 0/0
+   942                           ;		On exit  : 0/0
+   943                           ;		Unchanged: 0/0
+   944                           ; Data sizes:
+   945                           ;		Autos:    0
+   946                           ;		Params:   1
+   947                           ;		Temp:     0
+   948                           ;		Total:    1
+   949                           ; This function calls:
+   950                           ;		Nothing
+   951                           ; This function is called by:
+   952                           ;		_sendToUart
+   953                           ; This function uses a non-reentrant model
+   954                           ; 
+   955                                   psect   text6,class=CODE,space=0,reloc=2
+   956                           
+   957                           	opt lm
+   958                           	file	"G:\root\MPLAB Projects\PIC18F4431_I2C_Sla
+                                 ve\PIC18F4431_I2C_Slave\uart.c"
+   959                           	line	32
+   960  000000                     	__size_of_uart_send_byte	equ	__end_of_uart_send
+                                 _byte-_uart_send_byte
+   961                           ;uart.c: 31: void uart_send_byte(unsigned char b
+                                 yte)
+   962                           ;uart.c: 32: {
+   963                           	
+   964  000C22                     _uart_send_byte:		; BSR set to: ?
+   965                           
+   966                           	opt stack 25
+   967                           	line	33
+   968  000C22  EF15  F006         	goto	l777
+   969                           	
+   970  000C26                     l778:		; BSR set to: ?
+   971                           
+   972                           	line	35
+   973                           ;uart.c: 34: {
+   974                           ;uart.c: 35: continue;
+   975  000C26  EF15  F006         	goto	l777
+   976                           	line	36
+   977                           	
+   978  000C2A                     l777:		; BSR set to: ?
+   979                           
+   980                           	line	33
+   981  000C2A  A89E               	btfss	c:(31988/8),(31988)&7	;volatile
+   982  000C2C  EF1A  F006         	goto	u1241
+   983  000C30  EF1C  F006         	goto	u1240
+   984  000C34                     u1241:
+   985  000C34  EF13  F006         	goto	l778
+   986  000C38                     u1240:
+   987                           	
+   988  000C38                     l779:		; BSR set to: ?
+   989                           
+   990                           	line	37
+   991                           ;uart.c: 36: }
+   992                           ;uart.c: 37: TXREG = byte;
+   993  000C38  C108  FFAD         	movff	(uart_send_byte@byte),(c:4013)	;volatile
+   994                           	line	38
+   995                           ;uart.c: 38: }
+   996  000C3C                     l776:
+   997                           			; BSR set to: ?
+   998                           
+   999  000C3C  0012               	return
+  1000                           	opt stack 0
+  1001                           GLOBAL __end_of_uart_send_byte
+  1002  000C3E                     	__end_of_uart_send_byte:
+  1003                           	FNSIZE	_uart_send_byte,0,1
+  1004                           ; =============== function _uart_send_byte ends 
+                                 ============
+  1005                           
+  1006                           	signat	_uart_send_byte,4216
+  1007                           	global	_delay
+  1008                           	global	??_delay
+  1009                           	global	?_delay
+  1010                           
+  1011                           ; *************** function _delay **************
+                                 ***
+  1012                           ; Defined at:
+  1013                           ;		line 18 in file "G:\root\MPLAB Projects\PIC18
+                                 F4431_I2C_Slave\PIC18F4431_I2C_Slave\main.c"
+  1014                           ; Parameters:
+  1015                           ;		cnt            size:   2offs:   0	type: int 
+  1016                           ; Auto variables:
+  1017                           ;		j           	       	type: int 
+  1018                           ;		i           	       	type: int 
+  1019                           ; Return value:
+  1020                           ;		type: int 
+  1021                           ;		size: 2
+  1022                           ; Registers used:
+  1023                           ;		wreg, status,2, status,0
+  1024                           ; Tracked objects:
+  1025                           ;		On entry : 0/0
+  1026                           ;		On exit  : 0/0
+  1027                           ;		Unchanged: 0/0
+  1028                           ; Data sizes:
+  1029                           ;		Autos:    4
+  1030                           ;		Params:   2
+  1031                           ;		Temp:     1
+  1032                           ;		Total:    7
+  1033                           ; This function calls:
+  1034                           ;		Nothing
+  1035                           ; This function is called by:
+  1036                           ;		_main
+  1037                           ;		_sendToUart
+  1038                           ; This function uses a non-reentrant model
+  1039                           ; 
+  1040                                   psect   text7,class=CODE,space=0,reloc=2
+  1041                           
+  1042                           	opt lm
+  1043                           	file	"G:\root\MPLAB Projects\PIC18F4431_I2C_Sla
+                                 ve\PIC18F4431_I2C_Slave\main.c"
+  1044                           	line	18
+  1045  000000                     	__size_of_delay	equ	__end_of_delay-_delay
+  1046                           ;main.c: 17: int delay(int cnt)
+  1047                           ;main.c: 18: {
+  1048                           	
+  1049  0007F0                     _delay:		; BSR set to: ?
+  1050                           
+  1051                           	opt stack 25
+  1052                           	line	19
+  1053  0007F0  0E00               	movlw	low(0)
+  1054  0007F2  0101               	movlb	1	; () banked
+  1055  0007F4  0101               	movlb	1	; () banked
+  1056  0007F6  6F0C               	movwf	((delay@i))&0ffh
+  1057  0007F8  0E00               	movlw	high(0)
+  1058  0007FA  0101               	movlb	1	; () banked
+  1059  0007FC  6F0D               	movwf	((delay@i+1))&0ffh
+  1060  0007FE  0E00               	movlw	low(0)
+  1061  000800  0101               	movlb	1	; () banked
+  1062  000802  0101               	movlb	1	; () banked
+  1063  000804  6F0A               	movwf	((delay@j))&0ffh
+  1064  000806  0E00               	movlw	high(0)
+  1065  000808  0101               	movlb	1	; () banked
+  1066  00080A  6F0B               	movwf	((delay@j+1))&0ffh
+  1067                           	line	20
+  1068                           ;main.c: 20: for(i =0;i<3;i++)
+  1069  00080C  0E00               	movlw	low(0)
+  1070  00080E  0101               	movlb	1	; () banked
+  1071  000810  0101               	movlb	1	; () banked
+  1072  000812  6F0C               	movwf	((delay@i))&0ffh
+  1073  000814  0E00               	movlw	high(0)
+  1074  000816  0101               	movlb	1	; () banked
+  1075  000818  6F0D               	movwf	((delay@i+1))&0ffh
+  1076  00081A  0101               	movlb	1	; () banked
+  1077  00081C  0101               	movlb	1	; () banked
+  1078  00081E  510D               	movf	((delay@i+1))&0ffh,w
+  1079  000820  0A80               	xorlw	80h
+  1080  000822  0F80               	addlw	-((0)^80h)
+  1081  000824  0E03               	movlw	03h
+  1082  000826  B4D8               	btfsc	status,2
+  1083  000828  5D0C               	subwf	((delay@i))&0ffh,w
+  1084  00082A  A0D8               	btfss	status,0
+  1085  00082C  EF1A  F004         	goto	u1211
+  1086  000830  EF1C  F004         	goto	u1210
+  1087  000834                     u1211:
+  1088  000834  EF1E  F004         	goto	l515
+  1089  000838                     u1210:
+  1090  000838  EF56  F004         	goto	l516
+  1091                           	line	21
+  1092                           	
+  1093  00083C                     l515:		; BSR set to: ?
+  1094                           
+  1095                           	line	22
+  1096                           ;main.c: 21: {
+  1097                           ;main.c: 22: for(j=0;j<cnt;j++)
+  1098  00083C  0E00               	movlw	low(0)
+  1099  00083E  0101               	movlb	1	; () banked
+  1100  000840  0101               	movlb	1	; () banked
+  1101  000842  6F0A               	movwf	((delay@j))&0ffh
+  1102  000844  0E00               	movlw	high(0)
+  1103  000846  0101               	movlb	1	; () banked
+  1104  000848  6F0B               	movwf	((delay@j+1))&0ffh
+  1105  00084A  EF2B  F004         	goto	l521
+  1106                           	line	23
+  1107                           	
+  1108  00084E                     l518:		; BSR set to: ?
+  1109                           
+  1110                           	line	22
+  1111                           ;main.c: 23: {
+  1112  00084E  0101               	movlb	1	; () banked
+  1113  000850  0101               	movlb	1	; () banked
+  1114  000852  4B0A               	infsnz	((delay@j))&0ffh
+  1115  000854  2B0B               	incf	((delay@j+1))&0ffh
+  1116                           	
+  1117  000856                     l521:		; BSR set to: ?
+  1118                           
+  1119  000856  0101               	movlb	1	; () banked
+  1120  000858  0101               	movlb	1	; () banked
+  1121  00085A  510B               	movf	((delay@j+1))&0ffh,w
+  1122  00085C  0A80               	xorlw	80h
+  1123  00085E  0101               	movlb	1	; () banked
+  1124  000860  6F0E               	movwf	(??_delay+4+0)&0ffh
+  1125  000862  0101               	movlb	1	; () banked
+  1126  000864  5108               	movf	((delay@cnt))&0ffh,w
+  1127  000866  0101               	movlb	1	; () banked
+  1128  000868  0101               	movlb	1	; () banked
+  1129  00086A  5D0A               	subwf	((delay@j))&0ffh,w
+  1130  00086C  0101               	movlb	1	; () banked
+  1131  00086E  0101               	movlb	1	; () banked
+  1132  000870  5109               	movf	((delay@cnt+1))&0ffh,w
+  1133  000872  0A80               	xorlw	80h
+  1134  000874  0101               	movlb	1	; () banked
+  1135  000876  590E               	subwfb	(??_delay+4+0)&0ffh,w
+  1136  000878  A0D8               	btfss	status,0
+  1137  00087A  EF41  F004         	goto	u1221
+  1138  00087E  EF43  F004         	goto	u1220
+  1139  000882                     u1221:
+  1140  000882  EF27  F004         	goto	l518
+  1141  000886                     u1220:
+  1142                           	
+  1143  000886                     l519:		; BSR set to: ?
+  1144                           
+  1145                           	line	20
+  1146  000886  0101               	movlb	1	; () banked
+  1147  000888  0101               	movlb	1	; () banked
+  1148  00088A  4B0C               	infsnz	((delay@i))&0ffh
+  1149  00088C  2B0D               	incf	((delay@i+1))&0ffh
+  1150  00088E  0101               	movlb	1	; () banked
+  1151  000890  0101               	movlb	1	; () banked
+  1152  000892  510D               	movf	((delay@i+1))&0ffh,w
+  1153  000894  0A80               	xorlw	80h
+  1154  000896  0F80               	addlw	-((0)^80h)
+  1155  000898  0E03               	movlw	03h
+  1156  00089A  B4D8               	btfsc	status,2
+  1157  00089C  5D0C               	subwf	((delay@i))&0ffh,w
+  1158  00089E  A0D8               	btfss	status,0
+  1159  0008A0  EF54  F004         	goto	u1231
+  1160  0008A4  EF56  F004         	goto	u1230
+  1161  0008A8                     u1231:
+  1162  0008A8  EF1E  F004         	goto	l515
+  1163  0008AC                     u1230:
+  1164                           	
+  1165  0008AC                     l516:		; BSR set to: ?
+  1166                           
+  1167                           	line	26
+  1168  0008AC  EF58  F004         	goto	l514
+  1169                           	line	27
+  1170                           ;main.c: 27: }
+  1171  0008B0                     l514:
+  1172                           			; BSR set to: ?
+  1173                           
+  1174  0008B0  0012               	return
+  1175                           	opt stack 0
+  1176                           GLOBAL __end_of_delay
+  1177  0008B2                     	__end_of_delay:
+  1178                           	FNSIZE	_delay,5,2
+  1179                           ; =============== function _delay ends =========
+                                 ===
+  1180                           
+  1181                           	signat	_delay,4218
+  1182                           	global	___lldiv
+  1183                           	global	??___lldiv
+  1184                           	global	?___lldiv
+  1185                           
+  1186                           ; *************** function ___lldiv ************
+                                 *****
+  1187                           ; Defined at:
+  1188                           ;		line 5 in file "C:\Program Files\HI-TECH Soft
+                                 ware\PICC-18\PRO\9.66\sources\lldiv.c"
+  1189                           ; Parameters:
+  1190                           ;		dividend       size:   4offs:   0	type: unsig
+                                 ned long 
+  1191                           ;		divisor        size:   4offs:   4	type: unsig
+                                 ned long 
+  1192                           ; Auto variables:
+  1193                           ;		counter     	       	type: unsigned char 
+  1194                           ;		quotient    	       	type: unsigned long 
+  1195                           ; Return value:
+  1196                           ;		type: unsigned long 
+  1197                           ;		size: 4
+  1198                           ; Registers used:
+  1199                           ;		wreg, status,2, status,0
+  1200                           ; Tracked objects:
+  1201                           ;		On entry : 0/0
+  1202                           ;		On exit  : 0/0
+  1203                           ;		Unchanged: 0/0
+  1204                           ; Data sizes:
+  1205                           ;		Autos:    5
+  1206                           ;		Params:   8
+  1207                           ;		Temp:     1
+  1208                           ;		Total:   14
+  1209                           ; This function calls:
+  1210                           ;		Nothing
+  1211                           ; This function is called by:
+  1212                           ;		_eusart_init
+  1213                           ; This function uses a non-reentrant model
+  1214                           ; 
+  1215                                   psect   text8,class=CODE,space=0,reloc=2
+  1216                           
+  1217                           	opt lm
+  1218                           	file	"C:\Program Files\HI-TECH Software\PICC-18
+                                 \PRO\9.66\sources\lldiv.c"
+  1219                           	line	5
+  1220  000000                     	__size_of___lldiv	equ	__end_of___lldiv-___lldiv
+  1221                           	
+  1222  000522                     ___lldiv:		; BSR set to: ?
+  1223                           
+  1224                           	opt stack 25
+  1225                           	line	9
+  1226  000522  0E00               	movlw	low(0)
+  1227  000524  0101               	movlb	1	; () banked
+  1228  000526  0101               	movlb	1	; () banked
+  1229  000528  6F17               	movwf	((___lldiv@quotient))&0ffh
+  1230  00052A  0E00               	movlw	high(0)
+  1231  00052C  0101               	movlb	1	; () banked
+  1232  00052E  6F18               	movwf	((___lldiv@quotient+1))&0ffh
+  1233  000530  0E00               	movlw	low highword(0)
+  1234  000532  0101               	movlb	1	; () banked
+  1235  000534  6F19               	movwf	((___lldiv@quotient+2))&0ffh
+  1236  000536  0E00               	movlw	high highword(0)
+  1237  000538  0101               	movlb	1	; () banked
+  1238  00053A  6F1A               	movwf	((___lldiv@quotient+3))&0ffh
+  1239                           	line	10
+  1240  00053C  0101               	movlb	1	; () banked
+  1241  00053E  5115               	movf	((___lldiv@divisor+3))&0ffh,w
+  1242  000540  1112               	iorwf ((___lldiv@divisor))&0ffh,w
+  1243  000542  1113               	iorwf ((___lldiv@divisor+1))&0ffh,w
+  1244  000544  1114               	iorwf ((___lldiv@divisor+2))&0ffh,w
+  1245                           
+  1246  000546  B4D8               	btfsc	status,2
+  1247  000548  EFA8  F002         	goto	u1031
+  1248  00054C  EFAA  F002         	goto	u1030
+  1249  000550                     u1031:
+  1250  000550  EF1D  F003         	goto	l1078
+  1251  000554                     u1030:
+  1252                           	line	11
+  1253  000554  0101               	movlb	1	; () banked
+  1254  000556  6F1B               	movwf	(??___lldiv+5+0)&0ffh
+  1255  000558  0E01               	movlw	low(01h)
+  1256  00055A  0101               	movlb	1	; () banked
+  1257  00055C  0101               	movlb	1	; () banked
+  1258  00055E  6F16               	movwf	((___lldiv@counter))&0ffh
+  1259  000560  0101               	movlb	1	; () banked
+  1260  000562  511B               	movf	(??___lldiv+5+0)&0ffh,w
+  1261                           	line	12
+  1262  000564  EFC1  F002         	goto	l1079
+  1263                           	
+  1264  000568                     l1080:		; BSR set to: ?
+  1265                           
+  1266                           	line	13
+  1267  000568  0101               	movlb	1	; () banked
+  1268  00056A  90D8               	bcf	status,0
+  1269  00056C  0101               	movlb	1	; () banked
+  1270  00056E  3712               	rlcf	((___lldiv@divisor))&0ffh
+  1271  000570  0101               	movlb	1	; () banked
+  1272  000572  3713               	rlcf	((___lldiv@divisor+1))&0ffh
+  1273  000574  0101               	movlb	1	; () banked
+  1274  000576  3714               	rlcf	((___lldiv@divisor+2))&0ffh
+  1275  000578  0101               	movlb	1	; () banked
+  1276  00057A  3715               	rlcf	((___lldiv@divisor+3))&0ffh
+  1277                           	line	14
+  1278  00057C  0101               	movlb	1	; () banked
+  1279  00057E  0101               	movlb	1	; () banked
+  1280  000580  2B16               	incf	((___lldiv@counter))&0ffh
+  1281                           	line	15
+  1282                           	
+  1283  000582                     l1079:		; BSR set to: ?
+  1284                           
+  1285                           	line	12
+  1286  000582  0101               	movlb	1	; () banked
+  1287                           	
+  1288  000584  0101               	movlb	1	; () banked
+  1289  000586  AF15               	btfss	((___lldiv@divisor+3))&0ffh,(31)&7
+  1290  000588  EFC8  F002         	goto	u1041
+  1291  00058C  EFCA  F002         	goto	u1040
+  1292  000590                     u1041:
+  1293  000590  EFB4  F002         	goto	l1080
+  1294  000594                     u1040:
+  1295                           	
+  1296  000594                     l1081:		; BSR set to: ?
+  1297                           
+  1298                           	line	16
+  1299                           	
+  1300  000594                     l1084:		; BSR set to: ?
+  1301                           
+  1302                           	line	17
+  1303  000594  0101               	movlb	1	; () banked
+  1304  000596  90D8               	bcf	status,0
+  1305  000598  0101               	movlb	1	; () banked
+  1306  00059A  3717               	rlcf	((___lldiv@quotient))&0ffh
+  1307  00059C  0101               	movlb	1	; () banked
+  1308  00059E  3718               	rlcf	((___lldiv@quotient+1))&0ffh
+  1309  0005A0  0101               	movlb	1	; () banked
+  1310  0005A2  3719               	rlcf	((___lldiv@quotient+2))&0ffh
+  1311  0005A4  0101               	movlb	1	; () banked
+  1312  0005A6  371A               	rlcf	((___lldiv@quotient+3))&0ffh
+  1313                           	line	18
+  1314  0005A8  0101               	movlb	1	; () banked
+  1315  0005AA  0101               	movlb	1	; () banked
+  1316  0005AC  5112               	movf	((___lldiv@divisor))&0ffh,w
+  1317  0005AE  0101               	movlb	1	; () banked
+  1318  0005B0  0101               	movlb	1	; () banked
+  1319  0005B2  5D0E               	subwf	((___lldiv@dividend))&0ffh,w
+  1320  0005B4  0101               	movlb	1	; () banked
+  1321  0005B6  0101               	movlb	1	; () banked
+  1322  0005B8  5113               	movf	((___lldiv@divisor+1))&0ffh,w
+  1323  0005BA  0101               	movlb	1	; () banked
+  1324  0005BC  0101               	movlb	1	; () banked
+  1325  0005BE  590F               	subwfb	((___lldiv@dividend+1))&0ffh,w
+  1326  0005C0  0101               	movlb	1	; () banked
+  1327  0005C2  0101               	movlb	1	; () banked
+  1328  0005C4  5114               	movf	((___lldiv@divisor+2))&0ffh,w
+  1329  0005C6  0101               	movlb	1	; () banked
+  1330  0005C8  0101               	movlb	1	; () banked
+  1331  0005CA  5910               	subwfb	((___lldiv@dividend+2))&0ffh,w
+  1332  0005CC  0101               	movlb	1	; () banked
+  1333  0005CE  0101               	movlb	1	; () banked
+  1334  0005D0  5115               	movf	((___lldiv@divisor+3))&0ffh,w
+  1335  0005D2  0101               	movlb	1	; () banked
+  1336  0005D4  0101               	movlb	1	; () banked
+  1337  0005D6  5911               	subwfb	((___lldiv@dividend+3))&0ffh,w
+  1338  0005D8  A0D8               	btfss	status,0
+  1339  0005DA  EFF1  F002         	goto	u1051
+  1340  0005DE  EFF3  F002         	goto	u1050
+  1341  0005E2                     u1051:
+  1342  0005E2  EF0E  F003         	goto	l1085
+  1343  0005E6                     u1050:
+  1344                           	line	19
+  1345  0005E6  0101               	movlb	1	; () banked
+  1346  0005E8  0101               	movlb	1	; () banked
+  1347  0005EA  5112               	movf	((___lldiv@divisor))&0ffh,w
+  1348  0005EC  0101               	movlb	1	; () banked
+  1349  0005EE  0101               	movlb	1	; () banked
+  1350  0005F0  5F0E               	subwf	((___lldiv@dividend))&0ffh
+  1351  0005F2  0101               	movlb	1	; () banked
+  1352  0005F4  0101               	movlb	1	; () banked
+  1353  0005F6  5113               	movf	((___lldiv@divisor+1))&0ffh,w
+  1354  0005F8  0101               	movlb	1	; () banked
+  1355  0005FA  0101               	movlb	1	; () banked
+  1356  0005FC  5B0F               	subwfb	((___lldiv@dividend+1))&0ffh
+  1357  0005FE  0101               	movlb	1	; () banked
+  1358  000600  0101               	movlb	1	; () banked
+  1359  000602  5114               	movf	((___lldiv@divisor+2))&0ffh,w
+  1360  000604  0101               	movlb	1	; () banked
+  1361  000606  0101               	movlb	1	; () banked
+  1362  000608  5B10               	subwfb	((___lldiv@dividend+2))&0ffh
+  1363  00060A  0101               	movlb	1	; () banked
+  1364  00060C  0101               	movlb	1	; () banked
+  1365  00060E  5115               	movf	((___lldiv@divisor+3))&0ffh,w
+  1366  000610  0101               	movlb	1	; () banked
+  1367  000612  0101               	movlb	1	; () banked
+  1368  000614  5B11               	subwfb	((___lldiv@dividend+3))&0ffh
+  1369                           	line	20
+  1370  000616  0101               	movlb	1	; () banked
+  1371  000618  0101               	movlb	1	; () banked
+  1372  00061A  8117               	bsf	(0+(0/8)+(___lldiv@quotient))&0ffh,(0)&7
+  1373                           	line	21
+  1374                           	
+  1375  00061C                     l1085:		; BSR set to: ?
+  1376                           
+  1377                           	line	22
+  1378  00061C  0101               	movlb	1	; () banked
+  1379  00061E  90D8               	bcf	status,0
+  1380  000620  0101               	movlb	1	; () banked
+  1381  000622  3315               	rrcf	((___lldiv@divisor+3))&0ffh
+  1382  000624  0101               	movlb	1	; () banked
+  1383  000626  3314               	rrcf	((___lldiv@divisor+2))&0ffh
+  1384  000628  0101               	movlb	1	; () banked
+  1385  00062A  3313               	rrcf	((___lldiv@divisor+1))&0ffh
+  1386  00062C  0101               	movlb	1	; () banked
+  1387  00062E  3312               	rrcf	((___lldiv@divisor))&0ffh
+  1388                           	line	23
+  1389  000630  0101               	movlb	1	; () banked
+  1390  000632  0101               	movlb	1	; () banked
+  1391  000634  2F16               	decfsz	((___lldiv@counter))&0ffh
+  1392                           	
+  1393  000636  EFCA  F002         	goto	l1084
+  1394                           	
+  1395  00063A                     l1083:		; BSR set to: ?
+  1396                           
+  1397                           	line	24
+  1398                           	
+  1399  00063A                     l1078:		; BSR set to: ?
+  1400                           
+  1401                           	line	25
+  1402  00063A  C117  F10E         	movff	(___lldiv@quotient),(?___lldiv)
+  1403  00063E  C118  F10F         	movff	(___lldiv@quotient+1),(?___lldiv+1)
+  1404  000642  C119  F110         	movff	(___lldiv@quotient+2),(?___lldiv+2)
+  1405  000646  C11A  F111         	movff	(___lldiv@quotient+3),(?___lldiv+3)
+  1406  00064A  EF27  F003         	goto	l1077
+  1407                           	line	26
+  1408  00064E                     l1077:
+  1409                           			; BSR set to: ?
+  1410                           
+  1411  00064E  0012               	return
+  1412                           	opt stack 0
+  1413                           GLOBAL __end_of___lldiv
+  1414  000650                     	__end_of___lldiv:
+  1415                           	FNSIZE	___lldiv,6,8
+  1416                           ; =============== function ___lldiv ends =======
+                                 =====
+  1417                           
+  1418                           	signat	___lldiv,8316
+  1419                           	global	_strlen
+  1420                           	global	??_strlen
+  1421                           	global	?_strlen
+  1422                           
+  1423                           ; *************** function _strlen *************
+                                 ****
+  1424                           ; Defined at:
+  1425                           ;		line 5 in file "C:\Program Files\HI-TECH Soft
+                                 ware\PICC-18\PRO\9.66\sources\strlen.c"
+  1426                           ; Parameters:
+  1427                           ;		s              size:   2offs:   0	type: PTR c
+                                 onst unsigned char ; Largest target is 39
+  1428                           ;		 -> STR_15(8), STR_14(8), STR_13(9), STR_12(1
+                                 3), 
+  1429                           ;		 -> STR_11(14), STR_10(15), STR_9(15), STR_8(
+                                 9), 
+  1430                           ;		 -> STR_7(15), STR_6(14), STR_5(15), STR_4(11
+                                 ), 
+  1431                           ;		 -> STR_3(17), STR_2(39), STR_1(4), 
+  1432                           ; Auto variables:
+  1433                           ;		cp          	       	type: PTR const unsigned
+                                  char ; Largest target is 39
+  1434                           ;		 -> STR_15(8), STR_14(8), STR_13(9), STR_12(1
+                                 3), 
+  1435                           ;		 -> STR_11(14), STR_10(15), STR_9(15), STR_8(
+                                 9), 
+  1436                           ;		 -> STR_7(15), STR_6(14), STR_5(15), STR_4(11
+                                 ), 
+  1437                           ;		 -> STR_3(17), STR_2(39), STR_1(4), 
+  1438                           ; Return value:
+  1439                           ;		type: unsigned int 
+  1440                           ;		size: 2
+  1441                           ; Registers used:
+  1442                           ;		wreg, status,2, status,0, tblptrl, tblptrh, t
+                                 blptru, tablat
+  1443                           ; Tracked objects:
+  1444                           ;		On entry : 0/0
+  1445                           ;		On exit  : 0/0
+  1446                           ;		Unchanged: 0/0
+  1447                           ; Data sizes:
+  1448                           ;		Autos:    2
+  1449                           ;		Params:   2
+  1450                           ;		Temp:     2
+  1451                           ;		Total:    6
+  1452                           ; This function calls:
+  1453                           ;		Nothing
+  1454                           ; This function is called by:
+  1455                           ;		_sendToUart
+  1456                           ; This function uses a non-reentrant model
+  1457                           ; 
+  1458                                   psect   text9,class=CODE,space=0,reloc=2
+  1459                           
+  1460                           	opt lm
+  1461                           	file	"C:\Program Files\HI-TECH Software\PICC-18
+                                 \PRO\9.66\sources\strlen.c"
+  1462                           	line	5
+  1463  000000                     	__size_of_strlen	equ	__end_of_strlen-_strlen
+  1464                           	
+  1465  000AE6                     _strlen:		; BSR set to: ?
+  1466                           
+  1467                           	opt stack 25
+  1468                           	line	8
+  1469  000AE6  C108  F10A         	movff	(strlen@s),(strlen@cp)
+  1470  000AEA  C109  F10B         	movff	(strlen@s+1),(strlen@cp+1)
+  1471                           	line	9
+  1472  000AEE  EF7B  F005         	goto	l795
+  1473                           	
+  1474  000AF2                     l796:		; BSR set to: ?
+  1475                           
+  1476                           	line	10
+  1477  000AF2  EF7B  F005         	goto	l795
+  1478                           	
+  1479  000AF6                     l795:		; BSR set to: ?
+  1480                           
+  1481                           	line	9
+  1482  000AF6  0101               	movlb	1	; () banked
+  1483  000AF8  C10A  FFF6         	movff	(strlen@cp),tblptrl
+  1484  000AFC  0101               	movlb	1	; () banked
+  1485  000AFE  C10B  FFF7         	movff	(strlen@cp+1),tblptrh
+  1486  000B02  0101               	movlb	1	; () banked
+  1487  000B04  0101               	movlb	1	; () banked
+  1488  000B06  4B0A               	infsnz	((strlen@cp))&0ffh
+  1489  000B08  2B0B               	incf	((strlen@cp+1))&0ffh
+  1490  000B0A  0008               	tblrd	*
+  1491                           	
+  1492  000B0C  50F5               	movf	tablat,w
+  1493                           
+  1494  000B0E  0900               	iorlw	0
+  1495  000B10  A4D8               	btfss	status,2
+  1496  000B12  EF8D  F005         	goto	u1251
+  1497  000B16  EF8F  F005         	goto	u1250
+  1498  000B1A                     u1251:
+  1499  000B1A  EF79  F005         	goto	l796
+  1500  000B1E                     u1250:
+  1501                           	
+  1502  000B1E                     l797:		; BSR set to: ?
+  1503                           
+  1504                           	line	11
+  1505  000B1E  0101               	movlb	1	; () banked
+  1506  000B20  C10A  F10C         	movff	(strlen@cp),??_strlen+2+0
+  1507  000B24  0101               	movlb	1	; () banked
+  1508  000B26  C10B  F10D         	movff	(strlen@cp+1),??_strlen+2+0+1
+  1509  000B2A  0101               	movlb	1	; () banked
+  1510  000B2C  0101               	movlb	1	; () banked
+  1511  000B2E  5108               	movf	((strlen@s))&0ffh,w
+  1512  000B30  0101               	movlb	1	; () banked
+  1513  000B32  5F0C               	subwf	(??_strlen+2+0)&0ffh
+  1514  000B34  0101               	movlb	1	; () banked
+  1515  000B36  0101               	movlb	1	; () banked
+  1516  000B38  5109               	movf	((strlen@s+1))&0ffh,w
+  1517  000B3A  0101               	movlb	1	; () banked
+  1518  000B3C  5B0D               	subwfb	(??_strlen+2+1)&0ffh
+  1519  000B3E  0EFF               	movlw	low(0FFFFh)
+  1520  000B40  0101               	movlb	1	; () banked
+  1521  000B42  250C               	addwf	(??_strlen+2+0)&0ffh,w
+  1522  000B44  0101               	movlb	1	; () banked
+  1523                           	
+  1524  000B46  0101               	movlb	1	; () banked
+  1525  000B48  6F08               	movwf	((?_strlen))&0ffh
+  1526  000B4A  0EFF               	movlw	high(0FFFFh)
+  1527  000B4C  0101               	movlb	1	; () banked
+  1528  000B4E  210D               	addwfc	(??_strlen+2+1)&0ffh,w
+  1529  000B50  0101               	movlb	1	; () banked
+  1530  000B52  6F09               	movwf	1+((?_strlen))&0ffh
+  1531  000B54  EFAC  F005         	goto	l794
+  1532                           	line	12
+  1533  000B58                     l794:
+  1534                           			; BSR set to: ?
+  1535                           
+  1536  000B58  0012               	return
+  1537                           	opt stack 0
+  1538                           GLOBAL __end_of_strlen
+  1539  000B5A                     	__end_of_strlen:
+  1540                           	FNSIZE	_strlen,4,2
+  1541                           ; =============== function _strlen ends ========
+                                 ====
+  1542                           
+  1543                           	signat	_strlen,4218
+  1544                           	global	_ISR
+  1545                           	global	??_ISR
+  1546                           	global	?_ISR
+  1547                           
+  1548                           ; *************** function _ISR ****************
+                                 *
+  1549                           ; Defined at:
+  1550                           ;		line 9 in file "G:\root\MPLAB Projects\PIC18F
+                                 4431_I2C_Slave\PIC18F4431_I2C_Slave\i2c.c"
+  1551                           ; Parameters:
+  1552                           ;		None
+  1553                           ; Auto variables:
+  1554                           ;		None
+  1555                           ; Return value:
+  1556                           ;		type: void 
+  1557                           ;		size: 0
+  1558                           ; Registers used:
+  1559                           ;		wreg, status,2, status,0, tblptrl, tblptrh, t
+                                 blptru, tablat, cstack
+  1560                           ; Tracked objects:
+  1561                           ;		On entry : 0/0
+  1562                           ;		On exit  : 0/0
+  1563                           ;		Unchanged: 0/0
+  1564                           ; Data sizes:
+  1565                           ;		Autos:    0
+  1566                           ;		Params:   0
+  1567                           ;		Temp:    15
+  1568                           ;		Total:   15
+  1569                           ; This function calls:
+  1570                           ;		i2_sendToUart
+  1571                           ; This function is called by:
+  1572                           ;		Interrupt level 2
+  1573                           ; This function uses a non-reentrant model
+  1574                           ; 
+  1575                                   psect   text10,class=CODE,space=0,reloc=
+                                 2
+  1576                           
+  1577                           	opt lm
+  1578                           	file	"G:\root\MPLAB Projects\PIC18F4431_I2C_Sla
+                                 ve\PIC18F4431_I2C_Slave\i2c.c"
+  1579                           	line	9
+  1580  000000                     	__size_of_ISR	equ	__end_of_ISR-_ISR
+  1581                           ;i2c.c: 4: unsigned char gRecvData=0,gExpectAck=
+                                 0,gSendingReadCtrlBits=0,gSendingWriteCtrlBits=0
+                                 ,gSendingData=0;
+  1582                           ;i2c.c: 5: char gBuffer[32];
+  1583                           ;i2c.c: 8: void interrupt ISR()
+  1584                           ;i2c.c: 9: {
+  1585                           	
+  1586  0003AC                     _ISR:		; BSR set to: ?
+  1587                           
+  1588                           	opt stack 31
+  1589                                   psect   intcode,class=CODE,space=0,reloc
+                                 =2
+  1590                           	global	int_func
+  1591  000008                     int_func:
+  1592                                   psect   intcode
+  1593  000008  CFFA F11D          	movff	pclat+0,??_ISR+1
+  1594  00000C  CFFB F11E          	movff	pclat+1,??_ISR+2
+  1595  000010  CFE9 F11F          	movff	fsr0l+0,??_ISR+3
+  1596  000014  EFD6  F001         	goto	_ISR
+  1597                                   psect   text10
+  1598  0003AC  CFEA F120          	movff	fsr0h+0,??_ISR+4
+  1599  0003B0  CFE1 F121          	movff	fsr1l+0,??_ISR+5
+  1600  0003B4  CFE2 F122          	movff	fsr1h+0,??_ISR+6
+  1601  0003B8  CFD9 F123          	movff	fsr2l+0,??_ISR+7
+  1602  0003BC  CFDA F124          	movff	fsr2h+0,??_ISR+8
+  1603  0003C0  CFF3 F125          	movff	prodl+0,??_ISR+9
+  1604  0003C4  CFF4 F126          	movff	prodh+0,??_ISR+10
+  1605  0003C8  CFF6 F127          	movff	tblptrl+0,??_ISR+11
+  1606  0003CC  CFF7 F128          	movff	tblptrh+0,??_ISR+12
+  1607  0003D0  CFF8 F129          	movff	tblptru+0,??_ISR+13
+  1608  0003D4  CFF5 F12A          	movff	tablat+0,??_ISR+14
+  1609                           	line	10
+  1610  0003D8  0EA6               	movlw	low(STR_1)
+  1611  0003DA  0101               	movlb	1	; () banked
+  1612  0003DC  0101               	movlb	1	; () banked
+  1613  0003DE  6F2B               	movwf	((?i2_sendToUart))&0ffh
+  1614  0003E0  0E03               	movlw	high(STR_1)
+  1615  0003E2  0101               	movlb	1	; () banked
+  1616  0003E4  6F2C               	movwf	((?i2_sendToUart+1))&0ffh
+  1617  0003E6  EC28  F003         	call	i2_sendToUart	;wreg free
+  1618                           	line	11
+  1619                           ;i2c.c: 11: if(SSPIE && SSPIF)
+  1620  0003EA  A69D               	btfss	c:(31979/8),(31979)&7	;volatile
+  1621  0003EC  EFFA  F001         	goto	i2u1091
+  1622  0003F0  EFFC  F001         	goto	i2u1090
+  1623  0003F4                     i2u1091:
+  1624  0003F4  EF73  F002         	goto	i2l245
+  1625  0003F8                     i2u1090:
+  1626  0003F8  A69E               	btfss	c:(31987/8),(31987)&7	;volatile
+  1627  0003FA  EF01  F002         	goto	i2u1101
+  1628  0003FE  EF03  F002         	goto	i2u1100
+  1629  000402                     i2u1101:
+  1630  000402  EF73  F002         	goto	i2l245
+  1631  000406                     i2u1100:
+  1632                           	line	14
+  1633                           ;i2c.c: 12: {
+  1634                           ;i2c.c: 14: if(WCOL == 1){
+  1635  000406  AEC6               	btfss	c:(32311/8),(32311)&7	;volatile
+  1636  000408  EF08  F002         	goto	i2u1111
+  1637  00040C  EF0A  F002         	goto	i2u1110
+  1638  000410                     i2u1111:
+  1639  000410  EF14  F002         	goto	i2l246
+  1640  000414                     i2u1110:
+  1641                           	line	15
+  1642                           ;i2c.c: 15: sendToUart("Write collision Detected
+                                 . Write failed");
+  1643  000414  0E01               	movlw	low(STR_2)
+  1644  000416  0101               	movlb	1	; () banked
+  1645  000418  0101               	movlb	1	; () banked
+  1646  00041A  6F2B               	movwf	((?i2_sendToUart))&0ffh
+  1647  00041C  0E03               	movlw	high(STR_2)
+  1648  00041E  0101               	movlb	1	; () banked
+  1649  000420  6F2C               	movwf	((?i2_sendToUart+1))&0ffh
+  1650  000422  EC28  F003         	call	i2_sendToUart	;wreg free
+  1651                           	line	16
+  1652                           ;i2c.c: 16: WCOL=0;
+  1653  000426  9EC6               	bcf	c:(32311/8),(32311)&7	;volatile
+  1654                           	line	17
+  1655                           	
+  1656  000428                     i2l246:		; BSR set to: ?
+  1657                           
+  1658                           	line	18
+  1659                           ;i2c.c: 17: }
+  1660                           ;i2c.c: 18: if(SSPOV == 1){
+  1661  000428  ACC6               	btfss	c:(32310/8),(32310)&7	;volatile
+  1662  00042A  EF19  F002         	goto	i2u1121
+  1663  00042E  EF1B  F002         	goto	i2u1120
+  1664  000432                     i2u1121:
+  1665  000432  EF25  F002         	goto	i2l247
+  1666  000436                     i2u1120:
+  1667                           	line	19
+  1668                           ;i2c.c: 19: sendToUart("Receive Overflow");
+  1669  000436  0E28               	movlw	low(STR_3)
+  1670  000438  0101               	movlb	1	; () banked
+  1671  00043A  0101               	movlb	1	; () banked
+  1672  00043C  6F2B               	movwf	((?i2_sendToUart))&0ffh
+  1673  00043E  0E03               	movlw	high(STR_3)
+  1674  000440  0101               	movlb	1	; () banked
+  1675  000442  6F2C               	movwf	((?i2_sendToUart+1))&0ffh
+  1676  000444  EC28  F003         	call	i2_sendToUart	;wreg free
+  1677                           	line	20
+  1678                           ;i2c.c: 20: WCOL=0;
+  1679  000448  9EC6               	bcf	c:(32311/8),(32311)&7	;volatile
+  1680                           	line	21
+  1681                           	
+  1682  00044A                     i2l247:		; BSR set to: ?
+  1683                           
+  1684                           	line	22
+  1685                           ;i2c.c: 21: }
+  1686                           ;i2c.c: 22: if(gRecvData && BF){
+  1687  00044A  5000               	movf	((c:0)),c,w
+  1688  00044C  B4D8               	btfsc	status,2
+  1689  00044E  EF2B  F002         	goto	i2u1131
+  1690  000452  EF2D  F002         	goto	i2u1130
+  1691  000456                     i2u1131:
+  1692  000456  EF43  F002         	goto	i2l248
+  1693  00045A                     i2u1130:
+  1694  00045A  A0C7               	btfss	c:(32312/8),(32312)&7	;volatile
+  1695  00045C  EF32  F002         	goto	i2u1141
+  1696  000460  EF34  F002         	goto	i2u1140
+  1697  000464                     i2u1141:
+  1698  000464  EF43  F002         	goto	i2l248
+  1699  000468                     i2u1140:
+  1700                           	line	24
+  1701                           ;i2c.c: 24: gRecvData= 0;
+  1702  000468  0101               	movlb	1	; () banked
+  1703  00046A  6F1C               	movwf	(??_ISR+0+0)&0ffh
+  1704  00046C  0E00               	movlw	low(0)
+  1705  00046E  6E00               	movwf	((c:0)),c
+  1706  000470  0101               	movlb	1	; () banked
+  1707  000472  511C               	movf	(??_ISR+0+0)&0ffh,w
+  1708                           	line	25
+  1709                           ;i2c.c: 25: sendToUart("Data Recvd");
+  1710  000474  0E81               	movlw	low(STR_4)
+  1711  000476  0101               	movlb	1	; () banked
+  1712  000478  0101               	movlb	1	; () banked
+  1713  00047A  6F2B               	movwf	((?i2_sendToUart))&0ffh
+  1714  00047C  0E03               	movlw	high(STR_4)
+  1715  00047E  0101               	movlb	1	; () banked
+  1716  000480  6F2C               	movwf	((?i2_sendToUart+1))&0ffh
+  1717  000482  EC28  F003         	call	i2_sendToUart	;wreg free
+  1718                           	line	27
+  1719                           	
+  1720  000486                     i2l248:		; BSR set to: ?
+  1721                           
+  1722                           	line	28
+  1723                           ;i2c.c: 27: }
+  1724                           ;i2c.c: 28: if(SSPSTATbits.S == 0b1){
+  1725                           	
+  1726  000486  A6C7               	btfss	((c:4039)),c,3	;volatile
+  1727  000488  EF48  F002         	goto	i2u1151
+  1728  00048C  EF4A  F002         	goto	i2u1150
+  1729  000490                     i2u1151:
+  1730  000490  EF53  F002         	goto	i2l249
+  1731  000494                     i2u1150:
+  1732                           	line	29
+  1733                           ;i2c.c: 29: sendToUart("Start Detected");
+  1734  000494  0E48               	movlw	low(STR_5)
+  1735  000496  0101               	movlb	1	; () banked
+  1736  000498  0101               	movlb	1	; () banked
+  1737  00049A  6F2B               	movwf	((?i2_sendToUart))&0ffh
+  1738  00049C  0E03               	movlw	high(STR_5)
+  1739  00049E  0101               	movlb	1	; () banked
+  1740  0004A0  6F2C               	movwf	((?i2_sendToUart+1))&0ffh
+  1741  0004A2  EC28  F003         	call	i2_sendToUart	;wreg free
+  1742                           	line	30
+  1743                           	
+  1744  0004A6                     i2l249:		; BSR set to: ?
+  1745                           
+  1746                           	line	31
+  1747                           ;i2c.c: 30: }
+  1748                           ;i2c.c: 31: if(SSPSTATbits.P == 0b1){
+  1749                           	
+  1750  0004A6  A8C7               	btfss	((c:4039)),c,4	;volatile
+  1751  0004A8  EF58  F002         	goto	i2u1161
+  1752  0004AC  EF5A  F002         	goto	i2u1160
+  1753  0004B0                     i2u1161:
+  1754  0004B0  EF63  F002         	goto	i2l250
+  1755  0004B4                     i2u1160:
+  1756                           	line	32
+  1757                           ;i2c.c: 32: sendToUart("Stop Detected");
+  1758  0004B4  0E66               	movlw	low(STR_6)
+  1759  0004B6  0101               	movlb	1	; () banked
+  1760  0004B8  0101               	movlb	1	; () banked
+  1761  0004BA  6F2B               	movwf	((?i2_sendToUart))&0ffh
+  1762  0004BC  0E03               	movlw	high(STR_6)
+  1763  0004BE  0101               	movlb	1	; () banked
+  1764  0004C0  6F2C               	movwf	((?i2_sendToUart+1))&0ffh
+  1765  0004C2  EC28  F003         	call	i2_sendToUart	;wreg free
+  1766                           	line	33
+  1767                           	
+  1768  0004C6                     i2l250:		; BSR set to: ?
+  1769                           
+  1770                           	line	35
+  1771                           ;i2c.c: 33: }
+  1772                           ;i2c.c: 35: if(SSPSTATbits.BF == 0b1){
+  1773                           	
+  1774  0004C6  A0C7               	btfss	((c:4039)),c,0	;volatile
+  1775  0004C8  EF68  F002         	goto	i2u1171
+  1776  0004CC  EF6A  F002         	goto	i2u1170
+  1777  0004D0                     i2u1171:
+  1778  0004D0  EF73  F002         	goto	i2l245
+  1779  0004D4                     i2u1170:
+  1780                           	line	36
+  1781                           ;i2c.c: 36: sendToUart("SSPBUF is Full");
+  1782  0004D4  0E39               	movlw	low(STR_7)
+  1783  0004D6  0101               	movlb	1	; () banked
+  1784  0004D8  0101               	movlb	1	; () banked
+  1785  0004DA  6F2B               	movwf	((?i2_sendToUart))&0ffh
+  1786  0004DC  0E03               	movlw	high(STR_7)
+  1787  0004DE  0101               	movlb	1	; () banked
+  1788  0004E0  6F2C               	movwf	((?i2_sendToUart+1))&0ffh
+  1789  0004E2  EC28  F003         	call	i2_sendToUart	;wreg free
+  1790                           	line	37
+  1791                           	
+  1792  0004E6                     i2l251:		; BSR set to: ?
+  1793                           
+  1794                           	line	41
+  1795                           	
+  1796  0004E6                     i2l245:		; BSR set to: ?
+  1797                           
+  1798                           	line	42
+  1799                           ;i2c.c: 37: }
+  1800                           ;i2c.c: 41: }
+  1801                           ;i2c.c: 42: SSPIF = 0b0;
+  1802  0004E6  969E               	bcf	c:(31987/8),(31987)&7	;volatile
+  1803                           	line	43
+  1804                           ;i2c.c: 43: }
+  1805  0004E8                     i2l244:
+  1806                           			; BSR set to: ?
+  1807                           
+  1808  0004E8  C12A  FFF5         	movff	??_ISR+14,tablat+0
+  1809  0004EC  C129  FFF8         	movff	??_ISR+13,tblptru+0
+  1810  0004F0  C128  FFF7         	movff	??_ISR+12,tblptrh+0
+  1811  0004F4  C127  FFF6         	movff	??_ISR+11,tblptrl+0
+  1812  0004F8  C126  FFF4         	movff	??_ISR+10,prodh+0
+  1813  0004FC  C125  FFF3         	movff	??_ISR+9,prodl+0
+  1814  000500  C124  FFDA         	movff	??_ISR+8,fsr2h+0
+  1815  000504  C123  FFD9         	movff	??_ISR+7,fsr2l+0
+  1816  000508  C122  FFE2         	movff	??_ISR+6,fsr1h+0
+  1817  00050C  C121  FFE1         	movff	??_ISR+5,fsr1l+0
+  1818  000510  C120  FFEA         	movff	??_ISR+4,fsr0h+0
+  1819  000514  C11F  FFE9         	movff	??_ISR+3,fsr0l+0
+  1820  000518  C11E  FFFB         	movff	??_ISR+2,pclat+1
+  1821  00051C  C11D  FFFA         	movff	??_ISR+1,pclat+0
+  1822  000520  0011               	retfie f
+  1823                           	opt stack 0
+  1824                           GLOBAL __end_of_ISR
+  1825  000522                     	__end_of_ISR:
+  1826                           	FNSIZE	_ISR,15,0
+  1827                           ; =============== function _ISR ends ===========
+                                 =
+  1828                           
+  1829                           	signat	_ISR,88
+  1830                                   psect   text11,class=CODE,space=0,reloc=
+                                 2
+  1831                           	global	intlevel2
+  1832                           
+  1833                           	opt lm
+  1834                           	FNBREAK i2_sendToUart,intlevel2
+  1835                           	global	i2_sendToUart
+  1836                           	global	i2_sendToUart
+  1837                           	global	??i2_sendToUart
+  1838                           	global	?i2_sendToUart
+  1839                           
+  1840                           ; *************** function i2_sendToUart *******
+                                 **********
+  1841                           ; Defined at:
+  1842                           ;		line 50 in file "G:\root\MPLAB Projects\PIC18
+                                 F4431_I2C_Slave\PIC18F4431_I2C_Slave\uart.c"
+  1843                           ; Parameters:
+  1844                           ;		pkt            size:   2offs:   0	type: PTR c
+                                 onst unsigned char ; Largest target is 39
+  1845                           ;		 -> STR_15(8), STR_14(8), STR_13(9), STR_12(1
+                                 3), 
+  1846                           ;		 -> STR_11(14), STR_10(15), STR_9(15), STR_8(
+                                 9), 
+  1847                           ;		 -> STR_7(15), STR_6(14), STR_5(15), STR_4(11
+                                 ), 
+  1848                           ;		 -> STR_3(17), STR_2(39), STR_1(4), 
+  1849                           ; Auto variables:
+  1850                           ;		size        	       	type: int 
+  1851                           ;		i           	       	type: int 
+  1852                           ; Return value:
+  1853                           ;		type: int 
+  1854                           ;		size: 2
+  1855                           ; Registers used:
+  1856                           ;		wreg, status,2, status,0, tblptrl, tblptrh, t
+                                 blptru, tablat, cstack
+  1857                           ; Tracked objects:
+  1858                           ;		On entry : 0/0
+  1859                           ;		On exit  : 0/0
+  1860                           ;		Unchanged: 0/0
+  1861                           ; Data sizes:
+  1862                           ;		Autos:    4
+  1863                           ;		Params:   2
+  1864                           ;		Temp:     2
+  1865                           ;		Total:    8
+  1866                           ; This function calls:
+  1867                           ;		i2_strlen
+  1868                           ;		i2_uart_send_byte
+  1869                           ;		i2_delay
+  1870                           ; This function is called by:
+  1871                           ;		_ISR
+  1872                           ;		i2_start_I2C
+  1873                           ; This function uses a non-reentrant model
+  1874                           ; 
+  1875                           	file	"G:\root\MPLAB Projects\PIC18F4431_I2C_Sla
+                                 ve\PIC18F4431_I2C_Slave\uart.c"
+  1876                           	line	50
+  1877  000000                     	__size_ofi2_sendToUart	equ	__end_ofi2_sendToUar
+                                 t-i2_sendToUart
+  1878                           ;uart.c: 49: int sendToUart(const char *pkt)
+  1879                           ;uart.c: 50: {
+  1880                           	
+  1881  000650                     i2_sendToUart:		; BSR set to: ?
+  1882                           
+  1883                           	opt stack 30
+  1884                           	line	52
+  1885  000650  0E00               	movlw	low(0)
+  1886  000652  0101               	movlb	1	; () banked
+  1887  000654  0101               	movlb	1	; () banked
+  1888  000656  6F2D               	movwf	((i2sendToUart@size))&0ffh
+  1889  000658  0E00               	movlw	high(0)
+  1890  00065A  0101               	movlb	1	; () banked
+  1891  00065C  6F2E               	movwf	((i2sendToUart@size+1))&0ffh
+  1892                           	line	54
+  1893  00065E  C12B  F133         	movff	(i2sendToUart@pkt),(?i2_strlen)
+  1894  000662  C12C  F134         	movff	(i2sendToUart@pkt+1),(?i2_strlen+1)
+  1895  000666  EC39  F005         	call	i2_strlen	;wreg free
+  1896  00066A  C133  F12D         	movff	0+?i2_strlen,(i2sendToUart@size)
+  1897  00066E  C134  F12E         	movff	1+?i2_strlen,(i2sendToUart@size+1)
+  1898                           	line	55
+  1899  000672  0E00               	movlw	low(0)
+  1900  000674  0101               	movlb	1	; () banked
+  1901  000676  0101               	movlb	1	; () banked
+  1902  000678  6F2F               	movwf	((i2sendToUart@i))&0ffh
+  1903  00067A  0E00               	movlw	high(0)
+  1904  00067C  0101               	movlb	1	; () banked
+  1905  00067E  6F30               	movwf	((i2sendToUart@i+1))&0ffh
+  1906  000680  EF6B  F003         	goto	i2l788
+  1907                           	line	56
+  1908                           	
+  1909  000684                     i2l785:		; BSR set to: ?
+  1910                           
+  1911                           	line	57
+  1912  000684  0101               	movlb	1	; () banked
+  1913  000686  0101               	movlb	1	; () banked
+  1914  000688  512F               	movf	((i2sendToUart@i))&0ffh,w
+  1915  00068A  0101               	movlb	1	; () banked
+  1916  00068C  0101               	movlb	1	; () banked
+  1917  00068E  252B               	addwf	((i2sendToUart@pkt))&0ffh,w
+  1918  000690  0101               	movlb	1	; () banked
+  1919  000692  6F31               	movwf	(??i2_sendToUart+4+0)&0ffh
+  1920  000694  6AE8               	clrf	wreg
+  1921  000696  0101               	movlb	1	; () banked
+  1922  000698  0101               	movlb	1	; () banked
+  1923  00069A  BF2F               	btfsc	((i2sendToUart@i))&0ffh,7
+  1924  00069C  68E8               	setf	wreg
+  1925  00069E  0101               	movlb	1	; () banked
+  1926  0006A0  0101               	movlb	1	; () banked
+  1927  0006A2  212C               	addwfc	((i2sendToUart@pkt+1))&0ffh,w
+  1928  0006A4  0101               	movlb	1	; () banked
+  1929  0006A6  6F32               	movwf	(??i2_sendToUart+4+0+1)&0ffh
+  1930  0006A8  C131  FFF6         	movff	??i2_sendToUart+4+0,tblptrl
+  1931  0006AC  C132  FFF7         	movff	??i2_sendToUart+4+1,tblptrh
+  1932  0006B0  0008               	tblrd	*
+  1933                           	
+  1934  0006B2  0101               	movlb	1	; () banked
+  1935  0006B4  CFF5 F133          	movff	tablat,(?i2_uart_send_byte)
+  1936  0006B8  ECF5  F005         	call	i2_uart_send_byte	;wreg free
+  1937                           	line	58
+  1938  0006BC  0E0A               	movlw	low(0Ah)
+  1939  0006BE  0101               	movlb	1	; () banked
+  1940  0006C0  0101               	movlb	1	; () banked
+  1941  0006C2  6F33               	movwf	((?i2_delay))&0ffh
+  1942  0006C4  0E00               	movlw	high(0Ah)
+  1943  0006C6  0101               	movlb	1	; () banked
+  1944  0006C8  6F34               	movwf	((?i2_delay+1))&0ffh
+  1945  0006CA  EC59  F004         	call	i2_delay	;wreg free
+  1946                           	line	55
+  1947  0006CE  0101               	movlb	1	; () banked
+  1948  0006D0  0101               	movlb	1	; () banked
+  1949  0006D2  4B2F               	infsnz	((i2sendToUart@i))&0ffh
+  1950  0006D4  2B30               	incf	((i2sendToUart@i+1))&0ffh
+  1951                           	
+  1952  0006D6                     i2l788:		; BSR set to: ?
+  1953                           
+  1954  0006D6  0101               	movlb	1	; () banked
+  1955  0006D8  0101               	movlb	1	; () banked
+  1956  0006DA  5130               	movf	((i2sendToUart@i+1))&0ffh,w
+  1957  0006DC  0A80               	xorlw	80h
+  1958  0006DE  0101               	movlb	1	; () banked
+  1959  0006E0  6F31               	movwf	(??i2_sendToUart+4+0)&0ffh
+  1960  0006E2  0101               	movlb	1	; () banked
+  1961  0006E4  512D               	movf	((i2sendToUart@size))&0ffh,w
+  1962  0006E6  0101               	movlb	1	; () banked
+  1963  0006E8  0101               	movlb	1	; () banked
+  1964  0006EA  5D2F               	subwf	((i2sendToUart@i))&0ffh,w
+  1965  0006EC  0101               	movlb	1	; () banked
+  1966  0006EE  0101               	movlb	1	; () banked
+  1967  0006F0  512E               	movf	((i2sendToUart@size+1))&0ffh,w
+  1968  0006F2  0A80               	xorlw	80h
+  1969  0006F4  0101               	movlb	1	; () banked
+  1970  0006F6  5931               	subwfb	(??i2_sendToUart+4+0)&0ffh,w
+  1971  0006F8  A0D8               	btfss	status,0
+  1972  0006FA  EF81  F003         	goto	i2u1181
+  1973  0006FE  EF83  F003         	goto	i2u1180
+  1974  000702                     i2u1181:
+  1975  000702  EF42  F003         	goto	i2l785
+  1976  000706                     i2u1180:
+  1977                           	
+  1978  000706                     i2l786:		; BSR set to: ?
+  1979                           
+  1980                           	line	60
+  1981  000706  0101               	movlb	1	; () banked
+  1982  000708  6F31               	movwf	(??i2_sendToUart+4+0)&0ffh
+  1983  00070A  0E0A               	movlw	low(0Ah)
+  1984  00070C  0101               	movlb	1	; () banked
+  1985  00070E  0101               	movlb	1	; () banked
+  1986  000710  6F33               	movwf	((?i2_uart_send_byte))&0ffh
+  1987  000712  0101               	movlb	1	; () banked
+  1988  000714  5131               	movf	(??i2_sendToUart+4+0)&0ffh,w
+  1989  000716  ECF5  F005         	call	i2_uart_send_byte	;wreg free
+  1990                           	line	61
+  1991  00071A  EF8F  F003         	goto	i2l784
+  1992                           	line	62
+  1993  00071E                     i2l784:
+  1994                           			; BSR set to: ?
+  1995                           
+  1996  00071E  0012               	return
+  1997                           	opt stack 0
+  1998                           GLOBAL __end_ofi2_sendToUart
+  1999  000720                     	__end_ofi2_sendToUart:
+  2000                           	FNSIZE	i2_sendToUart,6,2
+  2001                           ; =============== function i2_sendToUart ends ==
+                                 ==========
+  2002                           
+  2003                           	signat	i2_sendToUart,4218
+  2004                                   psect   text12,class=CODE,space=0,reloc=
+                                 2
+  2005                           	global	intlevel2
+  2006                           
+  2007                           	opt lm
+  2008                           	FNBREAK i2_delay,intlevel2
+  2009                           	global	i2_delay
+  2010                           	global	i2_delay
+  2011                           	global	??i2_delay
+  2012                           	global	?i2_delay
+  2013                           
+  2014                           ; *************** function i2_delay ************
+                                 *****
+  2015                           ; Defined at:
+  2016                           ;		line 18 in file "G:\root\MPLAB Projects\PIC18
+                                 F4431_I2C_Slave\PIC18F4431_I2C_Slave\main.c"
+  2017                           ; Parameters:
+  2018                           ;		cnt            size:   2offs:   0	type: int 
+  2019                           ; Auto variables:
+  2020                           ;		j           	       	type: int 
+  2021                           ;		i           	       	type: int 
+  2022                           ; Return value:
+  2023                           ;		type: int 
+  2024                           ;		size: 2
+  2025                           ; Registers used:
+  2026                           ;		wreg, status,2, status,0
+  2027                           ; Tracked objects:
+  2028                           ;		On entry : 0/0
+  2029                           ;		On exit  : 0/0
+  2030                           ;		Unchanged: 0/0
+  2031                           ; Data sizes:
+  2032                           ;		Autos:    4
+  2033                           ;		Params:   2
+  2034                           ;		Temp:     1
+  2035                           ;		Total:    7
+  2036                           ; This function calls:
+  2037                           ;		Nothing
+  2038                           ; This function is called by:
+  2039                           ;		i2_main
+  2040                           ;		i2_sendToUart
+  2041                           ; This function uses a non-reentrant model
+  2042                           ; 
+  2043                           	file	"G:\root\MPLAB Projects\PIC18F4431_I2C_Sla
+                                 ve\PIC18F4431_I2C_Slave\main.c"
+  2044                           	line	18
+  2045  000000                     	__size_ofi2_delay	equ	__end_ofi2_delay-i2_delay
+  2046                           ;main.c: 17: int delay(int cnt)
+  2047                           ;main.c: 18: {
+  2048                           	
+  2049  0008B2                     i2_delay:		; BSR set to: ?
+  2050                           
+  2051                           	opt stack 29
+  2052                           	line	19
+  2053  0008B2  0E00               	movlw	low(0)
+  2054  0008B4  0101               	movlb	1	; () banked
+  2055  0008B6  0101               	movlb	1	; () banked
+  2056  0008B8  6F37               	movwf	((i2delay@i))&0ffh
+  2057  0008BA  0E00               	movlw	high(0)
+  2058  0008BC  0101               	movlb	1	; () banked
+  2059  0008BE  6F38               	movwf	((i2delay@i+1))&0ffh
+  2060  0008C0  0E00               	movlw	low(0)
+  2061  0008C2  0101               	movlb	1	; () banked
+  2062  0008C4  0101               	movlb	1	; () banked
+  2063  0008C6  6F35               	movwf	((i2delay@j))&0ffh
+  2064  0008C8  0E00               	movlw	high(0)
+  2065  0008CA  0101               	movlb	1	; () banked
+  2066  0008CC  6F36               	movwf	((i2delay@j+1))&0ffh
+  2067                           	line	20
+  2068  0008CE  0E00               	movlw	low(0)
+  2069  0008D0  0101               	movlb	1	; () banked
+  2070  0008D2  0101               	movlb	1	; () banked
+  2071  0008D4  6F37               	movwf	((i2delay@i))&0ffh
+  2072  0008D6  0E00               	movlw	high(0)
+  2073  0008D8  0101               	movlb	1	; () banked
+  2074  0008DA  6F38               	movwf	((i2delay@i+1))&0ffh
+  2075  0008DC  0101               	movlb	1	; () banked
+  2076  0008DE  0101               	movlb	1	; () banked
+  2077  0008E0  5138               	movf	((i2delay@i+1))&0ffh,w
+  2078  0008E2  0A80               	xorlw	80h
+  2079  0008E4  0F80               	addlw	-((0)^80h)
+  2080  0008E6  0E03               	movlw	03h
+  2081  0008E8  B4D8               	btfsc	status,2
+  2082  0008EA  5D37               	subwf	((i2delay@i))&0ffh,w
+  2083  0008EC  A0D8               	btfss	status,0
+  2084  0008EE  EF7B  F004         	goto	i2u1211
+  2085  0008F2  EF7D  F004         	goto	i2u1210
+  2086  0008F6                     i2u1211:
+  2087  0008F6  EF7F  F004         	goto	i2l515
+  2088  0008FA                     i2u1210:
+  2089  0008FA  EFB7  F004         	goto	i2l516
+  2090                           	line	21
+  2091                           	
+  2092  0008FE                     i2l515:		; BSR set to: ?
+  2093                           
+  2094                           	line	22
+  2095  0008FE  0E00               	movlw	low(0)
+  2096  000900  0101               	movlb	1	; () banked
+  2097  000902  0101               	movlb	1	; () banked
+  2098  000904  6F35               	movwf	((i2delay@j))&0ffh
+  2099  000906  0E00               	movlw	high(0)
+  2100  000908  0101               	movlb	1	; () banked
+  2101  00090A  6F36               	movwf	((i2delay@j+1))&0ffh
+  2102  00090C  EF8C  F004         	goto	i2l521
+  2103                           	line	23
+  2104                           	
+  2105  000910                     i2l518:		; BSR set to: ?
+  2106                           
+  2107                           	line	22
+  2108  000910  0101               	movlb	1	; () banked
+  2109  000912  0101               	movlb	1	; () banked
+  2110  000914  4B35               	infsnz	((i2delay@j))&0ffh
+  2111  000916  2B36               	incf	((i2delay@j+1))&0ffh
+  2112                           	
+  2113  000918                     i2l521:		; BSR set to: ?
+  2114                           
+  2115  000918  0101               	movlb	1	; () banked
+  2116  00091A  0101               	movlb	1	; () banked
+  2117  00091C  5136               	movf	((i2delay@j+1))&0ffh,w
+  2118  00091E  0A80               	xorlw	80h
+  2119  000920  0101               	movlb	1	; () banked
+  2120  000922  6F39               	movwf	(??i2_delay+4+0)&0ffh
+  2121  000924  0101               	movlb	1	; () banked
+  2122  000926  5133               	movf	((i2delay@cnt))&0ffh,w
+  2123  000928  0101               	movlb	1	; () banked
+  2124  00092A  0101               	movlb	1	; () banked
+  2125  00092C  5D35               	subwf	((i2delay@j))&0ffh,w
+  2126  00092E  0101               	movlb	1	; () banked
+  2127  000930  0101               	movlb	1	; () banked
+  2128  000932  5134               	movf	((i2delay@cnt+1))&0ffh,w
+  2129  000934  0A80               	xorlw	80h
+  2130  000936  0101               	movlb	1	; () banked
+  2131  000938  5939               	subwfb	(??i2_delay+4+0)&0ffh,w
+  2132  00093A  A0D8               	btfss	status,0
+  2133  00093C  EFA2  F004         	goto	i2u1221
+  2134  000940  EFA4  F004         	goto	i2u1220
+  2135  000944                     i2u1221:
+  2136  000944  EF88  F004         	goto	i2l518
+  2137  000948                     i2u1220:
+  2138                           	
+  2139  000948                     i2l519:		; BSR set to: ?
+  2140                           
+  2141                           	line	20
+  2142  000948  0101               	movlb	1	; () banked
+  2143  00094A  0101               	movlb	1	; () banked
+  2144  00094C  4B37               	infsnz	((i2delay@i))&0ffh
+  2145  00094E  2B38               	incf	((i2delay@i+1))&0ffh
+  2146  000950  0101               	movlb	1	; () banked
+  2147  000952  0101               	movlb	1	; () banked
+  2148  000954  5138               	movf	((i2delay@i+1))&0ffh,w
+  2149  000956  0A80               	xorlw	80h
+  2150  000958  0F80               	addlw	-((0)^80h)
+  2151  00095A  0E03               	movlw	03h
+  2152  00095C  B4D8               	btfsc	status,2
+  2153  00095E  5D37               	subwf	((i2delay@i))&0ffh,w
+  2154  000960  A0D8               	btfss	status,0
+  2155  000962  EFB5  F004         	goto	i2u1231
+  2156  000966  EFB7  F004         	goto	i2u1230
+  2157  00096A                     i2u1231:
+  2158  00096A  EF7F  F004         	goto	i2l515
+  2159  00096E                     i2u1230:
+  2160                           	
+  2161  00096E                     i2l516:		; BSR set to: ?
+  2162                           
+  2163                           	line	26
+  2164  00096E  EFB9  F004         	goto	i2l514
+  2165                           	line	27
+  2166  000972                     i2l514:
+  2167                           			; BSR set to: ?
+  2168                           
+  2169  000972  0012               	return
+  2170                           	opt stack 0
+  2171                           GLOBAL __end_ofi2_delay
+  2172  000974                     	__end_ofi2_delay:
+  2173                           	FNSIZE	i2_delay,5,2
+  2174                           ; =============== function i2_delay ends =======
+                                 =====
+  2175                           
+  2176                           	signat	i2_delay,4218
+  2177                                   psect   text13,class=CODE,space=0,reloc=
+                                 2
+  2178                           	global	intlevel2
+  2179                           
+  2180                           	opt lm
+  2181                           	FNBREAK i2_uart_send_byte,intlevel2
+  2182                           	global	i2_uart_send_byte
+  2183                           	global	i2_uart_send_byte
+  2184                           	global	??i2_uart_send_byte
+  2185                           	global	?i2_uart_send_byte
+  2186                           
+  2187                           ; *************** function i2_uart_send_byte ***
+                                 **************
+  2188                           ; Defined at:
+  2189                           ;		line 32 in file "G:\root\MPLAB Projects\PIC18
+                                 F4431_I2C_Slave\PIC18F4431_I2C_Slave\uart.c"
+  2190                           ; Parameters:
+  2191                           ;		byte           size:   1offs:   0	type: unsig
+                                 ned char 
+  2192                           ; Auto variables:
+  2193                           ;		None
+  2194                           ; Return value:
+  2195                           ;		type: void 
+  2196                           ;		size: 0
+  2197                           ; Registers used:
+  2198                           ;		None
+  2199                           ; Tracked objects:
+  2200                           ;		On entry : 0/0
+  2201                           ;		On exit  : 0/0
+  2202                           ;		Unchanged: 0/0
+  2203                           ; Data sizes:
+  2204                           ;		Autos:    0
+  2205                           ;		Params:   1
+  2206                           ;		Temp:     0
+  2207                           ;		Total:    1
+  2208                           ; This function calls:
+  2209                           ;		Nothing
+  2210                           ; This function is called by:
+  2211                           ;		i2_sendToUart
+  2212                           ; This function uses a non-reentrant model
+  2213                           ; 
+  2214                           	file	"G:\root\MPLAB Projects\PIC18F4431_I2C_Sla
+                                 ve\PIC18F4431_I2C_Slave\uart.c"
+  2215                           	line	32
+  2216  000000                     	__size_ofi2_uart_send_byte	equ	__end_ofi2_uart_
+                                 send_byte-i2_uart_send_byte
+  2217                           ;uart.c: 31: void uart_send_byte(unsigned char b
+                                 yte)
+  2218                           ;uart.c: 32: {
+  2219                           	
+  2220  000BEA                     i2_uart_send_byte:		; BSR set to: ?
+  2221                           
+  2222                           	opt stack 29
+  2223                           	line	33
+  2224  000BEA  EFF9  F005         	goto	i2l777
+  2225                           	
+  2226  000BEE                     i2l778:		; BSR set to: ?
+  2227                           
+  2228                           	line	35
+  2229  000BEE  EFF9  F005         	goto	i2l777
+  2230                           	line	36
+  2231                           	
+  2232  000BF2                     i2l777:		; BSR set to: ?
+  2233                           
+  2234                           	line	33
+  2235  000BF2  A89E               	btfss	c:(31988/8),(31988)&7	;volatile
+  2236  000BF4  EFFE  F005         	goto	i2u1241
+  2237  000BF8  EF00  F006         	goto	i2u1240
+  2238  000BFC                     i2u1241:
+  2239  000BFC  EFF7  F005         	goto	i2l778
+  2240  000C00                     i2u1240:
+  2241                           	
+  2242  000C00                     i2l779:		; BSR set to: ?
+  2243                           
+  2244                           	line	37
+  2245  000C00  C133  FFAD         	movff	(i2uart_send_byte@byte),(c:4013)	;volatil
+                                 e
+  2246                           	line	38
+  2247  000C04                     i2l776:
+  2248                           			; BSR set to: ?
+  2249                           
+  2250  000C04  0012               	return
+  2251                           	opt stack 0
+  2252                           GLOBAL __end_ofi2_uart_send_byte
+  2253  000C06                     	__end_ofi2_uart_send_byte:
+  2254                           	FNSIZE	i2_uart_send_byte,0,1
+  2255                           ; =============== function i2_uart_send_byte end
+                                 s ============
+  2256                           
+  2257                           	signat	i2_uart_send_byte,4216
+  2258                                   psect   text14,class=CODE,space=0,reloc=
+                                 2
+  2259                           	global	intlevel2
+  2260                           
+  2261                           	opt lm
+  2262                           	FNBREAK i2_strlen,intlevel2
+  2263                           	global	i2_strlen
+  2264                           	global	i2_strlen
+  2265                           	global	??i2_strlen
+  2266                           	global	?i2_strlen
+  2267                           
+  2268                           ; *************** function i2_strlen ***********
+                                 ******
+  2269                           ; Defined at:
+  2270                           ;		line 5 in file "C:\Program Files\HI-TECH Soft
+                                 ware\PICC-18\PRO\9.66\sources\strlen.c"
+  2271                           ; Parameters:
+  2272                           ;		s              size:   2offs:   0	type: PTR c
+                                 onst unsigned char ; Largest target is 39
+  2273                           ;		 -> STR_15(8), STR_14(8), STR_13(9), STR_12(1
+                                 3), 
+  2274                           ;		 -> STR_11(14), STR_10(15), STR_9(15), STR_8(
+                                 9), 
+  2275                           ;		 -> STR_7(15), STR_6(14), STR_5(15), STR_4(11
+                                 ), 
+  2276                           ;		 -> STR_3(17), STR_2(39), STR_1(4), 
+  2277                           ; Auto variables:
+  2278                           ;		cp          	       	type: PTR const unsigned
+                                  char ; Largest target is 39
+  2279                           ;		 -> STR_15(8), STR_14(8), STR_13(9), STR_12(1
+                                 3), 
+  2280                           ;		 -> STR_11(14), STR_10(15), STR_9(15), STR_8(
+                                 9), 
+  2281                           ;		 -> STR_7(15), STR_6(14), STR_5(15), STR_4(11
+                                 ), 
+  2282                           ;		 -> STR_3(17), STR_2(39), STR_1(4), 
+  2283                           ; Return value:
+  2284                           ;		type: unsigned int 
+  2285                           ;		size: 2
+  2286                           ; Registers used:
+  2287                           ;		wreg, status,2, status,0, tblptrl, tblptrh, t
+                                 blptru, tablat
+  2288                           ; Tracked objects:
+  2289                           ;		On entry : 0/0
+  2290                           ;		On exit  : 0/0
+  2291                           ;		Unchanged: 0/0
+  2292                           ; Data sizes:
+  2293                           ;		Autos:    2
+  2294                           ;		Params:   2
+  2295                           ;		Temp:     2
+  2296                           ;		Total:    6
+  2297                           ; This function calls:
+  2298                           ;		Nothing
+  2299                           ; This function is called by:
+  2300                           ;		i2_sendToUart
+  2301                           ; This function uses a non-reentrant model
+  2302                           ; 
+  2303                           	file	"C:\Program Files\HI-TECH Software\PICC-18
+                                 \PRO\9.66\sources\strlen.c"
+  2304                           	line	5
+  2305  000000                     	__size_ofi2_strlen	equ	__end_ofi2_strlen-i2_str
+                                 len
+  2306                           	
+  2307  000A72                     i2_strlen:		; BSR set to: ?
+  2308                           
+  2309                           	opt stack 29
+  2310                           	line	8
+  2311  000A72  C133  F135         	movff	(i2strlen@s),(i2strlen@cp)
+  2312  000A76  C134  F136         	movff	(i2strlen@s+1),(i2strlen@cp+1)
+  2313                           	line	9
+  2314  000A7A  EF41  F005         	goto	i2l795
+  2315                           	
+  2316  000A7E                     i2l796:		; BSR set to: ?
+  2317                           
+  2318                           	line	10
+  2319  000A7E  EF41  F005         	goto	i2l795
+  2320                           	
+  2321  000A82                     i2l795:		; BSR set to: ?
+  2322                           
+  2323                           	line	9
+  2324  000A82  0101               	movlb	1	; () banked
+  2325  000A84  C135  FFF6         	movff	(i2strlen@cp),tblptrl
+  2326  000A88  0101               	movlb	1	; () banked
+  2327  000A8A  C136  FFF7         	movff	(i2strlen@cp+1),tblptrh
+  2328  000A8E  0101               	movlb	1	; () banked
+  2329  000A90  0101               	movlb	1	; () banked
+  2330  000A92  4B35               	infsnz	((i2strlen@cp))&0ffh
+  2331  000A94  2B36               	incf	((i2strlen@cp+1))&0ffh
+  2332  000A96  0008               	tblrd	*
+  2333                           	
+  2334  000A98  50F5               	movf	tablat,w
+  2335                           
+  2336  000A9A  0900               	iorlw	0
+  2337  000A9C  A4D8               	btfss	status,2
+  2338  000A9E  EF53  F005         	goto	i2u1251
+  2339  000AA2  EF55  F005         	goto	i2u1250
+  2340  000AA6                     i2u1251:
+  2341  000AA6  EF3F  F005         	goto	i2l796
+  2342  000AAA                     i2u1250:
+  2343                           	
+  2344  000AAA                     i2l797:		; BSR set to: ?
+  2345                           
+  2346                           	line	11
+  2347  000AAA  0101               	movlb	1	; () banked
+  2348  000AAC  C135  F137         	movff	(i2strlen@cp),??i2_strlen+2+0
+  2349  000AB0  0101               	movlb	1	; () banked
+  2350  000AB2  C136  F138         	movff	(i2strlen@cp+1),??i2_strlen+2+0+1
+  2351  000AB6  0101               	movlb	1	; () banked
+  2352  000AB8  0101               	movlb	1	; () banked
+  2353  000ABA  5133               	movf	((i2strlen@s))&0ffh,w
+  2354  000ABC  0101               	movlb	1	; () banked
+  2355  000ABE  5F37               	subwf	(??i2_strlen+2+0)&0ffh
+  2356  000AC0  0101               	movlb	1	; () banked
+  2357  000AC2  0101               	movlb	1	; () banked
+  2358  000AC4  5134               	movf	((i2strlen@s+1))&0ffh,w
+  2359  000AC6  0101               	movlb	1	; () banked
+  2360  000AC8  5B38               	subwfb	(??i2_strlen+2+1)&0ffh
+  2361  000ACA  0EFF               	movlw	low(0FFFFh)
+  2362  000ACC  0101               	movlb	1	; () banked
+  2363  000ACE  2537               	addwf	(??i2_strlen+2+0)&0ffh,w
+  2364  000AD0  0101               	movlb	1	; () banked
+  2365                           	
+  2366  000AD2  0101               	movlb	1	; () banked
+  2367  000AD4  6F33               	movwf	((?i2_strlen))&0ffh
+  2368  000AD6  0EFF               	movlw	high(0FFFFh)
+  2369  000AD8  0101               	movlb	1	; () banked
+  2370  000ADA  2138               	addwfc	(??i2_strlen+2+1)&0ffh,w
+  2371  000ADC  0101               	movlb	1	; () banked
+  2372  000ADE  6F34               	movwf	1+((?i2_strlen))&0ffh
+  2373  000AE0  EF72  F005         	goto	i2l794
+  2374                           	line	12
+  2375  000AE4                     i2l794:
+  2376                           			; BSR set to: ?
+  2377                           
+  2378  000AE4  0012               	return
+  2379                           	opt stack 0
+  2380                           GLOBAL __end_ofi2_strlen
+  2381  000AE6                     	__end_ofi2_strlen:
+  2382                           	FNSIZE	i2_strlen,4,2
+  2383                           ; =============== function i2_strlen ends ======
+                                 ======
+  2384                           
+  2385                           	signat	i2_strlen,4218
+  2386                           	FNCALL	_main,_init
+  2387                           	FNCALL	_main,_start_I2C
+  2388                           	FNCALL	_main,_delay
+  2389                           	FNCALL	_start_I2C,_sendToUart
+  2390                           	FNCALL	_init,_eusart_init
+  2391                           	FNCALL	_init,_init_I2C
+  2392                           	FNCALL	_sendToUart,_strlen
+  2393                           	FNCALL	_sendToUart,_uart_send_byte
+  2394                           	FNCALL	_sendToUart,_delay
+  2395                           	FNCALL	_eusart_init,___lldiv
+  2396                           	FNROOT	_main
+  2397                           	FNCALL	_ISR,i2_sendToUart
+  2398                           	FNCALL	i2_sendToUart,i2_strlen
+  2399                           	FNCALL	i2_sendToUart,i2_uart_send_byte
+  2400                           	FNCALL	i2_sendToUart,i2_delay
+  2401                           	FNCALL	intlevel2,_ISR
+  2402                           	global	intlevel2
+  2403                           	FNROOT	intlevel2
+  2404                                   psect   smallconst,class=SMALLCONST,spac
+                                 e=0,reloc=2
+  2405  000300  00                 	db	0	;reserve
+  2406                           	global	_gBuffer
+  2407                           	global	_gBuffer
+  2408  000000                     _gBuffer  equ     5
+  2409                           
+  2410                           	DABS	1,5,32	;_gBuffer
+  2411                           	global	_gExpectAck
+  2412                           	global	_gExpectAck
+  2413  000000                     _gExpectAck  equ     4
+  2414                           
+  2415                           	DABS	1,4,1	;_gExpectAck
+  2416                           	global	_gRecvData
+  2417                           	global	_gRecvData
+  2418  000000                     _gRecvData  equ     0
+  2419                           
+  2420                           	DABS	1,0,1	;_gRecvData
+  2421                           	global	_gSendingData
+  2422                           	global	_gSendingData
+  2423  000000                     _gSendingData  equ     3
+  2424                           
+  2425                           	DABS	1,3,1	;_gSendingData
+  2426                           	global	_gSendingReadCtrlBits
+  2427                           	global	_gSendingReadCtrlBits
+  2428  000000                     _gSendingReadCtrlBits  equ     1
+  2429                           
+  2430                           	DABS	1,1,1	;_gSendingReadCtrlBits
+  2431                           	global	_gSendingWriteCtrlBits
+  2432                           	global	_gSendingWriteCtrlBits
+  2433  000000                     _gSendingWriteCtrlBits  equ     2
+  2434                           
+  2435                           	DABS	1,2,1	;_gSendingWriteCtrlBits
+  2436                           	global	_ANSEL0
+  2437  000000                     _ANSEL0	equ	0xFB8
+  2438                           	global	_OSCCON
+  2439  000000                     _OSCCON	equ	0xFD3
+  2440                           	global	_PORTB
+  2441  000000                     _PORTB	equ	0xF81
+  2442                           	global	_RCREG
+  2443  000000                     _RCREG	equ	0xFAE
+  2444                           	global	_RCSTA
+  2445  000000                     _RCSTA	equ	0xFAB
+  2446                           	global	_SPBRG
+  2447  000000                     _SPBRG	equ	0xFAF
+  2448                           	global	_SSPADD
+  2449  000000                     _SSPADD	equ	0xFC8
+  2450                           	global	_SSPCONbits
+  2451  000000                     _SSPCONbits	equ	0xFC6
+  2452                           	global	_SSPSTATbits
+  2453  000000                     _SSPSTATbits	equ	0xFC7
+  2454                           	global	_TRISB
+  2455  000000                     _TRISB	equ	0xF93
+  2456                           	global	_TRISC
+  2457  000000                     _TRISC	equ	0xF94
+  2458                           	global	_TRISD
+  2459  000000                     _TRISD	equ	0xF95
+  2460                           	global	_TRISDbits
+  2461  000000                     _TRISDbits	equ	0xF95
+  2462                           	global	_TXREG
+  2463  000000                     _TXREG	equ	0xFAD
+  2464                           	global	_TXSTA
+  2465  000000                     _TXSTA	equ	0xFAC
+  2466                           	global	_BF
+  2467  000000                     _BF	equ	0x7E38
+  2468                           	global	_BRG16
+  2469  000000                     _BRG16	equ	0x7D53
+  2470                           	global	_GIE
+  2471  000000                     _GIE	equ	0x7F97
+  2472                           	global	_PEIE
+  2473  000000                     _PEIE	equ	0x7F96
+  2474                           	global	_RCIF
+  2475  000000                     _RCIF	equ	0x7CF5
+  2476                           	global	_SSPIE
+  2477  000000                     _SSPIE	equ	0x7CEB
+  2478                           	global	_SSPIF
+  2479  000000                     _SSPIF	equ	0x7CF3
+  2480                           	global	_SSPOV
+  2481  000000                     _SSPOV	equ	0x7E36
+  2482                           	global	_TXIF
+  2483  000000                     _TXIF	equ	0x7CF4
+  2484                           	global	_WCOL
+  2485  000000                     _WCOL	equ	0x7E37
+  2486                           	
+  2487  000301                     STR_2:		; BSR set to: ?
+  2488                           
+  2489  000301  57                 	db	87	;'W'
+  2490  000302  72                 	db	114	;'r'
+  2491  000303  69                 	db	105	;'i'
+  2492  000304  74                 	db	116	;'t'
+  2493  000305  65                 	db	101	;'e'
+  2494  000306  20                 	db	32
+  2495  000307  63                 	db	99	;'c'
+  2496  000308  6F                 	db	111	;'o'
+  2497  000309  6C                 	db	108	;'l'
+  2498  00030A  6C                 	db	108	;'l'
+  2499  00030B  69                 	db	105	;'i'
+  2500  00030C  73                 	db	115	;'s'
+  2501  00030D  69                 	db	105	;'i'
+  2502  00030E  6F                 	db	111	;'o'
+  2503  00030F  6E                 	db	110	;'n'
+  2504  000310  20                 	db	32
+  2505  000311  44                 	db	68	;'D'
+  2506  000312  65                 	db	101	;'e'
+  2507  000313  74                 	db	116	;'t'
+  2508  000314  65                 	db	101	;'e'
+  2509  000315  63                 	db	99	;'c'
+  2510  000316  74                 	db	116	;'t'
+  2511  000317  65                 	db	101	;'e'
+  2512  000318  64                 	db	100	;'d'
+  2513  000319  2E                 	db	46
+  2514  00031A  20                 	db	32
+  2515  00031B  57                 	db	87	;'W'
+  2516  00031C  72                 	db	114	;'r'
+  2517  00031D  69                 	db	105	;'i'
+  2518  00031E  74                 	db	116	;'t'
+  2519  00031F  65                 	db	101	;'e'
+  2520  000320  20                 	db	32
+  2521  000321  66                 	db	102	;'f'
+  2522  000322  61                 	db	97	;'a'
+  2523  000323  69                 	db	105	;'i'
+  2524  000324  6C                 	db	108	;'l'
+  2525  000325  65                 	db	101	;'e'
+  2526  000326  64                 	db	100	;'d'
+  2527  000327  00                 	db	0
+  2528                           	
+  2529  000328                     STR_3:		; BSR set to: ?
+  2530                           
+  2531  000328  52                 	db	82	;'R'
+  2532  000329  65                 	db	101	;'e'
+  2533  00032A  63                 	db	99	;'c'
+  2534  00032B  65                 	db	101	;'e'
+  2535  00032C  69                 	db	105	;'i'
+  2536  00032D  76                 	db	118	;'v'
+  2537  00032E  65                 	db	101	;'e'
+  2538  00032F  20                 	db	32
+  2539  000330  4F                 	db	79	;'O'
+  2540  000331  76                 	db	118	;'v'
+  2541  000332  65                 	db	101	;'e'
+  2542  000333  72                 	db	114	;'r'
+  2543  000334  66                 	db	102	;'f'
+  2544  000335  6C                 	db	108	;'l'
+  2545  000336  6F                 	db	111	;'o'
+  2546  000337  77                 	db	119	;'w'
+  2547  000338  00                 	db	0
+  2548                           	
+  2549  000339                     STR_7:		; BSR set to: ?
+  2550                           
+  2551  000339  53                 	db	83	;'S'
+  2552  00033A  53                 	db	83	;'S'
+  2553  00033B  50                 	db	80	;'P'
+  2554  00033C  42                 	db	66	;'B'
+  2555  00033D  55                 	db	85	;'U'
+  2556  00033E  46                 	db	70	;'F'
+  2557  00033F  20                 	db	32
+  2558  000340  69                 	db	105	;'i'
+  2559  000341  73                 	db	115	;'s'
+  2560  000342  20                 	db	32
+  2561  000343  46                 	db	70	;'F'
+  2562  000344  75                 	db	117	;'u'
+  2563  000345  6C                 	db	108	;'l'
+  2564  000346  6C                 	db	108	;'l'
+  2565  000347  00                 	db	0
+  2566                           	
+  2567  000348                     STR_9:		; BSR set to: ?
+  2568                           
+  2569  000348  53                 	db	83	;'S'
+  2570  000349  74                 	db	116	;'t'
+  2571  00034A  61                 	db	97	;'a'
+  2572  00034B  72                 	db	114	;'r'
+  2573  00034C  74                 	db	116	;'t'
+  2574  00034D  20                 	db	32
+  2575  00034E  44                 	db	68	;'D'
+  2576  00034F  65                 	db	101	;'e'
+  2577  000350  74                 	db	116	;'t'
+  2578  000351  65                 	db	101	;'e'
+  2579  000352  63                 	db	99	;'c'
+  2580  000353  74                 	db	116	;'t'
+  2581  000354  65                 	db	101	;'e'
+  2582  000355  64                 	db	100	;'d'
+  2583  000356  00                 	db	0
+  2584                           	
+  2585  000357                     STR_10:		; BSR set to: ?
+  2586                           
+  2587  000357  53                 	db	83	;'S'
+  2588  000358  74                 	db	116	;'t'
+  2589  000359  61                 	db	97	;'a'
+  2590  00035A  72                 	db	114	;'r'
+  2591  00035B  74                 	db	116	;'t'
+  2592  00035C  20                 	db	32
+  2593  00035D  46                 	db	70	;'F'
+  2594  00035E  69                 	db	105	;'i'
+  2595  00035F  6E                 	db	110	;'n'
+  2596  000360  69                 	db	105	;'i'
+  2597  000361  73                 	db	115	;'s'
+  2598  000362  68                 	db	104	;'h'
+  2599  000363  65                 	db	101	;'e'
+  2600  000364  64                 	db	100	;'d'
+  2601  000365  00                 	db	0
+  2602                           	
+  2603  000366                     STR_6:		; BSR set to: ?
+  2604                           
+  2605  000366  53                 	db	83	;'S'
+  2606  000367  74                 	db	116	;'t'
+  2607  000368  6F                 	db	111	;'o'
+  2608  000369  70                 	db	112	;'p'
+  2609  00036A  20                 	db	32
+  2610  00036B  44                 	db	68	;'D'
+  2611  00036C  65                 	db	101	;'e'
+  2612  00036D  74                 	db	116	;'t'
+  2613  00036E  65                 	db	101	;'e'
+  2614  00036F  63                 	db	99	;'c'
+  2615  000370  74                 	db	116	;'t'
+  2616  000371  65                 	db	101	;'e'
+  2617  000372  64                 	db	100	;'d'
+  2618  000373  00                 	db	0
+  2619                           	
+  2620  000374                     STR_12:		; BSR set to: ?
+  2621                           
+  2622  000374  53                 	db	83	;'S'
+  2623  000375  74                 	db	116	;'t'
+  2624  000376  61                 	db	97	;'a'
+  2625  000377  72                 	db	114	;'r'
+  2626  000378  74                 	db	116	;'t'
+  2627  000379  69                 	db	105	;'i'
+  2628  00037A  6E                 	db	110	;'n'
+  2629  00037B  67                 	db	103	;'g'
+  2630  00037C  20                 	db	32
+  2631  00037D  49                 	db	73	;'I'
+  2632  00037E  32                 	db	50	;'2'
+  2633  00037F  43                 	db	67	;'C'
+  2634  000380  00                 	db	0
+  2635                           	
+  2636  000381                     STR_4:		; BSR set to: ?
+  2637                           
+  2638  000381  44                 	db	68	;'D'
+  2639  000382  61                 	db	97	;'a'
+  2640  000383  74                 	db	116	;'t'
+  2641  000384  61                 	db	97	;'a'
+  2642  000385  20                 	db	32
+  2643  000386  52                 	db	82	;'R'
+  2644  000387  65                 	db	101	;'e'
+  2645  000388  63                 	db	99	;'c'
+  2646  000389  76                 	db	118	;'v'
+  2647  00038A  64                 	db	100	;'d'
+  2648  00038B  00                 	db	0
+  2649                           	
+  2650  00038C                     STR_13:		; BSR set to: ?
+  2651                           
+  2652  00038C  53                 	db	83	;'S'
+  2653  00038D  53                 	db	83	;'S'
+  2654  00038E  50                 	db	80	;'P'
+  2655  00038F  49                 	db	73	;'I'
+  2656  000390  46                 	db	70	;'F'
+  2657  000391  20                 	db	32
+  2658  000392  30                 	db	48	;'0'
+  2659  000393  20                 	db	32
+  2660  000394  00                 	db	0
+  2661                           	
+  2662  000395                     STR_8:		; BSR set to: ?
+  2663                           
+  2664  000395  53                 	db	83	;'S'
+  2665  000396  53                 	db	83	;'S'
+  2666  000397  50                 	db	80	;'P'
+  2667  000398  45                 	db	69	;'E'
+  2668  000399  4E                 	db	78	;'N'
+  2669  00039A  20                 	db	32
+  2670  00039B  30                 	db	48	;'0'
+  2671  00039C  20                 	db	32
+  2672  00039D  00                 	db	0
+  2673                           	
+  2674  00039E                     STR_15:		; BSR set to: ?
+  2675                           
+  2676  00039E  53                 	db	83	;'S'
+  2677  00039F  53                 	db	83	;'S'
+  2678  0003A0  50                 	db	80	;'P'
+  2679  0003A1  49                 	db	73	;'I'
+  2680  0003A2  46                 	db	70	;'F'
+  2681  0003A3  20                 	db	32
+  2682  0003A4  31                 	db	49	;'1'
+  2683  0003A5  00                 	db	0
+  2684                           	
+  2685  0003A6                     STR_1:		; BSR set to: ?
+  2686                           
+  2687  0003A6  49                 	db	73	;'I'
+  2688  0003A7  52                 	db	82	;'R'
+  2689  0003A8  51                 	db	81	;'Q'
+  2690  0003A9  00                 	db	0
+  2691  000000                     STR_5	equ	STR_9+0
+  2692  000000                     STR_11	equ	STR_6+0
+  2693  000000                     STR_14	equ	STR_15+0
+  2694  0003AA  00                 	db 0	; dummy byte at the end
+  2695                           	psect	intsave_regs,class=BIGRAM,space=1
+  2696                           	PSECT	param1,class=BANK1,space=1
+  2697                           	GLOBAL	__Lparam1
+  2698                           	FNCONF	param1,??,?
+  2699                           	GLOBAL	__Labsbss0
+  2700  000000                     __Labsbss0	EQU	0
+  2701                           	GLOBAL	__Habsbss0
+  2702  000000                     __Habsbss0	EQU	37
+  2703                           GLOBAL	__Lparam, __Hparam
+  2704                           GLOBAL	__Lparam1, __Hparam1
+  2705  000000                     __Lparam	EQU	__Lparam1
+  2706  000000                     __Hparam	EQU	__Hparam1
+
+
+HI-TECH Software PICC-18 Macro Assembler V9.66 build 8870 
+Symbol Table                                           Sat Dec 22 02:02:13 2012
+
+              _SSPSTATbits 000FC7                         _BF 007E38  
+     __end_ofi2_sendToUart 0720                        l260 0A70  
+                      l261 0A34                        l262 0A46  
+                      l263 0A4C                        l521 0856  
+                      l265 0A5A                        l514 08B0  
+                      l266 0C20                        l522 0BC6  
+                      l515 083C                        l516 08AC  
+                      l524 0BE2                        l525 0BD0  
+                      l518 084E                        l519 0886  
+                      l770 09FC                        l771 09FC  
+                      l772 09E6                        l773 0978  
+                      l774 09E2                        l776 0C3C  
+                      l784 07EE                        l777 0C2A  
+                      l785 0754                        l794 0B58  
+                      l778 0C26                        l786 07D6  
+                      l795 0AF6                        l779 0C38  
+                      l796 0AF2                        l788 07A6  
+                      l797 0B1E                        _GIE 007F97  
+                      _ISR 03AC                        u365 0998  
+                      wreg 000FE8          ?i2_uart_send_byte 0133  
+                     ?_ISR 011C         ??i2_uart_send_byte 0134  
+                     l1080 0568                       l1081 0594  
+                     l1083 063A                       l1084 0594  
+                     l1077 064E                       l1085 061C  
+                     l1078 063A                       l1079 0582  
+                     STR_1 03A6                       STR_2 0301  
+                     STR_3 0328                       STR_4 0381  
+                     STR_5 0348                       STR_6 0366  
+                     STR_7 0339                       STR_8 0395  
+                     STR_9 0348                       u1030 0554  
+                     u1031 0550                       u1040 0594  
+                     u1200 0A5A                       u1041 0590  
+                     u1201 0A56                       u1050 05E6  
+                     u1210 0838                       u1051 05E2  
+                     u1211 0834                       u1220 0886  
+                     u1221 0882                       u1230 08AC  
+                     u1231 08A8                       u1240 0C38  
+                     u1241 0C34                       u1250 0B1E  
+                     u1251 0B1A                       u1180 07D6  
+                     u1181 07D2                       u1190 0A1E  
+                     u1191 0A1A                       _PEIE 007F96  
+                     _RCIF 007CF5      eusart_init@usart_mode 0102  
+                     _WCOL 007E37                       _TXIF 007CF4  
+                     _main 0BC8                       _init 0B5A  
+                     fsr0h 000FEA                       fsr1h 000FE2  
+                     fsr0l 000FE9                       fsr2h 000FDA  
+                     fsr1l 000FE1                       fsr2l 000FD9  
+                     pclat 000FFA                 i2delay@cnt 0133  
+                     prodh 000FF4                       prodl 000FF3  
+          __end_ofi2_delay 0974                       start 0018  
+          eusart_init@baud 0108            eusart_init@fosc 0104  
+         ??_uart_send_byte 0109                      ??_ISR 011C  
+             _gSendingData 000003                      ?_main 0100  
+                    ?_init 0100                      STR_10 0357  
+                    STR_12 0374                      STR_13 038C  
+                    STR_14 039E                      STR_15 039E  
+                    _BRG16 007D53            __end_of___lldiv 0650  
+                    i2l250 04C6                      i2l251 04E6  
+                    i2l244 04E8                      i2l245 04E6  
+                    i2l246 0428                      i2l247 044A  
+                    i2l248 0486                      i2l521 0918  
+                    i2l249 04A6                      i2l514 0972  
+                    i2l515 08FE                      i2l516 096E  
+                    i2l518 0910                      i2l519 0948  
+                    i2l776 0C04                      i2l784 071E  
+                    i2l777 0BF2                      i2l785 0684  
+                    i2l794 0AE4                      i2l778 0BEE  
+                    i2l786 0706                      i2l795 0A82  
+                    i2l779 0C00                      i2l796 0A7E  
+                    i2l788 06D6                      i2l797 0AAA  
+                    _RCREG 000FAE                      _RCSTA 000FAB  
+                    _SPBRG 000FAF                      _PORTB 000F81  
+                    _TRISB 000F93                      _TRISC 000F94  
+                    _TRISD 000F95                      _SSPIE 007CEB  
+                    _SSPIF 007CF3                      _SSPOV 007E36  
+                    _TXREG 000FAD                      _TXSTA 000FAC  
+                    _delay 07F0               ?_eusart_init 0102  
+                    tablat 000FF5                      status 000FD8  
+         __end_ofi2_strlen 0AE6               __end_of_main 0BEA  
+             __end_of_init 0BC8                     ??_main 0100  
+                   ??_init 0100              __activetblptr 000001  
+               i2strlen@cp 0135                     ?_delay 0108  
+                   _ANSEL0 000FB8                  ??i2_delay 0135  
+     i2uart_send_byte@byte 0133                     i2u1100 0406  
+                   i2u1101 0402                     i2u1110 0414  
+                   i2u1111 0410                     i2u1120 0436  
+                   i2u1121 0432                     i2u1210 08FA  
+                   i2u1130 045A                     i2u1211 08F6  
+                   i2u1131 0456                     i2u1220 0948  
+                   i2u1140 0468                     i2u1221 0944  
+                   i2u1141 0464                     i2u1230 096E  
+                   i2u1150 0494                     i2u1231 096A  
+                   i2u1151 0490                     i2u1240 0C00  
+                   i2u1160 04B4                     i2u1241 0BFC  
+                   i2u1161 04B0                     i2u1250 0AAA  
+                   i2u1170 04D4                     i2u1090 03F8  
+                   i2u1251 0AA6                     i2u1171 04D0  
+                   i2u1091 03F4                     i2u1180 0706  
+                   i2u1181 0702                     _OSCCON 000FD3  
+                   _SSPADD 000FC8                     __Ldata 000000  
+                ??___lldiv 0116           __end_of_init_I2C 0C22  
+                   delay@i 010C                     delay@j 010A  
+                   _strlen 0AE6               __mediumconst 03AC  
+                   tblptrh 000FF7                     tblptrl 000FF6  
+                   tblptru 000FF8               i2_sendToUart 0650  
+               _gExpectAck 000004                 __accesstop 0060  
+            __end_of_delay 08B2                    ??_delay 010A  
+                ?i2_strlen 0133                sendToUart@i 0104  
+                  ?_strlen 0108                 ??i2_strlen 0135  
+                  i2_delay 08B2                  ?_init_I2C 0102  
+                  __Hparam 013A                    __Lparam 0100  
+                  _gBuffer 000005              sendToUart@pkt 0100  
+                  ___lldiv 0522                    __ramtop 0300  
+               _sendToUart 0720                 ??_init_I2C 0102  
+            __Lmediumconst 03AC                    int_func 0008  
+    _gSendingWriteCtrlBits 000002            ___lldiv@divisor 0112  
+          ___lldiv@counter 0116          __end_of_start_I2C 0A72  
+                  strlen@s 0108                  _TRISDbits 000F95  
+       eusart_init@tx_mode 0103           i2_uart_send_byte 0BEA  
+           __end_of_strlen 0B5A                __end_of_ISR 0522  
+                __Habsbss0 000025                  __Labsbss0 000000  
+              ?_sendToUart 0100                  i2strlen@s 0133  
+                 ??_strlen 010A                  _gRecvData 000000  
+            ??_eusart_init 010A                   ?i2_delay 0133  
+         i2sendToUart@size 012D                   ?___lldiv 010E  
+     _gSendingReadCtrlBits 000001                __smallconst 0300  
+           _uart_send_byte 0C22        __end_of_eusart_init 09FE  
+   __end_of_uart_send_byte 0C3E                  _start_I2C 09FE  
+ __end_ofi2_uart_send_byte 0C06                   i2delay@i 0137  
+                 i2delay@j 0135                   i2_strlen 0A72  
+            ?i2_sendToUart 012B         uart_send_byte@byte 0108  
+                 __Hparam1 013A                   __Lparam1 0100  
+             __Lsmallconst 0300             sendToUart@size 0102  
+               ?_start_I2C 0100            ?_uart_send_byte 0108  
+          i2sendToUart@pkt 012B             ??i2_sendToUart 012D  
+              _eusart_init 0974               ??_sendToUart 0102  
+                 _init_I2C 0C06                   delay@cnt 0108  
+       __end_of_sendToUart 07F0                   intlevel2 0C3E  
+         ___lldiv@dividend 010E                ??_start_I2C 0100  
+            i2sendToUart@i 012F           ___lldiv@quotient 0117  
+                 strlen@cp 010A                 _SSPCONbits 000FC6  

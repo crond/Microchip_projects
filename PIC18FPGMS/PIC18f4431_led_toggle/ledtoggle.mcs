@@ -1,0 +1,185 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=E:\MPLAB Projects\PIC18f4431\main.p1
+Folder=Intermediary
+DeviceName=PIC18F4431
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\bin\picc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|main.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File001]
+Location=E:\MPLAB Projects\PIC18f4431\ledtoggle.cof
+Folder=Output
+DeviceName=PIC18F4431
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\bin\picc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|main.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File002]
+Location=E:\MPLAB Projects\PIC18f4431\ledtoggle.hex
+Folder=Output
+DeviceName=PIC18F4431
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\bin\picc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|main.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File003]
+Location=E:\MPLAB Projects\PIC18f4431\ledtoggle.sym
+Folder=Output
+DeviceName=PIC18F4431
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\bin\picc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|main.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File004]
+Location=E:\MPLAB Projects\PIC18f4431\ledtoggle.map
+Folder=Output
+DeviceName=PIC18F4431
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\bin\picc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|main.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File005]
+Location=E:\MPLAB Projects\PIC18f4431\ledtoggle.hxl
+Folder=Output
+DeviceName=PIC18F4431
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\bin\picc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|main.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File006]
+Location=E:\MPLAB Projects\PIC18f4431\startup.lst
+Folder=Output
+DeviceName=PIC18F4431
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\bin\picc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|main.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File007]
+Location=E:\MPLAB Projects\PIC18f4431\startup.rlf
+Folder=Output
+DeviceName=PIC18F4431
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\bin\picc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|main.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File008]
+Location=E:\MPLAB Projects\PIC18f4431\doprnt.p1
+Folder=Output
+DeviceName=PIC18F4431
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\bin\picc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|main.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File009]
+Location=E:\MPLAB Projects\PIC18f4431\doprnt.pre
+Folder=Output
+DeviceName=PIC18F4431
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\bin\picc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|main.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File010]
+Location=E:\MPLAB Projects\PIC18f4431\ledtoggle.obj
+Folder=Output
+DeviceName=PIC18F4431
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\bin\picc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|main.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File011]
+Location=E:\MPLAB Projects\PIC18f4431\ledtoggle.lst
+Folder=Output
+DeviceName=PIC18F4431
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\bin\picc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|main.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File012]
+Location=E:\MPLAB Projects\PIC18f4431\ledtoggle.rlf
+Folder=Output
+DeviceName=PIC18F4431
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\bin\picc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|main.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File013]
+Location=E:\MPLAB Projects\PIC18f4431\ledtoggle.sdb
+Folder=Output
+DeviceName=PIC18F4431
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\bin\picc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|main.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=

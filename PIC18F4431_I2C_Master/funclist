@@ -1,0 +1,18 @@
+_delay: CODE, 2048 0 194
+i2_strlen: CODE, 2862 0 116
+___lldiv: CODE, 1330 0 302
+_uart_send_byte: CODE, 3298 0 28
+i2_sendToUart: CODE, 1632 0 208
+_main: CODE, 3204 0 34
+_strlen: CODE, 2978 0 116
+_eusart_init: CODE, 2724 0 138
+_sendToUart: CODE, 1840 0 208
+i2_delay: CODE, 2242 0 194
+_ISR: CODE, 956 0 374
+i2_uart_send_byte: CODE, 3270 0 28
+_init_I2C: CODE, 3238 0 32
+_start_I2C: CODE, 2436 0 146
+_invokeStop: CODE, 3326 0 6
+_invokeStart: CODE, 2582 0 142
+_init: CODE, 3094 0 110
+Total: 2376

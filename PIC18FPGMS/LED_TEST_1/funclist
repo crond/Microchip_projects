@@ -1,0 +1,6 @@
+_delay: CODE, 554 0 66
+_do_timer: CODE, 646 0 22
+_anuche_init: CODE, 620 0 26
+_main: CODE, 388 0 166
+_ISR: CODE, 78 0 310
+Total: 590

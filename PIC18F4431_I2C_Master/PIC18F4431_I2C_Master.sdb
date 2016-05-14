@@ -1,0 +1,311 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4431 ]
+"2081 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\include\pic18f4431.h
+[s S34 . 1 `Vuc 1 BF 1 0 :1:0 
+`Vuc 1 UA 1 0 :1:1 
+`Vuc 1 R_nW 1 0 :1:2 
+`Vuc 1 S 1 0 :1:3 
+`Vuc 1 P 1 0 :1:4 
+`Vuc 1 D_nA 1 0 :1:5 
+`Vuc 1 CKE 1 0 :1:6 
+`Vuc 1 SMP 1 0 :1:7 
+]
+[s S43 . 1 `Vuc 1 . 1 0 :1:0 
+`Vuc 1 . 1 0 :1:1 
+`Vuc 1 . 1 0 :1:2 
+`Vuc 1 . 1 0 :1:3 
+`Vuc 1 . 1 0 :1:4 
+`Vuc 1 . 1 0 :1:5 
+`Vuc 1 . 1 0 :1:6 
+`Vuc 1 . 1 0 :1:7 
+]
+[s S52 . 1 `Vuc 1 . 1 0 :2:0 
+`Vuc 1 R_W 1 0 :1:2 
+`Vuc 1 . 1 0 :2:3 
+`Vuc 1 D_A 1 0 :1:5 
+]
+[s S57 . 1 `Vuc 1 . 1 0 :2:0 
+`Vuc 1 nW 1 0 :1:2 
+`Vuc 1 . 1 0 :2:3 
+`Vuc 1 nA 1 0 :1:5 
+]
+[s S62 . 1 `Vuc 1 . 1 0 :2:0 
+`Vuc 1 nWRITE 1 0 :1:2 
+`Vuc 1 . 1 0 :2:3 
+`Vuc 1 nADDRESS 1 0 :1:5 
+]
+[s S67 . 1 `Vuc 1 . 1 0 :2:0 
+`Vuc 1 READ_WRITE 1 0 :1:2 
+`Vuc 1 . 1 0 :2:3 
+`Vuc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[s S72 . 1 `Vuc 1 . 1 0 :2:0 
+`Vuc 1 R 1 0 :1:2 
+`Vuc 1 . 1 0 :2:3 
+`Vuc 1 D 1 0 :1:5 
+]
+[u S77 . 1 `S34 1 . 1 0 `S43 1 . 1 0 `S52 1 . 1 0 `S57 1 . 1 0 `S62 1 . 1 0 `S67 1 . 1 0 `S72 1 . 1 0 ]
+"2150
+[s S86 . 1 `Vuc 1 SSPM 1 0 :4:0 
+`Vuc 1 CKP 1 0 :1:4 
+`Vuc 1 SSPEN 1 0 :1:5 
+`Vuc 1 SSPOV 1 0 :1:6 
+`Vuc 1 WCOL 1 0 :1:7 
+]
+[s S92 . 1 `Vuc 1 SSPM0 1 0 :1:0 
+`Vuc 1 SSPM1 1 0 :1:1 
+`Vuc 1 SSPM2 1 0 :1:2 
+`Vuc 1 SSPM3 1 0 :1:3 
+]
+[u S97 . 1 `S86 1 . 1 0 `S92 1 . 1 0 ]
+"1212
+[s S103 . 1 `Vuc 1 TRISD0 1 0 :1:0 
+`Vuc 1 TRISD1 1 0 :1:1 
+`Vuc 1 TRISD2 1 0 :1:2 
+`Vuc 1 TRISD3 1 0 :1:3 
+`Vuc 1 TRISD4 1 0 :1:4 
+`Vuc 1 TRISD5 1 0 :1:5 
+`Vuc 1 TRISD6 1 0 :1:6 
+`Vuc 1 TRISD7 1 0 :1:7 
+]
+[s S112 . 1 `Vuc 1 RD0 1 0 :1:0 
+`Vuc 1 RD1 1 0 :1:1 
+`Vuc 1 RD2 1 0 :1:2 
+`Vuc 1 RD3 1 0 :1:3 
+`Vuc 1 RD4 1 0 :1:4 
+`Vuc 1 RD5 1 0 :1:5 
+`Vuc 1 RD6 1 0 :1:6 
+`Vuc 1 RD7 1 0 :1:7 
+]
+[u S121 . 1 `S103 1 . 1 0 `S112 1 . 1 0 ]
+"1252
+[s S125 . 1 `Vuc 1 RD0 1 0 :1:0 
+`Vuc 1 RD1 1 0 :1:1 
+`Vuc 1 RD2 1 0 :1:2 
+`Vuc 1 RD3 1 0 :1:3 
+`Vuc 1 RD4 1 0 :1:4 
+`Vuc 1 RD5 1 0 :1:5 
+`Vuc 1 RD6 1 0 :1:6 
+`Vuc 1 RD7 1 0 :1:7 
+]
+[u S134 . 1 `S112 1 . 1 0 ]
+"9 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\i2c.c
+[v F2862 `(v  1 t 0 ]
+"5 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\sources\lldiv.c
+[v ___lldiv `(ul  1 e 4 0 ]
+"5 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\sources\strlen.c
+[v _strlen `(ui  1 e 2 0 ]
+"9 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\i2c.c
+[v _ISR `I(v  1 e 0 0 ]
+"80
+[v _invokeStop `(i  1 e 2 0 ]
+"91
+[v _invokeStart `(i  1 e 2 0 ]
+"113
+[v _start_I2C `(i  1 e 2 0 ]
+"135
+[v _init_I2C `(i  1 e 2 0 ]
+"18 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\main.c
+[v _delay `(i  1 e 2 0 ]
+"29
+[v _init `(i  1 e 2 0 ]
+"54
+[v _main `(i  1 e 2 0 ]
+"6 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\uart.c
+[v _eusart_init `(v  1 e 0 0 ]
+"32
+[v _uart_send_byte `(v  1 e 0 0 ]
+"50
+[v _sendToUart `(i  1 e 2 0 ]
+"789 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\include\pic18f4431.h
+[v _PORTB `Vuc  1 e 1 @3969 ]
+"920
+[v _PORTDbits `S134  1 e 1 @3971 ]
+"1126
+[v _TRISB `Vuc  1 e 1 @3987 ]
+"1169
+[v _TRISC `Vuc  1 e 1 @3988 ]
+"1212
+[v _TRISD `Vuc  1 e 1 @3989 ]
+"1252
+[v _TRISDbits `S121  1 e 1 @3989 ]
+"1382
+[v _SSPIE `Vb  1 e 0 @31979 ]
+"1409
+[v _SSPIF `Vb  1 e 0 @31987 ]
+"1410
+[v _TXIF `Vb  1 e 0 @31988 ]
+"1411
+[v _RCIF `Vb  1 e 0 @31989 ]
+"1617
+[v _BRG16 `Vb  1 e 0 @32083 ]
+"1644
+[v _RCSTA `Vuc  1 e 1 @4011 ]
+"1673
+[v _TXSTA `Vuc  1 e 1 @4012 ]
+"1697
+[v _TXREG `Vuc  1 e 1 @4013 ]
+"1701
+[v _RCREG `Vuc  1 e 1 @4014 ]
+"1705
+[v _SPBRG `Vuc  1 e 1 @4015 ]
+"1806
+[v _ANSEL0 `Vuc  1 e 1 @4024 ]
+"2056
+[v _SSPOV `Vb  1 e 0 @32310 ]
+"2057
+[v _WCOL `Vb  1 e 0 @32311 ]
+"2076
+[v _SSPCONbits `S97  1 e 1 @4038 ]
+"2081
+[v _BF `Vb  1 e 0 @32312 ]
+"2150
+[v _SSPSTATbits `S77  1 e 1 @4039 ]
+"2153
+[v _SSPADD `Vuc  1 e 1 @4040 ]
+"2157
+[v _SSPBUF `Vuc  1 e 1 @4041 ]
+"2330
+[v _OSCCON `Vuc  1 e 1 @4051 ]
+"2625
+[v _PEIE `Vb  1 e 0 @32662 ]
+"2626
+[v _GIE `Vb  1 e 0 @32663 ]
+"4 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\i2c.c
+[v _gSendingData `uc  1 e 1 @3 ]
+[v _gSendingReadCtrlBits `uc  1 e 1 @1 ]
+[v _gRecvData `uc  1 e 1 @0 ]
+[v _gSendingWriteCtrlBits `uc  1 e 1 @2 ]
+[v _gExpectAck `uc  1 e 1 @4 ]
+"5
+[v _gBuffer `[32]uc  1 e 32 @5 ]
+"54 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\main.c
+[v _main `(i  1 e 2 0 ]
+{
+"63
+} 0
+"113 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\i2c.c
+[v _start_I2C `(i  1 e 2 0 ]
+{
+"131
+} 0
+"29 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\main.c
+[v _init `(i  1 e 2 0 ]
+{
+"51
+} 0
+"91 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\i2c.c
+[v _invokeStart `(i  1 e 2 0 ]
+{
+"110
+} 0
+"135
+[v _init_I2C `(i  1 e 2 0 ]
+{
+"159
+} 0
+"6 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\uart.c
+[v _eusart_init `(v  1 e 0 0 ]
+{
+[v _usart_mode `uc  1 p 1 0 ]
+[v _tx_mode `uc  1 p 1 1 ]
+[v _fosc `ul  1 p 4 2 ]
+[v _baud `ui  1 p 2 6 ]
+"29
+} 0
+"80 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\i2c.c
+[v _invokeStop `(i  1 e 2 0 ]
+{
+"88
+} 0
+"50 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\uart.c
+[v _sendToUart `(i  1 e 2 0 ]
+{
+"52
+[v _size `i  1 a 2 0 ]
+"51
+[v _i `i  1 a 2 2 ]
+"50
+[v _pkt `*.cDCuc  1 p 2 0 ]
+"62
+} 4
+"5 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\sources\lldiv.c
+[v ___lldiv `(ul  1 e 4 0 ]
+{
+"7
+[v _counter `uc  1 a 1 0 ]
+"6
+[v _quotient `ul  1 a 4 1 ]
+"5
+[v _dividend `ul  1 p 4 0 ]
+[v _divisor `ul  1 p 4 4 ]
+"26
+} 5
+"18 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\main.c
+[v _delay `(i  1 e 2 0 ]
+{
+"19
+[v _j `i  1 a 2 0 ]
+[v _i `i  1 a 2 2 ]
+"18
+[v _cnt `i  1 p 2 0 ]
+"27
+} 4
+"5 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\sources\strlen.c
+[v _strlen `(ui  1 e 2 0 ]
+{
+"6
+[v _cp `*.cDCuc  1 a 2 0 ]
+"5
+[v _s `*.cDCuc  1 p 2 0 ]
+"12
+} 2
+"32 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\uart.c
+[v _uart_send_byte `(v  1 e 0 0 ]
+{
+[v _byte `uc  1 p 1 0 ]
+"38
+} 0
+"9 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\i2c.c
+[v _ISR `I(v  1 e 0 0 ]
+{
+"43
+} 0
+"50 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\uart.c
+[v _sendToUart `(i  1 e 2 0 ]
+{
+"52
+[v _size `i  1 a 2 0 ]
+"51
+[v _i `i  1 a 2 2 ]
+"50
+[v _pkt `*.cDCuc  1 p 2 0 ]
+"62
+} 4
+"18 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\main.c
+[v _delay `(i  1 e 2 0 ]
+{
+"19
+[v _j `i  1 a 2 0 ]
+[v _i `i  1 a 2 2 ]
+"18
+[v _cnt `i  1 p 2 0 ]
+"27
+} 4
+"32 G:\root\MPLAB Projects\PIC18F4431_I2C_Master\PIC18F4431_I2C_Master\uart.c
+[v _uart_send_byte `(v  1 e 0 0 ]
+{
+[v _byte `uc  1 p 1 0 ]
+"38
+} 0
+"5 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\sources\strlen.c
+[v _strlen `(ui  1 e 2 0 ]
+{
+"6
+[v _cp `*.cDCuc  1 a 2 0 ]
+"5
+[v _s `*.cDCuc  1 p 2 0 ]
+"12
+} 2

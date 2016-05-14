@@ -1,0 +1,798 @@
+
+
+HI-TECH Software LITE Macro Assembler (PIC18) V9.66 build 8870 
+                                                       Sun Jun 17 12:29:28 2012
+
+HI-TECH Software Omniscient Code Generator build 8870
+     1  000000                     opt subtitle "HI-TECH Software Omniscient Code G
+                                 enerator build 8870"
+     2                           
+     3                           	processor	18F4431
+     4  000000                     porta	equ	0F80h
+     5  000000                     portb	equ	0F81h
+     6  000000                     portc	equ	0F82h
+     7  000000                     portd	equ	0F83h
+     8  000000                     porte	equ	0F84h
+     9  000000                     lata	equ	0F89h
+    10  000000                     latb	equ	0F8Ah
+    11  000000                     latc	equ	0F8Bh
+    12  000000                     latd	equ	0F8Ch
+    13  000000                     late	equ	0F8Dh
+    14  000000                     trisa	equ	0F92h
+    15  000000                     trisb	equ	0F93h
+    16  000000                     trisc	equ	0F94h
+    17  000000                     trisd	equ	0F95h
+    18  000000                     trise	equ	0F96h
+    19  000000                     pie1	equ	0F9Dh
+    20  000000                     pir1	equ	0F9Eh
+    21  000000                     ipr1	equ	0F9Fh
+    22  000000                     pie2	equ	0FA0h
+    23  000000                     pir2	equ	0FA1h
+    24  000000                     ipr2	equ	0FA2h
+    25  000000                     t3con	equ	0FB1h
+    26  000000                     tmr3l	equ	0FB2h
+    27  000000                     tmr3h	equ	0FB3h
+    28  000000                     ccp1con	equ	0FBDh
+    29  000000                     ccpr1l	equ	0FBEh
+    30  000000                     ccpr1h	equ	0FBFh
+    31  000000                     adcon1	equ	0FC1h
+    32  000000                     adcon0	equ	0FC2h
+    33  000000                     adresl	equ	0FC3h
+    34  000000                     adresh	equ	0FC4h
+    35  000000                     sspcon2	equ	0FC5h
+    36  000000                     sspcon1	equ	0FC6h
+    37  000000                     sspstat	equ	0FC7h
+    38  000000                     sspadd	equ	0FC8h
+    39  000000                     sspbuf	equ	0FC9h
+    40  000000                     t2con	equ	0FCAh
+    41  000000                     pr2	equ	0FCBh
+    42  000000                     tmr2	equ	0FCCh
+    43  000000                     t1con	equ	0FCDh
+    44  000000                     tmr1l	equ	0FCEh
+    45  000000                     tmr1h	equ	0FCFh
+    46  000000                     rcon	equ	0FD0h
+    47  000000                     wdtcon	equ	0FD1h
+    48  000000                     lvdcon	equ	0FD2h
+    49  000000                     osccon	equ	0FD3h
+    50  000000                     t0con	equ	0FD5h
+    51  000000                     tmr0l	equ	0FD6h
+    52  000000                     tmr0h	equ	0FD7h
+    53  000000                     status	equ	0FD8h
+    54  000000                     fsr2	equ	0FD9h
+    55  000000                     fsr2l	equ	0FD9h
+    56  000000                     fsr2h	equ	0FDAh
+    57  000000                     plusw2	equ	0FDBh
+    58  000000                     preinc2	equ	0FDCh
+    59  000000                     postdec2	equ	0FDDh
+    60  000000                     postinc2	equ	0FDEh
+    61  000000                     indf2	equ	0FDFh
+    62  000000                     bsr	equ	0FE0h
+    63  000000                     fsr1	equ	0FE1h
+    64  000000                     fsr1l	equ	0FE1h
+    65  000000                     fsr1h	equ	0FE2h
+    66  000000                     plusw1	equ	0FE3h
+    67  000000                     preinc1	equ	0FE4h
+    68  000000                     postdec1	equ	0FE5h
+    69  000000                     postinc1	equ	0FE6h
+    70  000000                     indf1	equ	0FE7h
+    71  000000                     wreg	equ	0FE8h
+    72  000000                     fsr0	equ	0FE9h
+    73  000000                     fsr0l	equ	0FE9h
+    74  000000                     fsr0h	equ	0FEAh
+    75  000000                     plusw0	equ	0FEBh
+    76  000000                     preinc0	equ	0FECh
+    77  000000                     postdec0	equ	0FEDh
+    78  000000                     postinc0	equ	0FEEh
+    79  000000                     indf0	equ	0FEFh
+    80  000000                     intcon3	equ	0FF0h
+    81  000000                     intcon2	equ	0FF1h
+    82  000000                     intcon	equ	0FF2h
+    83  000000                     prod	equ	0FF3h
+    84  000000                     prodl	equ	0FF3h
+    85  000000                     prodh	equ	0FF4h
+    86  000000                     tablat	equ	0FF5h
+    87  000000                     tblptr	equ	0FF6h
+    88  000000                     tblptrl	equ	0FF6h
+    89  000000                     tblptrh	equ	0FF7h
+    90  000000                     tblptru	equ	0FF8h
+    91  000000                     pcl	equ	0FF9h
+    92  000000                     pclat	equ	0FFAh
+    93  000000                     pclath	equ	0FFAh
+    94  000000                     pclatu	equ	0FFBh
+    95  000000                     stkptr	equ	0FFCh
+    96  000000                     tosl	equ	0FFDh
+    97  000000                     tosh	equ	0FFEh
+    98  000000                     tosu	equ	0FFFh
+    99                           	global	__ramtop
+   100                           	global	__accesstop
+   101                           	GLOBAL	__activetblptr
+   102  000000                     __activetblptr	EQU	0
+   103                           	GLOBAL	__smallconst,__Lsmallconst
+   104  000000                     __smallconst	EQU	__Lsmallconst
+   105                           	GLOBAL	__mediumconst,__Lmediumconst
+   106  000000                     __mediumconst	EQU	__Lmediumconst
+   107                           	GLOBAL	__Ldata
+   108  000000                     __Ldata	EQU	0
+   109  000000                     setSlaveAddr@addrBkp	equ	??_setSlaveAddr+0
+   110                           	global	setSlaveAddr@addrBkp
+   111  000000                     setSlaveAddr@addr	equ	?_setSlaveAddr+0
+   112                           	global	setSlaveAddr@addr
+   113  000000                     delay@i	equ	??_delay+0
+   114                           	global	delay@i
+   115  000000                     delay@j	equ	??_delay+2
+   116                           	global	delay@j
+   117  000000                     delay@cnt	equ	?_delay+0
+   118                           	global	delay@cnt
+   119                           ;Data sizes: Strings 0, constant 0, data 0, bss 
+                                 0, persistent 0 stack 11
+   120                           	global	_main
+   121                           	global	??_main
+   122                           	global	?_main
+   123                           
+   124                           ; *************** function _main ***************
+                                 **
+   125                           ; Defined at:
+   126                           ;		line 71 in file "E:\MPLAB Projects\PIC18f4431
+                                 \main.c"
+   127                           ; Parameters:
+   128                           ;		None
+   129                           ; Auto variables:
+   130                           ;		None
+   131                           ; Return value:
+   132                           ;		type: int 
+   133                           ;		size: 2
+   134                           ; Registers used:
+   135                           ;		wreg, status,2, status,0, cstack
+   136                           ; Tracked objects:
+   137                           ;		On entry : 0/0
+   138                           ;		On exit  : 0/0
+   139                           ;		Unchanged: 0/0
+   140                           ; Data sizes:
+   141                           ;		Autos:    0
+   142                           ;		Params:   0
+   143                           ;		Temp:     1
+   144                           ;		Total:    1
+   145                           ; This function calls:
+   146                           ;		_init
+   147                           ;		_setSlaveAddr
+   148                           ;		_toggleLed
+   149                           ; This function is called by:
+   150                           ;		Startup code after reset
+   151                           ; This function uses a non-reentrant model
+   152                           ; 
+   153                                   psect   text0,class=CODE,space=0,reloc=2
+   154                           
+   155                           	opt lm
+   156                           	file	"E:\MPLAB Projects\PIC18f4431\main.c"
+   157                           	line	71
+   158  000000                     	__size_of_main	equ	__end_of_main-_main
+   159                           ;main.c: 70: int main()
+   160                           ;main.c: 71: {
+   161                           	
+   162  003EBE                     _main:		; BSR set to: ?
+   163                           
+   164                           	opt stack 31
+   165                           	line	73
+   166                           ;main.c: 73: init();
+   167  003EBE  EC34  F01F         	call	_init	;wreg free
+   168                           	line	74
+   169                           ;main.c: 74: setSlaveAddr(0x1F);
+   170  003EC2  0100               	movlb	0	; () banked
+   171  003EC4  6FF5               	movwf	(??_main+0+0)&0ffh
+   172  003EC6  0E1F               	movlw	low(01Fh)
+   173  003EC8  0100               	movlb	0	; () banked
+   174  003ECA  0100               	movlb	0	; () banked
+   175  003ECC  6FF6               	movwf	((?_setSlaveAddr))&0ffh
+   176  003ECE  0100               	movlb	0	; () banked
+   177  003ED0  51F5               	movf	(??_main+0+0)&0ffh,w
+   178  003ED2  EC7D  F01F         	call	_setSlaveAddr	;wreg free
+   179                           	line	75
+   180                           ;main.c: 75: while(1)
+   181                           	
+   182  003ED6                     l262:		; BSR set to: ?
+   183                           
+   184                           	line	77
+   185                           ;main.c: 76: {
+   186                           ;main.c: 77: if(SSPIF == 1)
+   187  003ED6  A69E               	btfss	c:(31987/8),(31987)&7	;volatile
+   188  003ED8  EF70  F01F         	goto	u81
+   189  003EDC  EF72  F01F         	goto	u80
+   190  003EE0                     u81:
+   191  003EE0  EF74  F01F         	goto	l261
+   192  003EE4                     u80:
+   193                           	line	78
+   194                           ;main.c: 78: break;
+   195  003EE4  EF76  F01F         	goto	l263
+   196                           	line	80
+   197                           	
+   198  003EE8                     l261:		; BSR set to: ?
+   199                           
+   200                           	line	75
+   201  003EE8  EF6B  F01F         	goto	l262
+   202                           	
+   203  003EEC                     l263:		; BSR set to: ?
+   204                           
+   205                           	line	81
+   206                           ;main.c: 80: }
+   207                           ;main.c: 81: SSPIF = 0;
+   208  003EEC  969E               	bcf	c:(31987/8),(31987)&7	;volatile
+   209                           	line	82
+   210                           ;main.c: 82: toggleLed();
+   211  003EEE  EC44  F01F         	call	_toggleLed	;wreg free
+   212                           	line	84
+   213  003EF2  EF7B  F01F         	goto	l260
+   214                           	line	86
+   215                           ;main.c: 86: }
+   216  003EF6                     l260:
+   217                           			; BSR set to: ?
+   218                           
+   219                           	global	start
+   220  003EF6  EF00  F000         	goto	start
+   221                           	opt stack 0
+   222                           GLOBAL __end_of_main
+   223  003EFA                     	__end_of_main:
+   224                           	FNSIZE	_main,1,0
+   225                           ; =============== function _main ends ==========
+                                 ==
+   226                           
+   227                           	signat	_main,90
+   228                           	global	_toggleLed
+   229                           	global	??_toggleLed
+   230                           	global	?_toggleLed
+   231                           
+   232                           ; *************** function _toggleLed **********
+                                 *******
+   233                           ; Defined at:
+   234                           ;		line 9 in file "E:\MPLAB Projects\PIC18f4431\
+                                 main.c"
+   235                           ; Parameters:
+   236                           ;		None
+   237                           ; Auto variables:
+   238                           ;		None
+   239                           ; Return value:
+   240                           ;		type: int 
+   241                           ;		size: 2
+   242                           ; Registers used:
+   243                           ;		wreg, status,2, status,0, cstack
+   244                           ; Tracked objects:
+   245                           ;		On entry : 0/0
+   246                           ;		On exit  : 0/0
+   247                           ;		Unchanged: 0/0
+   248                           ; Data sizes:
+   249                           ;		Autos:    0
+   250                           ;		Params:   0
+   251                           ;		Temp:     0
+   252                           ;		Total:    0
+   253                           ; This function calls:
+   254                           ;		_delay
+   255                           ; This function is called by:
+   256                           ;		_main
+   257                           ; This function uses a non-reentrant model
+   258                           ; 
+   259                                   psect   text1,class=CODE,space=0,reloc=2
+   260                           
+   261                           	opt lm
+   262                           	file	"E:\MPLAB Projects\PIC18f4431\main.c"
+   263                           	line	9
+   264  000000                     	__size_of_toggleLed	equ	__end_of_toggleLed-_tog
+                                 gleLed
+   265                           ;main.c: 8: int toggleLed(void)
+   266                           ;main.c: 9: {
+   267                           	
+   268  003E88                     _toggleLed:		; BSR set to: ?
+   269                           
+   270                           	opt stack 30
+   271                           	line	10
+   272                           ;main.c: 10: PORTB = 0x00;
+   273  003E88  0E00               	movlw	low(0)
+   274  003E8A  6E81               	movwf	((c:3969)),c	;volatile
+   275                           	line	11
+   276                           ;main.c: 11: while(1)
+   277                           	
+   278  003E8C                     l245:		; BSR set to: ?
+   279                           
+   280                           	line	13
+   281                           ;main.c: 12: {
+   282                           ;main.c: 13: PORTB = 0xAA;
+   283  003E8C  0EAA               	movlw	low(0AAh)
+   284  003E8E  6E81               	movwf	((c:3969)),c	;volatile
+   285                           	line	14
+   286                           ;main.c: 14: delay(200);
+   287  003E90  0EC8               	movlw	low(0C8h)
+   288  003E92  0100               	movlb	0	; () banked
+   289  003E94  0100               	movlb	0	; () banked
+   290  003E96  6FF9               	movwf	((?_delay))&0ffh
+   291  003E98  0E00               	movlw	high(0C8h)
+   292  003E9A  0100               	movlb	0	; () banked
+   293  003E9C  6FFA               	movwf	((?_delay+1))&0ffh
+   294  003E9E  ECA5  F01F         	call	_delay	;wreg free
+   295                           	line	15
+   296                           ;main.c: 15: PORTB = 0x00;
+   297  003EA2  0E00               	movlw	low(0)
+   298  003EA4  6E81               	movwf	((c:3969)),c	;volatile
+   299                           	line	16
+   300                           ;main.c: 16: delay(200);
+   301  003EA6  0EC8               	movlw	low(0C8h)
+   302  003EA8  0100               	movlb	0	; () banked
+   303  003EAA  0100               	movlb	0	; () banked
+   304  003EAC  6FF9               	movwf	((?_delay))&0ffh
+   305  003EAE  0E00               	movlw	high(0C8h)
+   306  003EB0  0100               	movlb	0	; () banked
+   307  003EB2  6FFA               	movwf	((?_delay+1))&0ffh
+   308  003EB4  ECA5  F01F         	call	_delay	;wreg free
+   309                           	line	17
+   310                           	
+   311  003EB8                     l244:		; BSR set to: ?
+   312                           
+   313                           	line	11
+   314  003EB8  EF46  F01F         	goto	l245
+   315  003EBC  0012               	return
+   316                           	opt stack 0
+   317                           GLOBAL __end_of_toggleLed
+   318  003EBE                     	__end_of_toggleLed:
+   319                           	FNSIZE	_toggleLed,0,0
+   320                           ; =============== function _toggleLed ends =====
+                                 =======
+   321                           
+   322                                   psect   text2,class=CODE,space=0,reloc=2
+   323                           	line	19
+   324                           
+   325                           	opt lm
+   326                           	signat	_toggleLed,90
+   327                           	global	_setSlaveAddr
+   328                           	global	??_setSlaveAddr
+   329                           	global	?_setSlaveAddr
+   330                           
+   331                           ; *************** function _setSlaveAddr *******
+                                 **********
+   332                           ; Defined at:
+   333                           ;		line 21 in file "E:\MPLAB Projects\PIC18f4431
+                                 \main.c"
+   334                           ; Parameters:
+   335                           ;		addr           size:   1offs:   0	type: unsig
+                                 ned char 
+   336                           ; Auto variables:
+   337                           ;		addrBkp     	       	type: unsigned char 
+   338                           ; Return value:
+   339                           ;		type: int 
+   340                           ;		size: 2
+   341                           ; Registers used:
+   342                           ;		wreg, status,2, status,0, cstack
+   343                           ; Tracked objects:
+   344                           ;		On entry : 0/0
+   345                           ;		On exit  : 0/0
+   346                           ;		Unchanged: 0/0
+   347                           ; Data sizes:
+   348                           ;		Autos:    1
+   349                           ;		Params:   1
+   350                           ;		Temp:     1
+   351                           ;		Total:    3
+   352                           ; This function calls:
+   353                           ;		_delay
+   354                           ; This function is called by:
+   355                           ;		_main
+   356                           ; This function uses a non-reentrant model
+   357                           ; 
+   358                           	file	"E:\MPLAB Projects\PIC18f4431\main.c"
+   359                           	line	21
+   360  000000                     	__size_of_setSlaveAddr	equ	__end_of_setSlaveAdd
+                                 r-_setSlaveAddr
+   361                           ;main.c: 20: int setSlaveAddr(unsigned char addr
+                                 )
+   362                           ;main.c: 21: {
+   363                           	
+   364  003EFA                     _setSlaveAddr:		; BSR set to: ?
+   365                           
+   366                           	opt stack 30
+   367                           	line	22
+   368                           ;main.c: 22: unsigned char addrBkp=0;
+   369  003EFA  0100               	movlb	0	; () banked
+   370  003EFC  6FF8               	movwf	(??_setSlaveAddr+1+0)&0ffh
+   371  003EFE  0E00               	movlw	low(0)
+   372  003F00  0100               	movlb	0	; () banked
+   373  003F02  0100               	movlb	0	; () banked
+   374  003F04  6FF7               	movwf	((setSlaveAddr@addrBkp))&0ffh
+   375  003F06  0100               	movlb	0	; () banked
+   376  003F08  51F8               	movf	(??_setSlaveAddr+1+0)&0ffh,w
+   377                           	line	24
+   378                           ;main.c: 24: addrBkp = addr;
+   379  003F0A  C0F6  F0F7         	movff	(setSlaveAddr@addr),(setSlaveAddr@addrBkp
+                                 )
+   380                           	line	27
+   381                           ;main.c: 27: SSPADD = addr;
+   382  003F0E  C0F6  FFC8         	movff	(setSlaveAddr@addr),(c:4040)	;volatile
+   383                           	line	28
+   384                           ;main.c: 28: delay(100);
+   385  003F12  0E64               	movlw	low(064h)
+   386  003F14  0100               	movlb	0	; () banked
+   387  003F16  0100               	movlb	0	; () banked
+   388  003F18  6FF9               	movwf	((?_delay))&0ffh
+   389  003F1A  0E00               	movlw	high(064h)
+   390  003F1C  0100               	movlb	0	; () banked
+   391  003F1E  6FFA               	movwf	((?_delay+1))&0ffh
+   392  003F20  ECA5  F01F         	call	_delay	;wreg free
+   393                           	line	29
+   394                           ;main.c: 29: addr = SSPADD;
+   395  003F24  CFC8 F0F6          	movff	(c:4040),(setSlaveAddr@addr)	;volatile
+   396                           	line	30
+   397                           ;main.c: 30: if(addr == addrBkp)
+   398  003F28  0100               	movlb	0	; () banked
+   399  003F2A  0100               	movlb	0	; () banked
+   400  003F2C  51F7               	movf	((setSlaveAddr@addrBkp))&0ffh,w
+   401  003F2E  0100               	movlb	0	; () banked
+   402  003F30  0100               	movlb	0	; () banked
+   403  003F32  63F6               	cpfseq	((setSlaveAddr@addr))&0ffh
+   404  003F34  EF9E  F01F         	goto	u51
+   405  003F38  EFA0  F01F         	goto	u50
+   406  003F3C                     u51:
+   407  003F3C  EFA2  F01F         	goto	l248
+   408  003F40                     u50:
+   409                           	line	31
+   410  003F40  EFA4  F01F         	goto	l247
+   411                           	line	32
+   412                           	
+   413  003F44                     l248:		; BSR set to: ?
+   414                           
+   415                           	line	33
+   416  003F44  EFA4  F01F         	goto	l247
+   417                           	line	34
+   418                           ;main.c: 34: }
+   419  003F48                     l247:
+   420                           			; BSR set to: ?
+   421                           
+   422  003F48  0012               	return
+   423                           	opt stack 0
+   424                           GLOBAL __end_of_setSlaveAddr
+   425  003F4A                     	__end_of_setSlaveAddr:
+   426                           	FNSIZE	_setSlaveAddr,2,1
+   427                           ; =============== function _setSlaveAddr ends ==
+                                 ==========
+   428                           
+   429                           	signat	_setSlaveAddr,4218
+   430                           	global	_init
+   431                           	global	??_init
+   432                           	global	?_init
+   433                           
+   434                           ; *************** function _init ***************
+                                 **
+   435                           ; Defined at:
+   436                           ;		line 48 in file "E:\MPLAB Projects\PIC18f4431
+                                 \main.c"
+   437                           ; Parameters:
+   438                           ;		None
+   439                           ; Auto variables:
+   440                           ;		None
+   441                           ; Return value:
+   442                           ;		type: int 
+   443                           ;		size: 2
+   444                           ; Registers used:
+   445                           ;		wreg, status,2
+   446                           ; Tracked objects:
+   447                           ;		On entry : 0/0
+   448                           ;		On exit  : 0/0
+   449                           ;		Unchanged: 0/0
+   450                           ; Data sizes:
+   451                           ;		Autos:    0
+   452                           ;		Params:   0
+   453                           ;		Temp:     0
+   454                           ;		Total:    0
+   455                           ; This function calls:
+   456                           ;		Nothing
+   457                           ; This function is called by:
+   458                           ;		_main
+   459                           ; This function uses a non-reentrant model
+   460                           ; 
+   461                                   psect   text3,class=CODE,space=0,reloc=2
+   462                           
+   463                           	opt lm
+   464                           	file	"E:\MPLAB Projects\PIC18f4431\main.c"
+   465                           	line	48
+   466  000000                     	__size_of_init	equ	__end_of_init-_init
+   467                           ;main.c: 47: int init(void)
+   468                           ;main.c: 48: {
+   469                           	
+   470  003E68                     _init:		; BSR set to: ?
+   471                           
+   472                           	opt stack 30
+   473                           	line	50
+   474                           ;main.c: 50: OSCCON = 0x73;
+   475  003E68  0E73               	movlw	low(073h)
+   476  003E6A  6ED3               	movwf	((c:4051)),c	;volatile
+   477                           	line	53
+   478                           ;main.c: 53: PORTB = 0x00;
+   479  003E6C  0E00               	movlw	low(0)
+   480  003E6E  6E81               	movwf	((c:3969)),c	;volatile
+   481                           	line	54
+   482                           ;main.c: 54: TRISB = 0x00;
+   483  003E70  0E00               	movlw	low(0)
+   484  003E72  6E93               	movwf	((c:3987)),c	;volatile
+   485                           	line	57
+   486                           ;main.c: 57: TRISD =0xFF;
+   487  003E74  6895               	setf	((c:3989)),c	;volatile
+   488                           	line	58
+   489                           ;main.c: 58: PORTD =0xFF;
+   490  003E76  6883               	setf	((c:3971)),c	;volatile
+   491                           	line	61
+   492                           ;main.c: 61: SSPCON = 0x36;
+   493  003E78  0E36               	movlw	low(036h)
+   494  003E7A  6EC6               	movwf	((c:4038)),c	;volatile
+   495                           	line	64
+   496                           ;main.c: 64: GIE=1;
+   497  003E7C  8EF2               	bsf	c:(32663/8),(32663)&7	;volatile
+   498                           	line	65
+   499                           ;main.c: 65: PEIE=1;
+   500  003E7E  8CF2               	bsf	c:(32662/8),(32662)&7	;volatile
+   501                           	line	66
+   502                           ;main.c: 66: SSPIE=1;
+   503  003E80  869D               	bsf	c:(31979/8),(31979)&7	;volatile
+   504                           	line	68
+   505  003E82  EF43  F01F         	goto	l259
+   506                           	line	69
+   507                           ;main.c: 69: }
+   508  003E86                     l259:
+   509                           			; BSR set to: ?
+   510                           
+   511  003E86  0012               	return
+   512                           	opt stack 0
+   513                           GLOBAL __end_of_init
+   514  003E88                     	__end_of_init:
+   515                           	FNSIZE	_init,0,0
+   516                           ; =============== function _init ends ==========
+                                 ==
+   517                           
+   518                           	signat	_init,90
+   519                           	global	_delay
+   520                           	global	??_delay
+   521                           	global	?_delay
+   522                           
+   523                           ; *************** function _delay **************
+                                 ***
+   524                           ; Defined at:
+   525                           ;		line 37 in file "E:\MPLAB Projects\PIC18f4431
+                                 \main.c"
+   526                           ; Parameters:
+   527                           ;		cnt            size:   2offs:   0	type: int 
+   528                           ; Auto variables:
+   529                           ;		i           	       	type: int 
+   530                           ;		j           	       	type: int 
+   531                           ; Return value:
+   532                           ;		type: int 
+   533                           ;		size: 2
+   534                           ; Registers used:
+   535                           ;		wreg, status,2, status,0
+   536                           ; Tracked objects:
+   537                           ;		On entry : 0/0
+   538                           ;		On exit  : 0/0
+   539                           ;		Unchanged: 0/0
+   540                           ; Data sizes:
+   541                           ;		Autos:    4
+   542                           ;		Params:   2
+   543                           ;		Temp:     1
+   544                           ;		Total:    7
+   545                           ; This function calls:
+   546                           ;		Nothing
+   547                           ; This function is called by:
+   548                           ;		_toggleLed
+   549                           ;		_setSlaveAddr
+   550                           ; This function uses a non-reentrant model
+   551                           ; 
+   552                                   psect   text4,class=CODE,space=0,reloc=2
+   553                           
+   554                           	opt lm
+   555                           	file	"E:\MPLAB Projects\PIC18f4431\main.c"
+   556                           	line	37
+   557  000000                     	__size_of_delay	equ	__end_of_delay-_delay
+   558                           ;main.c: 36: int delay(int cnt)
+   559                           ;main.c: 37: {
+   560                           	
+   561  003F4A                     _delay:		; BSR set to: ?
+   562                           
+   563                           	opt stack 29
+   564                           	line	38
+   565  003F4A  0E00               	movlw	low(0)
+   566  003F4C  0100               	movlb	0	; () banked
+   567  003F4E  0100               	movlb	0	; () banked
+   568  003F50  6FFB               	movwf	((delay@i))&0ffh
+   569  003F52  0E00               	movlw	high(0)
+   570  003F54  0100               	movlb	0	; () banked
+   571  003F56  6FFC               	movwf	((delay@i+1))&0ffh
+   572  003F58  0E00               	movlw	low(0)
+   573  003F5A  0100               	movlb	0	; () banked
+   574  003F5C  0100               	movlb	0	; () banked
+   575  003F5E  6FFD               	movwf	((delay@j))&0ffh
+   576  003F60  0E00               	movlw	high(0)
+   577  003F62  0100               	movlb	0	; () banked
+   578  003F64  6FFE               	movwf	((delay@j+1))&0ffh
+   579                           	line	39
+   580                           ;main.c: 39: for(i =0;i<cnt;i++)
+   581  003F66  0E00               	movlw	low(0)
+   582  003F68  0100               	movlb	0	; () banked
+   583  003F6A  0100               	movlb	0	; () banked
+   584  003F6C  6FFB               	movwf	((delay@i))&0ffh
+   585  003F6E  0E00               	movlw	high(0)
+   586  003F70  0100               	movlb	0	; () banked
+   587  003F72  6FFC               	movwf	((delay@i+1))&0ffh
+   588  003F74  EFE5  F01F         	goto	l254
+   589                           	line	40
+   590                           	
+   591  003F78                     l251:		; BSR set to: ?
+   592                           
+   593                           	line	41
+   594                           ;main.c: 40: {
+   595                           ;main.c: 41: for(j=0;j<cnt;j++)
+   596  003F78  0E00               	movlw	low(0)
+   597  003F7A  0100               	movlb	0	; () banked
+   598  003F7C  0100               	movlb	0	; () banked
+   599  003F7E  6FFD               	movwf	((delay@j))&0ffh
+   600  003F80  0E00               	movlw	high(0)
+   601  003F82  0100               	movlb	0	; () banked
+   602  003F84  6FFE               	movwf	((delay@j+1))&0ffh
+   603  003F86  EFC9  F01F         	goto	l258
+   604                           	line	42
+   605                           	
+   606  003F8A                     l255:		; BSR set to: ?
+   607                           
+   608                           	line	41
+   609                           ;main.c: 42: {
+   610  003F8A  0100               	movlb	0	; () banked
+   611  003F8C  0100               	movlb	0	; () banked
+   612  003F8E  4BFD               	infsnz	((delay@j))&0ffh
+   613  003F90  2BFE               	incf	((delay@j+1))&0ffh
+   614                           	
+   615  003F92                     l258:		; BSR set to: ?
+   616                           
+   617  003F92  0100               	movlb	0	; () banked
+   618  003F94  0100               	movlb	0	; () banked
+   619  003F96  51FE               	movf	((delay@j+1))&0ffh,w
+   620  003F98  0A80               	xorlw	80h
+   621  003F9A  0100               	movlb	0	; () banked
+   622  003F9C  6FFF               	movwf	(??_delay+4+0)&0ffh
+   623+ 003F9E  0100               	movlb	0	; () banked
+   624  003FA0  51F9               	movf	((delay@cnt))&0ffh,w
+   625  003FA2  0100               	movlb	0	; () banked
+   626  003FA4  0100               	movlb	0	; () banked
+   627  003FA6  5DFD               	subwf	((delay@j))&0ffh,w
+   628  003FA8  0100               	movlb	0	; () banked
+   629  003FAA  0100               	movlb	0	; () banked
+   630  003FAC  51FA               	movf	((delay@cnt+1))&0ffh,w
+   631  003FAE  0A80               	xorlw	80h
+   632  003FB0  0100               	movlb	0	; () banked
+   633  003FB2  59FF               	subwfb	(??_delay+4+0)&0ffh,w
+   634  003FB4  A0D8               	btfss	status,0
+   635  003FB6  EFDF  F01F         	goto	u61
+   636  003FBA  EFE1  F01F         	goto	u60
+   637  003FBE                     u61:
+   638  003FBE  EFC5  F01F         	goto	l255
+   639  003FC2                     u60:
+   640                           	
+   641  003FC2                     l256:		; BSR set to: ?
+   642                           
+   643                           	line	39
+   644  003FC2  0100               	movlb	0	; () banked
+   645  003FC4  0100               	movlb	0	; () banked
+   646  003FC6  4BFB               	infsnz	((delay@i))&0ffh
+   647  003FC8  2BFC               	incf	((delay@i+1))&0ffh
+   648                           	
+   649  003FCA                     l254:		; BSR set to: ?
+   650                           
+   651  003FCA  0100               	movlb	0	; () banked
+   652  003FCC  0100               	movlb	0	; () banked
+   653  003FCE  51FC               	movf	((delay@i+1))&0ffh,w
+   654  003FD0  0A80               	xorlw	80h
+   655  003FD2  0100               	movlb	0	; () banked
+   656  003FD4  6FFF               	movwf	(??_delay+4+0)&0ffh
+   657  003FD6  0100               	movlb	0	; () banked
+   658  003FD8  51F9               	movf	((delay@cnt))&0ffh,w
+   659  003FDA  0100               	movlb	0	; () banked
+   660  003FDC  0100               	movlb	0	; () banked
+   661  003FDE  5DFB               	subwf	((delay@i))&0ffh,w
+   662  003FE0  0100               	movlb	0	; () banked
+   663  003FE2  0100               	movlb	0	; () banked
+   664  003FE4  51FA               	movf	((delay@cnt+1))&0ffh,w
+   665  003FE6  0A80               	xorlw	80h
+   666  003FE8  0100               	movlb	0	; () banked
+   667  003FEA  59FF               	subwfb	(??_delay+4+0)&0ffh,w
+   668  003FEC  A0D8               	btfss	status,0
+   669  003FEE  EFFB  F01F         	goto	u71
+   670  003FF2  EFFD  F01F         	goto	u70
+   671  003FF6                     u71:
+   672  003FF6  EFBC  F01F         	goto	l251
+   673  003FFA                     u70:
+   674                           	
+   675  003FFA                     l252:		; BSR set to: ?
+   676                           
+   677                           	line	45
+   678  003FFA  EFFF  F01F         	goto	l250
+   679                           	line	46
+   680                           ;main.c: 46: }
+   681  003FFE                     l250:
+   682                           			; BSR set to: ?
+   683                           
+   684  003FFE  0012               	return
+   685                           	opt stack 0
+   686                           GLOBAL __end_of_delay
+   687  004000                     	__end_of_delay:
+   688                           	FNSIZE	_delay,5,2
+   689                           ; =============== function _delay ends =========
+                                 ===
+   690                           
+   691                           	signat	_delay,4218
+   692                           	FNCALL	_main,_init
+   693                           	FNCALL	_main,_setSlaveAddr
+   694                           	FNCALL	_main,_toggleLed
+   695                           	FNCALL	_toggleLed,_delay
+   696                           	FNCALL	_setSlaveAddr,_delay
+   697                           	FNROOT	_main
+   698                                   psect   const,class=CODE,space=0,reloc=2
+   699                           	global	_OSCCON
+   700  000000                     _OSCCON	equ	0xFD3
+   701                           	global	_PORTB
+   702  000000                     _PORTB	equ	0xF81
+   703                           	global	_PORTD
+   704  000000                     _PORTD	equ	0xF83
+   705                           	global	_SSPADD
+   706  000000                     _SSPADD	equ	0xFC8
+   707                           	global	_SSPCON
+   708  000000                     _SSPCON	equ	0xFC6
+   709                           	global	_TRISB
+   710  000000                     _TRISB	equ	0xF93
+   711                           	global	_TRISD
+   712  000000                     _TRISD	equ	0xF95
+   713                           	global	_GIE
+   714  000000                     _GIE	equ	0x7F97
+   715                           	global	_PEIE
+   716  000000                     _PEIE	equ	0x7F96
+   717                           	global	_SSPIE
+   718  000000                     _SSPIE	equ	0x7CEB
+   719                           	global	_SSPIF
+   720  000000                     _SSPIF	equ	0x7CF3
+   721                           	psect	intsave_regs,class=BIGRAM,space=1
+   722                           	PSECT	param0,class=BANK0,space=1
+   723                           	GLOBAL	__Lparam0
+   724                           	FNCONF	param0,??,?
+   725                           GLOBAL	__Lparam, __Hparam
+   726                           GLOBAL	__Lparam0, __Hparam0
+   727  000000                     __Lparam	EQU	__Lparam0
+   728  000000                     __Hparam	EQU	__Hparam0
+
+
+HI-TECH Software PICC-18 Macro Assembler V9.66 build 8870 
+Symbol Table                                           Sun Jun 17 12:29:28 2012
+
+                   u50 3F40                     u51 3F3C  
+                   u60 3FC2                     u61 3FBE  
+                   u70 3FFA                     u71 3FF6  
+                   u80 3EE4                     u81 3EE0  
+                  l250 3FFE                    l251 3F78  
+                  l252 3FFA                    l244 3EB8  
+                  l260 3EF6                    l245 3E8C  
+                  l261 3EE8                    l254 3FCA  
+                  l262 3ED6                    l255 3F8A  
+                  l247 3F48                    l263 3EEC  
+                  l256 3FC2                    l248 3F44  
+                  l258 3F92                    l259 3E86  
+                  _GIE 007F97                   _PEIE 007F96  
+                 _main 3EBE                   _init 3E68  
+                 start 0000                  ?_main 00F5  
+                ?_init 00F6                  _PORTB 000F81  
+                _PORTD 000F83                  _TRISB 000F93  
+                _TRISD 000F95                  _SSPIE 007CEB  
+                _SSPIF 007CF3       setSlaveAddr@addr 00F6  
+                _delay 3F4A                  status 000FD8  
+         __end_of_main 3EFA           __end_of_init 3E88  
+               ??_main 00F5                 ??_init 00F6  
+        __activetblptr 000000                 ?_delay 00F9  
+               _OSCCON 000FD3                 _SSPADD 000FC8  
+               _SSPCON 000FC6                 __Ldata 000000  
+               delay@i 00FB                 delay@j 00FD  
+         __mediumconst 0300             __accesstop 0060  
+        __end_of_delay 4000                ??_delay 00FB  
+        ?_setSlaveAddr 00F6                __Hparam 0100  
+              __Lparam 00F5         ??_setSlaveAddr 00F7  
+              __ramtop 0300          __Lmediumconst 0300  
+    __end_of_toggleLed 3EBE   __end_of_setSlaveAddr 3F4A  
+          __smallconst 0300              _toggleLed 3E88  
+             __Hparam0 0100    setSlaveAddr@addrBkp 00F7  
+             __Lparam0 00F5           __Lsmallconst 0300  
+         _setSlaveAddr 3EFA             ?_toggleLed 00F6  
+             delay@cnt 00F9            ??_toggleLed 00F6  
